@@ -2361,6 +2361,10 @@ title = "Automatizálás futtatása"
 [automate.selection]
 title = "Automatizálás kiválasztása"
 
+[automate.selection.activity]
+description = "Save it as an automation and run it with one click."
+title = "Frequent workflows"
+
 [automate.selection.createNew]
 title = "Új automatizálás létrehozása"
 
@@ -2971,31 +2975,36 @@ stepTitle = "Ez az eszköz"
 [certSign.error]
 failed = "Hiba történt az aláírások feldolgozása közben."
 
-[certSign.format]
-pkcs11 = "USB token"
-windowsStore = "Windows tanúsítványtár"
-
 [certSign.hardware]
-certificate = "Tanúsítvány"
+allExpired = "None of the digital IDs here can sign today."
+backToDigitalIds = "Back to digital IDs"
 customLibrary = "Egyéni illesztőprogram elérési útja…"
+digitalId = "Digital ID"
 driver = "PKCS#11 illesztőprogram"
 driverPath = "Illesztőprogram könyvtárának elérési útja"
 driverPathPlaceholder = "A PKCS#11 illesztőprogram teljes elérési útja (.dll, .so vagy .dylib)"
-expired = "lejárt"
-expires = "lejár"
+driverSetup = "Read card directly"
+expiredOn = "Expired {{date}}"
+expiresOn = "Expires {{date}}"
+hideExpired = "Hide expired"
 listCerts = "Tanúsítványok listázása"
-loading = "Tanúsítványok beolvasása…"
+macLoadError = "Could not read the macOS keychain"
 noCerts = "Nem található aláíró tanúsítvány"
 noDriver = "Nem észleltünk PKCS#11 illesztőprogramot. Telepítse a token illesztőprogramját (pl. OpenSC), majd nyissa meg újra ezt – vagy adja meg alább kézzel az illesztőprogram útvonalát."
-notYetValid = "még nem érvényes"
+notListed = "Don't see your ID?"
+onDevice = "Stored on this device"
+onToken = "On a security key or smart card"
+osStoreHint = "Insert your smart card or security key, then choose your digital ID."
 pin = "Token PIN-kód"
 pkcs11Hint = "Válassza ki a token PKCS#11 illesztőprogramját, adja meg a PIN-kódot, majd listázza a tokenen lévő tanúsítványokat."
 pkcs11LoadError = "Nem sikerült beolvasni a tanúsítványokat a tokenről. Ellenőrizze a PIN-kódot és az illesztőprogramot."
-refresh = "Frissítés"
-selectCert = "Tanúsítvány kiválasztása"
+refreshList = "Refresh list"
 selectDriver = "Illesztőprogram kiválasztása"
+serial = "Serial …{{serial}}"
+showExpired = "Show {{count}} expired"
 slot = "Foglalat (opcionális)"
-windowsHint = "Válasszon tanúsítványt a Windows tanúsítványtárból. Az aláírás a kártyán/tokenen lévő kulcsot használja – a Windows bekéri a PIN-kódot."
+useDriver = "Read the card directly"
+validFrom = "Valid from {{date}}"
 windowsLoadError = "Nem sikerült beolvasni a Windows tanúsítványtárat"
 
 [certSign.sessions]
@@ -3035,6 +3044,8 @@ title = "Ökölszabály"
 device = "Ez az eszköz"
 noOtherSources = "Nem érhetők el más tanúsítványforrások."
 server = "Szerver"
+serverCertUnavailable = "The server's signing certificate isn't available."
+signsAs = "Signs as"
 stepTitle = "Tanúsítvány forrása"
 upload = "Feltöltés"
 
@@ -3265,7 +3276,9 @@ checking = "Ellenőrzés…"
 clauseRef = "{{profile}} §{{clauses}}"
 download = "Akadálymentességi jelentés letöltése"
 fileFailed = "sikertelen"
+noFiles = "Select a PDF to check it."
 pickFile = "Eredmények megjelenítése ehhez"
+retry = "Check again"
 submit = "Akadálymentesség ellenőrzése"
 
 [checkAccessibility.category]
@@ -3291,6 +3304,7 @@ label = "{{passed}} / {{total}} ellenőrzés sikeres"
 download = "Az akadálymentességi jelentést nem sikerült létrehozni. Próbálja újra."
 fileTitle = "Ezt a fájlt nem sikerült ellenőrizni"
 partial = "Néhány fájlt nem sikerült ellenőrizni."
+unreachable = "The server didn't answer. Check it's running, then check again."
 
 [checkAccessibility.facts]
 declares = "PDF/UA-t deklarál"
@@ -3313,6 +3327,21 @@ title = "A fájl metaadatai között szerepel a cím."
 [checkAccessibility.figures]
 summary_one = "{{count}} képhez szükséges leírás ({{pages}}. oldal)"
 summary_other = "{{count}} képhez szükséges leírás (oldalak {{pages}})"
+
+[checkAccessibility.fix]
+heading = "Fix the headings"
+headingOnPage = "Fix the heading on page {{page}}"
+hide = "Hide tagging tool"
+image = "Describe the images"
+imageOnPage = "Describe the image on page {{page}}"
+link = "Tag the links"
+linkOnPage = "Tag the link on page {{page}}"
+markedTagged = "Mark the document as tagged"
+show = "Show tagging tool"
+tagEverything = "Auto-tag"
+tagging = "Tagging... {{percent}}%"
+untagged = "Tag the content"
+untaggedOnPage = "Tag content on page {{page}}"
 
 [checkAccessibility.issue]
 appliesTo = "Érintett"
@@ -4928,12 +4957,15 @@ closeFile = "Fájl bezárása"
 
 [fileEditor]
 closedFile = "{{name}} bezárva"
+filesAdded_one = "Added {{count}} file"
+filesAdded_other = "Added {{count}} files"
 filesReordered_one = "Fájl átrendezve"
 filesReordered_other = "{{count}} fájl átrendezve"
 loadedFromStorage_one = "{{count}} fájl betöltve a tárhelyről"
 loadedFromStorage_other = "{{count}} fájl betöltve a tárhelyről"
 loadFromStorageFailed = "Nem sikerült néhány fájlt betölteni a tárhelyről"
 pinnedFile = "{{name}} rögzítve"
+processFilesFailed = "Failed to process files"
 savedAndClosed = "{{name}} mentve és bezárva"
 saveFailed = "A mentés sikertelen"
 unpinnedFile = "{{name}} rögzítése feloldva"
@@ -5959,8 +5991,10 @@ title = "Jogosultságok módosítása"
 
 [home.checkAccessibility]
 desc = "Pontozza a PDF-et a PDF/UA szerint, és lássa, mi akadályozza a képernyőolvasókat, anélkül hogy módosítaná"
+descWithReview = "Check a PDF against PDF/UA, then tag and describe what screen readers miss"
 tags = "accessibility,a11y,PDF/UA,screen reader,WCAG,Section 508,veraPDF,tagged PDF,alt text,accessibility checker,accessibility report,compliance,UA"
 title = "PDF akadálymentességének ellenőrzése"
+titleWithReview = "PDF accessibility"
 
 [home.classify]
 desc = "Azonosítsa, milyen típusú dokumentum ez, és címkézze fel."
@@ -6962,6 +6996,10 @@ yourCloudAccess = "Csapattaggá válik, és elveszíti a tulajdonosi hozzáfér�
 deselectAll = "Nincs"
 selectAll = "Összes kijelölése"
 
+[pageEditor.toolbar]
+redo = "Redo"
+undo = "Undo"
+
 [pageExtracter]
 title = "Oldalak kinyerése"
 
@@ -7800,14 +7838,11 @@ cannotTagLink = "Ez a hivatkozás nem címkézhető."
 cannotTagPage = "Ennek az oldalnak a tartalma nem címkézhető."
 contentGroup = "Tartalom"
 customTag = "{{role}} (egyéni címke)"
-decorativeInfo = "A képernyőolvasók kihagyják a dekoratív képeket. Használja szegélyekhez, hátterekhez és más, információt nem hordozó képekhez."
-decorativeLabel = "Dekoratív kép"
-description = "Kép leírása"
-descriptionInfo = "A képernyőolvasók ezt olvassák fel a kép helyett."
+describeLinks_one = "Describe link"
+describeLinks_other = "Describe {{count}} links"
 encrypted = "A címkék nem szerkeszthetők titkosított fájlban"
 figureDescription = "Ábra leírása"
 figureDescriptionInfo = "A képernyőolvasók ezt olvassák fel az ábra helyett."
-formFieldDescription = "Mezőleírás"
 formulaDescription = "Képlet leírása"
 formulaDescriptionInfo = "A képernyőolvasók ezt olvassák fel a képlet helyett. Úgy fogalmazd meg, ahogy kimondanád, például: \"x négyzet plusz egy\"."
 heading = "Akadálymentesség"
@@ -7818,7 +7853,6 @@ markedTagged = "A dokumentum teljesen címkézett"
 markedTaggedHint = "Azt jelzi a PDF-olvasóknak, hogy használják az akadálymentességi címkéket. Akkor pipálja be, ha mindent címkézett."
 markedWithUntagged = "Egyes tartalmaknak nincs címkéje, ezért a képernyőolvasók kihagyhatják."
 missingDescriptions = "Hiányzó leírások"
-mixedContent = "Az ábra más tartalmat is tartalmaz"
 mixedTags = "Vegyes"
 needsDescriptionBadge = "Nincs leírás"
 nextToReview = "Következő ellenőrizendő"
@@ -7826,12 +7860,10 @@ notFigure = "A szöveg részeként címkézve"
 removeTag = "Címke eltávolítása"
 saveFailed = "Az akadálymentességi módosításokat nem sikerült menteni, ezért a fájl nem lett mentve. Vonja vissza őket, és próbálja újra."
 selectedText = "Kijelölt szöveg"
-tagFormField = "Űrlapmező címkézése"
 tagging = "Oldalak címkézése"
 tagLabel = "Címke"
 tagLinks_one = "Hivatkozás címkézése"
 tagLinks_other = "{{count}} hivatkozás címkézése"
-tagUntagged = "Dokumentum automatikus címkézése"
 tagUntaggedHint = "Automatikusan hozzáadja az akadálymentességi címkéket a dokumentumban. Az eredmény nyers: utána ellenőrizze a címsorokat, listákat és az olvasási sorrendet."
 unknownTag = "Itt nem olvasható"
 unmarkedWithTags = "Egyes PDF-megjelenítők akkor is használják a címkéket, és kihagyhatják a címke nélküli tartalmakat."
@@ -7856,7 +7888,7 @@ heading = "Címsorok"
 mixedNumbering = "Számozott és számozatlan címsorokat kever"
 none = "Nincsenek címsorok"
 onPage = "Címsor a(z) {{page}}. oldalon"
-problems = "Címsorproblémák"
+problemCount = "{{count}} to fix"
 skippedLevel = "Kihagy egy szintet a Címsor {{previous}} után"
 
 [pdfTextEditor.inspector.accessibility.tagName]
@@ -7911,13 +7943,11 @@ title = "Cím"
 allLanguages = "Minden nyelv"
 cannotSetDocument = "Ennek a dokumentumnak a nyelve nem módosítható."
 cannotSetText = "Ennek a szövegnek a nyelve nem módosítható."
-documentHint = "A nyelv, amit a képernyőolvasók használnak, hacsak a szöveg egy része másikat nem ad meg."
 documentLabel = "Nyelv"
 documentLocked = "Titkosított dokumentum nyelve itt nem módosítható."
 inDocument = "Ebben a dokumentumban"
 innerLabel = "{{number}}. címke nyelve"
 label = "Nyelv"
-missing = "Nincs nyelv beállítva. A képernyőolvasók találgatni fognak, és lehet, hogy az egészet rossz hangon olvassák."
 mixed = "Vegyes"
 noMatch = "Nincs egyező nyelv. Írja be a kódját, pl. mt vagy en-IE."
 placeholder = "Nyelv kiválasztása"
@@ -7948,6 +7978,52 @@ renderFailed = "Nem sikerült renderelni az oldalt"
 [pdfTextEditor.password]
 incorrect = "Helytelen jelszó – próbáld újra."
 label = "Jelszó"
+
+[pdfTextEditor.review]
+allDone = "All text and images are tagged"
+close = "Close accessibility settings"
+counting = "still counting"
+left = "{{count}} left to tag"
+next = "Next untagged (N)"
+noneLeft = "No text or images left to tag"
+previous = "Previous untagged (Shift+N)"
+untaggedCount = "{{count}} untagged"
+untaggedPosition = "{{index}} of {{count}} untagged"
+
+[pdfTextEditor.review.badge]
+described = "Described"
+noDescription = "Needs a description"
+untagged = "Needs a tag"
+
+[pdfTextEditor.review.card]
+autoAdvance = "Go to the next item after tagging"
+done = "Tagged"
+figureQuestion = "What does this figure show?"
+formulaPlaceholder = "For example: x squared plus one"
+formulaQuestion = "How is this formula read aloud?"
+imagePlaceholder = "Describe the image"
+imageQuestion = "What does this image show?"
+label = "Accessibility review"
+pickHint = "Click a block or an image on the page, or press the arrow to go to the next one still to tag. Shift-click to tag several at once."
+saveDescription = "Save description"
+selectedCount_one = "{{count}} block selected"
+selectedCount_other = "{{count}} blocks selected"
+showAllTags = "Show tags on every block"
+skipQuestion = "Or skip it for screen readers"
+textQuestion = "What is this text?"
+todo = "Needs attention"
+
+[pdfTextEditor.review.closePrompt]
+body = "Your tags are not in your workspace yet. Closing accessibility settings without saving loses them."
+discard = "Discard"
+keep = "Keep tagging"
+save = "Save and close"
+title = "Save your tags?"
+
+[pdfTextEditor.review.summary]
+progress = "Tagging progress"
+tagged = "{{done}} of {{total}} tagged"
+title = "Tagging"
 
 [pdfTextEditor.rulers]
 guide = "Igazítási segédvonal itt: {{value}} {{unit}} – eltávolításhoz húzd egy vonalzóra"
@@ -8129,6 +8205,10 @@ title = "Előnézet eltérései"
 [pdfTextEditor.tooltip.textFocus]
 text = "Ez a munkaterület a szöveg szerkesztésére és a beágyazott képek áthelyezésére fókuszál. Az összetett oldalgrafika, űrlapelemek és rétegelt grafikák exportáláskor megmaradnak, de itt nem minden szerkeszthető teljes körűen."
 title = "Szöveg és képek fókusza"
+
+[pdfTextEditor.trail]
+save = "Save"
+saveTooltip = "Save to your workspace ({{shortcut}})"
 
 [PDFToCSV]
 header = "PDF konvertálása CSV-be"
@@ -10321,6 +10401,10 @@ title = "Pipeline-ok"
 
 [portal.pipelines.actions]
 newCustomPipeline = "Új egyéni folyamat"
+
+[portal.pipelines.activity]
+build = "Build pipeline"
+title = "Frequent workflows"
 
 [portal.pipelines.all]
 title = "Összes folyamat"
@@ -14338,6 +14422,20 @@ noTools = "Nem állnak rendelkezésre eszközök"
 [tooltip]
 close = "Eszköztipp bezárása"
 
+[toolWorkflows]
+draftName = "{{first}} + {{count}} more steps"
+longName = "{{first}} → … → {{last}} ({{count}} steps)"
+
+[toolWorkflows.ranBy]
+install = "Your colleagues have done this {{count, number}} times."
+team = "Your team has done this {{count, number}} times."
+user = "You've done this {{count, number}} times."
+
+[toolWorkflows.ranByShort]
+install = "Colleagues ran this {{count, number}} times"
+team = "Your team ran this {{count, number}} times"
+user = "You ran this {{count, number}} times"
+
 [unlockPDFForms]
 description = "Ez az eszköz eltávolítja az írásvédelmet a PDF űrlapmezőkről, így azok szerkeszthetővé és kitölthetővé válnak."
 submit = "Űrlapok feloldása"
@@ -15114,6 +15212,7 @@ readAloud = "Felolvasás"
 readAloudLanguage = "Nyelv"
 readAloudSpeed = "Sebesség"
 redact = "Kitakarás"
+reviewAccessibility = "Review accessibility"
 rotateLeft = "Forgatás balra"
 rotateRight = "Forgatás jobbra"
 ruler = "Vonalzó / Mérés"

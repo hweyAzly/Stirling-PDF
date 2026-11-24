@@ -2361,6 +2361,10 @@ title = "Rulați automatizarea"
 [automate.selection]
 title = "Selecția automatizării"
 
+[automate.selection.activity]
+description = "Save it as an automation and run it with one click."
+title = "Frequent workflows"
+
 [automate.selection.createNew]
 title = "Creați automatizare nouă"
 
@@ -2971,31 +2975,36 @@ stepTitle = "Acest dispozitiv"
 [certSign.error]
 failed = "A apărut o eroare la procesarea semnăturilor."
 
-[certSign.format]
-pkcs11 = "Token USB"
-windowsStore = "Stocarea de certificate Windows"
-
 [certSign.hardware]
-certificate = "Certificat"
+allExpired = "None of the digital IDs here can sign today."
+backToDigitalIds = "Back to digital IDs"
 customLibrary = "Cale către driver personalizat…"
+digitalId = "Digital ID"
 driver = "Driver PKCS#11"
 driverPath = "Calea bibliotecii driverului"
 driverPathPlaceholder = "Calea completă către driverul PKCS#11 (.dll, .so sau .dylib)"
-expired = "expirat"
-expires = "expiră"
+driverSetup = "Read card directly"
+expiredOn = "Expired {{date}}"
+expiresOn = "Expires {{date}}"
+hideExpired = "Hide expired"
 listCerts = "Listează certificatele"
-loading = "Se citesc certificatele…"
+macLoadError = "Could not read the macOS keychain"
 noCerts = "Nu s-au găsit certificate de semnare"
 noDriver = "Nu a fost detectat niciun driver PKCS#11. Instalați driverul tokenului (de ex. OpenSC), apoi redeschideți aceasta - sau introduceți manual mai jos calea driverului."
-notYetValid = "încă nevalid"
+notListed = "Don't see your ID?"
+onDevice = "Stored on this device"
+onToken = "On a security key or smart card"
+osStoreHint = "Insert your smart card or security key, then choose your digital ID."
 pin = "PIN token"
 pkcs11Hint = "Selectați driverul PKCS#11 al tokenului, introduceți PIN-ul, apoi listați certificatele de pe token."
 pkcs11LoadError = "Nu s-au putut citi certificatele de pe token. Verificați PIN-ul și driverul."
-refresh = "Reîmprospătează"
-selectCert = "Selectați certificatul"
+refreshList = "Refresh list"
 selectDriver = "Selectați driverul"
+serial = "Serial …{{serial}}"
+showExpired = "Show {{count}} expired"
 slot = "Slot (opțional)"
-windowsHint = "Alegeți un certificat din stocarea de certificate Windows. Semnarea folosește cheia de pe card/token - Windows va solicita PIN-ul."
+useDriver = "Read the card directly"
+validFrom = "Valid from {{date}}"
 windowsLoadError = "Nu s-a putut citi stocarea de certificate Windows"
 
 [certSign.sessions]
@@ -3035,6 +3044,8 @@ title = "Regulă generală"
 device = "Acest dispozitiv"
 noOtherSources = "Nu sunt disponibile alte surse de certificate."
 server = "Server"
+serverCertUnavailable = "The server's signing certificate isn't available."
+signsAs = "Signs as"
 stepTitle = "Sursa certificatului"
 upload = "Încărcare"
 
@@ -3265,7 +3276,9 @@ checking = "Se verifică..."
 clauseRef = "{{profile}} §{{clauses}}"
 download = "Descărcați raportul de accesibilitate"
 fileFailed = "eșuat"
+noFiles = "Select a PDF to check it."
 pickFile = "Afișați rezultatele pentru"
+retry = "Check again"
 submit = "Verificați accesibilitatea"
 
 [checkAccessibility.category]
@@ -3291,6 +3304,7 @@ label = "{{passed}} din {{total}} verificări reușite"
 download = "Raportul de accesibilitate nu a putut fi creat. Încercați din nou."
 fileTitle = "Acest fișier nu a putut fi verificat"
 partial = "Unele fișiere nu au putut fi verificate."
+unreachable = "The server didn't answer. Check it's running, then check again."
 
 [checkAccessibility.facts]
 declares = "Declară PDF/UA"
@@ -3313,6 +3327,21 @@ title = "Fișierul are un titlu în metadate."
 [checkAccessibility.figures]
 summary_one = "{{count}} imagine are nevoie de o descriere (pagina {{pages}})"
 summary_other = "{{count}} imagini au nevoie de o descriere (paginile {{pages}})"
+
+[checkAccessibility.fix]
+heading = "Fix the headings"
+headingOnPage = "Fix the heading on page {{page}}"
+hide = "Hide tagging tool"
+image = "Describe the images"
+imageOnPage = "Describe the image on page {{page}}"
+link = "Tag the links"
+linkOnPage = "Tag the link on page {{page}}"
+markedTagged = "Mark the document as tagged"
+show = "Show tagging tool"
+tagEverything = "Auto-tag"
+tagging = "Tagging... {{percent}}%"
+untagged = "Tag the content"
+untaggedOnPage = "Tag content on page {{page}}"
 
 [checkAccessibility.issue]
 appliesTo = "Se aplică la"
@@ -4928,12 +4957,15 @@ closeFile = "Închideți fișierul"
 
 [fileEditor]
 closedFile = "{{name}} închis"
+filesAdded_one = "Added {{count}} file"
+filesAdded_other = "Added {{count}} files"
 filesReordered_one = "Fișier reordonat"
 filesReordered_other = "{{count}} fișiere reordonate"
 loadedFromStorage_one = "S-a încărcat {{count}} fișier din stocare"
 loadedFromStorage_other = "S-au încărcat {{count}} fișiere din stocare"
 loadFromStorageFailed = "Nu s-au putut încărca unele fișiere din stocare"
 pinnedFile = "{{name}} fixat"
+processFilesFailed = "Failed to process files"
 savedAndClosed = "{{name}} salvat și închis"
 saveFailed = "Salvarea a eșuat"
 unpinnedFile = "{{name}} nefixat"
@@ -5959,8 +5991,10 @@ title = "Schimbă Permisiunile"
 
 [home.checkAccessibility]
 desc = "Atribuiți un scor unui PDF în raport cu PDF/UA și vedeți ce blochează cititoarele de ecran, fără a-l modifica"
+descWithReview = "Check a PDF against PDF/UA, then tag and describe what screen readers miss"
 tags = "accessibility,a11y,PDF/UA,screen reader,WCAG,Section 508,veraPDF,tagged PDF,alt text,accessibility checker,accessibility report,compliance,UA"
 title = "Verificați accesibilitatea PDF-ului"
+titleWithReview = "PDF accessibility"
 
 [home.classify]
 desc = "Identifică ce fel de document este acesta și etichetează-l."
@@ -6962,6 +6996,10 @@ yourCloudAccess = "Veți deveni membru al echipei și veți pierde accesul de pr
 deselectAll = "Niciunul"
 selectAll = "Bifează tot"
 
+[pageEditor.toolbar]
+redo = "Redo"
+undo = "Undo"
+
 [pageExtracter]
 title = "Extrage Pagini"
 
@@ -7800,14 +7838,11 @@ cannotTagLink = "Acest link nu poate fi etichetat."
 cannotTagPage = "Conținutul acestei pagini nu poate fi etichetat."
 contentGroup = "Conținut"
 customTag = "{{role}} (etichetă personalizată)"
-decorativeInfo = "Cititoarele de ecran ignoră imaginile decorative. Folosiți-le pentru borduri, fundaluri și alte imagini care nu transmit informații."
-decorativeLabel = "Imagine decorativă"
-description = "Descrierea imaginii"
-descriptionInfo = "Cititoarele de ecran citesc acest text în locul imaginii."
+describeLinks_one = "Describe link"
+describeLinks_other = "Describe {{count}} links"
 encrypted = "Etichetele nu pot fi editate într-un fișier criptat"
 figureDescription = "Descrierea figurii"
 figureDescriptionInfo = "Cititoarele de ecran citesc acest text în locul figurii."
-formFieldDescription = "Descriere câmp"
 formulaDescription = "Descrierea formulei"
 formulaDescriptionInfo = "Cititoarele de ecran citesc acest text în locul formulei. Formulați-l așa cum l-ați rosti cu voce tare, de exemplu \"x la pătrat plus unu\"."
 heading = "Accesibilitate"
@@ -7818,7 +7853,6 @@ markedTagged = "Documentul este complet etichetat"
 markedTaggedHint = "Indică cititoarelor PDF să folosească etichetele de accesibilitate. Bifați după ce totul este etichetat."
 markedWithUntagged = "O parte din conținut nu are etichete, astfel încât cititoarele de ecran îl pot omite."
 missingDescriptions = "Descrieri lipsă"
-mixedContent = "Figura include alt conținut"
 mixedTags = "Mixt"
 needsDescriptionBadge = "Fără descriere"
 nextToReview = "Următorul de revizuit"
@@ -7826,12 +7860,10 @@ notFigure = "Etichetat ca parte a textului"
 removeTag = "Elimină eticheta"
 saveFailed = "Modificările de accesibilitate nu au putut fi salvate, așa că fișierul nu a fost salvat. Anulați-le și încercați din nou."
 selectedText = "Text selectat"
-tagFormField = "Etichetează câmpul de formular"
 tagging = "Etichetarea paginilor"
 tagLabel = "Etichetă"
 tagLinks_one = "Etichetați linkul"
 tagLinks_other = "Etichetați {{count}} linkuri"
-tagUntagged = "Etichetați automat documentul"
 tagUntaggedHint = "Adaugă automat etichete de accesibilitate în tot documentul. Rezultatul este aproximativ: verificați ulterior titlurile, listele și ordinea de citire."
 unknownTag = "Nu poate fi citit aici"
 unmarkedWithTags = "Unele cititoare PDF vor folosi oricum etichetele și pot omite conținutul fără ele."
@@ -7856,7 +7888,7 @@ heading = "Titluri"
 mixedNumbering = "Combină titluri numerotate și nenumerotate"
 none = "Fără titluri"
 onPage = "Titlu pe pagina {{page}}"
-problems = "Probleme cu titlurile"
+problemCount = "{{count}} to fix"
 skippedLevel = "Omite un nivel după Titlul {{previous}}"
 
 [pdfTextEditor.inspector.accessibility.tagName]
@@ -7911,13 +7943,11 @@ title = "Titlu"
 allLanguages = "Toate limbile"
 cannotSetDocument = "Limba acestui document nu poate fi schimbată."
 cannotSetText = "Limba acestui text nu poate fi schimbată."
-documentHint = "Limba folosită de cititoarele de ecran, cu excepția cazului în care o parte a textului își setează propria."
 documentLabel = "Limbă"
 documentLocked = "Limba unui document criptat nu poate fi schimbată aici."
 inDocument = "În acest document"
 innerLabel = "Limbă etichetă {{number}}"
 label = "Limbă"
-missing = "Nicio limbă setată. Cititoarele de ecran vor ghici și pot citi întregul document cu voce greșită."
 mixed = "Mixt"
 noMatch = "Nicio limbă corespondentă. Introduceți codul ei, de exemplu mt sau en-IE."
 placeholder = "Selectați limba"
@@ -7948,6 +7978,52 @@ renderFailed = "Nu s-a putut reda pagina"
 [pdfTextEditor.password]
 incorrect = "Parolă incorectă - încearcă din nou."
 label = "Parolă"
+
+[pdfTextEditor.review]
+allDone = "All text and images are tagged"
+close = "Close accessibility settings"
+counting = "still counting"
+left = "{{count}} left to tag"
+next = "Next untagged (N)"
+noneLeft = "No text or images left to tag"
+previous = "Previous untagged (Shift+N)"
+untaggedCount = "{{count}} untagged"
+untaggedPosition = "{{index}} of {{count}} untagged"
+
+[pdfTextEditor.review.badge]
+described = "Described"
+noDescription = "Needs a description"
+untagged = "Needs a tag"
+
+[pdfTextEditor.review.card]
+autoAdvance = "Go to the next item after tagging"
+done = "Tagged"
+figureQuestion = "What does this figure show?"
+formulaPlaceholder = "For example: x squared plus one"
+formulaQuestion = "How is this formula read aloud?"
+imagePlaceholder = "Describe the image"
+imageQuestion = "What does this image show?"
+label = "Accessibility review"
+pickHint = "Click a block or an image on the page, or press the arrow to go to the next one still to tag. Shift-click to tag several at once."
+saveDescription = "Save description"
+selectedCount_one = "{{count}} block selected"
+selectedCount_other = "{{count}} blocks selected"
+showAllTags = "Show tags on every block"
+skipQuestion = "Or skip it for screen readers"
+textQuestion = "What is this text?"
+todo = "Needs attention"
+
+[pdfTextEditor.review.closePrompt]
+body = "Your tags are not in your workspace yet. Closing accessibility settings without saving loses them."
+discard = "Discard"
+keep = "Keep tagging"
+save = "Save and close"
+title = "Save your tags?"
+
+[pdfTextEditor.review.summary]
+progress = "Tagging progress"
+tagged = "{{done}} of {{total}} tagged"
+title = "Tagging"
 
 [pdfTextEditor.rulers]
 guide = "Ghid de aliniere la {{value}} {{unit}} - trage-l pe o riglă pentru a-l elimina"
@@ -8129,6 +8205,10 @@ title = "Variații în previzualizare"
 [pdfTextEditor.tooltip.textFocus]
 text = "Acest spațiu de lucru se concentrează pe editarea textului și repoziționarea imaginilor încorporate. Elementele grafice complexe ale paginii, widgeturile de formular și grafica stratificată sunt păstrate pentru export, dar nu sunt pe deplin editabile aici."
 title = "Focalizare pe text și imagine"
+
+[pdfTextEditor.trail]
+save = "Save"
+saveTooltip = "Save to your workspace ({{shortcut}})"
 
 [PDFToCSV]
 header = "PDF în CSV"
@@ -10321,6 +10401,10 @@ title = "Pipeline-uri"
 
 [portal.pipelines.actions]
 newCustomPipeline = "Pipeline personalizat nou"
+
+[portal.pipelines.activity]
+build = "Build pipeline"
+title = "Frequent workflows"
 
 [portal.pipelines.all]
 title = "Toate pipeline-urile"
@@ -14338,6 +14422,20 @@ noTools = "Niciun instrument disponibil"
 [tooltip]
 close = "Închideți tooltipul"
 
+[toolWorkflows]
+draftName = "{{first}} + {{count}} more steps"
+longName = "{{first}} → … → {{last}} ({{count}} steps)"
+
+[toolWorkflows.ranBy]
+install = "Your colleagues have done this {{count, number}} times."
+team = "Your team has done this {{count, number}} times."
+user = "You've done this {{count, number}} times."
+
+[toolWorkflows.ranByShort]
+install = "Colleagues ran this {{count, number}} times"
+team = "Your team ran this {{count, number}} times"
+user = "You ran this {{count, number}} times"
+
 [unlockPDFForms]
 description = "Acest instrument va elimina restricțiile de tip doar citire din câmpurile de formular PDF, făcându-le editabile și completabile."
 submit = "Deblochează formularele"
@@ -15114,6 +15212,7 @@ readAloud = "Citește cu voce tare"
 readAloudLanguage = "Limbă"
 readAloudSpeed = "Viteză"
 redact = "Redactează"
+reviewAccessibility = "Review accessibility"
 rotateLeft = "Rotește la stânga"
 rotateRight = "Rotește la dreapta"
 ruler = "Riglă / Măsurare"

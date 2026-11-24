@@ -2361,6 +2361,10 @@ title = "اجرای اتوماسیون"
 [automate.selection]
 title = "انتخاب اتوماسیون"
 
+[automate.selection.activity]
+description = "Save it as an automation and run it with one click."
+title = "Frequent workflows"
+
 [automate.selection.createNew]
 title = "ایجاد اتوماسیون جدید"
 
@@ -2971,31 +2975,36 @@ stepTitle = "این دستگاه"
 [certSign.error]
 failed = "هنگام پردازش امضاها خطایی رخ داد."
 
-[certSign.format]
-pkcs11 = "توکن USB"
-windowsStore = "فروشگاه گواهی Windows"
-
 [certSign.hardware]
-certificate = "گواهی"
+allExpired = "None of the digital IDs here can sign today."
+backToDigitalIds = "Back to digital IDs"
 customLibrary = "مسیر درایور سفارشی…"
+digitalId = "Digital ID"
 driver = "درایور PKCS#11"
 driverPath = "مسیر کتابخانه درایور"
 driverPathPlaceholder = "مسیر کامل به درایور PKCS#11 شما (.dll، .so یا .dylib)"
-expired = "منقضی شده"
-expires = "منقضی می‌شود"
+driverSetup = "Read card directly"
+expiredOn = "Expired {{date}}"
+expiresOn = "Expires {{date}}"
+hideExpired = "Hide expired"
 listCerts = "فهرست گواهی‌ها"
-loading = "در حال خواندن گواهی‌ها…"
+macLoadError = "Could not read the macOS keychain"
 noCerts = "هیچ گواهی امضایی یافت نشد"
 noDriver = "هیچ درایور PKCS#11 شناسایی نشد. درایور توکن خود را نصب کنید (مثلاً OpenSC)، سپس این را دوباره باز کنید - یا مسیر درایور را در پایین به‌صورت دستی وارد کنید."
-notYetValid = "هنوز معتبر نیست"
+notListed = "Don't see your ID?"
+onDevice = "Stored on this device"
+onToken = "On a security key or smart card"
+osStoreHint = "Insert your smart card or security key, then choose your digital ID."
 pin = "PIN توکن"
 pkcs11Hint = "درایور PKCS#11 توکن خود را انتخاب کنید، PIN را وارد کنید، سپس گواهی‌های موجود روی توکن را فهرست کنید."
 pkcs11LoadError = "امکان خواندن گواهی‌ها از توکن نبود. PIN و درایور را بررسی کنید."
-refresh = "تازه‌سازی"
-selectCert = "انتخاب گواهی"
+refreshList = "Refresh list"
 selectDriver = "انتخاب درایور"
+serial = "Serial …{{serial}}"
+showExpired = "Show {{count}} expired"
 slot = "اسلات (اختیاری)"
-windowsHint = "یک گواهی از فروشگاه گواهی Windows خود انتخاب کنید. امضا از کلید روی کارت/توکن شما استفاده می‌کند - Windows برای PIN از شما درخواست می‌کند."
+useDriver = "Read the card directly"
+validFrom = "Valid from {{date}}"
 windowsLoadError = "امکان خواندن فروشگاه گواهی Windows نبود"
 
 [certSign.sessions]
@@ -3035,6 +3044,8 @@ title = "قاعده سرانگشتی"
 device = "این دستگاه"
 noOtherSources = "هیچ منبع گواهی دیگری در دسترس نیست."
 server = "سرور"
+serverCertUnavailable = "The server's signing certificate isn't available."
+signsAs = "Signs as"
 stepTitle = "منبع گواهی"
 upload = "بارگذاری"
 
@@ -3265,7 +3276,9 @@ checking = "در حال بررسی..."
 clauseRef = "{{profile}} §{{clauses}}"
 download = "دانلود گزارش دسترس‌پذیری"
 fileFailed = "ناموفق"
+noFiles = "Select a PDF to check it."
 pickFile = "نمایش نتایج برای"
+retry = "Check again"
 submit = "بررسی دسترس‌پذیری"
 
 [checkAccessibility.category]
@@ -3291,6 +3304,7 @@ label = "{{passed}} از {{total}} بررسی با موفقیت گذرانده �
 download = "گزارش دسترس‌پذیری ایجاد نشد. دوباره تلاش کنید."
 fileTitle = "این فایل قابل بررسی نبود"
 partial = "برخی فایل‌ها قابل بررسی نبودند."
+unreachable = "The server didn't answer. Check it's running, then check again."
 
 [checkAccessibility.facts]
 declares = "PDF/UA را اعلام می‌کند"
@@ -3313,6 +3327,21 @@ title = "فایل در فراداده‌اش یک عنوان دارد."
 [checkAccessibility.figures]
 summary_one = "{{count}} تصویر به توضیح نیاز دارد (صفحه {{pages}})"
 summary_other = "{{count}} تصویر به توضیح نیاز دارند (صفحات {{pages}})"
+
+[checkAccessibility.fix]
+heading = "Fix the headings"
+headingOnPage = "Fix the heading on page {{page}}"
+hide = "Hide tagging tool"
+image = "Describe the images"
+imageOnPage = "Describe the image on page {{page}}"
+link = "Tag the links"
+linkOnPage = "Tag the link on page {{page}}"
+markedTagged = "Mark the document as tagged"
+show = "Show tagging tool"
+tagEverything = "Auto-tag"
+tagging = "Tagging... {{percent}}%"
+untagged = "Tag the content"
+untaggedOnPage = "Tag content on page {{page}}"
 
 [checkAccessibility.issue]
 appliesTo = "مربوط به"
@@ -4928,12 +4957,15 @@ closeFile = "بستن فایل"
 
 [fileEditor]
 closedFile = "{{name}} بسته شد"
+filesAdded_one = "Added {{count}} file"
+filesAdded_other = "Added {{count}} files"
 filesReordered_one = "فایل دوباره مرتب شد"
 filesReordered_other = "{{count}} فایل دوباره مرتب شدند"
 loadedFromStorage_one = "{{count}} فایل از فضای ذخیره‌سازی بارگیری شد"
 loadedFromStorage_other = "{{count}} فایل از فضای ذخیره‌سازی بارگیری شدند"
 loadFromStorageFailed = "بارگیری برخی فایل‌ها از فضای ذخیره‌سازی ناموفق بود"
 pinnedFile = "{{name}} سنجاق شد"
+processFilesFailed = "Failed to process files"
 savedAndClosed = "{{name}} ذخیره و بسته شد"
 saveFailed = "ذخیره ناموفق بود"
 unpinnedFile = "{{name}} از حالت سنجاق خارج شد"
@@ -5959,8 +5991,10 @@ title = "تغییر مجوزها"
 
 [home.checkAccessibility]
 desc = "یک PDF را در برابر PDF/UA امتیازدهی کنید و ببینید چه چیزی مانع صفحه‌خوان‌ها می‌شود، بدون تغییر آن"
+descWithReview = "Check a PDF against PDF/UA, then tag and describe what screen readers miss"
 tags = "دسترس‌پذیری,a11y,PDF/UA,صفحه‌خوان,WCAG,Section 508,veraPDF,PDF برچسب‌گذاری‌شده,متن جایگزین,بررسی‌کننده دسترس‌پذیری,گزارش دسترس‌پذیری,انطباق,UA"
 title = "بررسی دسترس‌پذیری PDF"
+titleWithReview = "PDF accessibility"
 
 [home.classify]
 desc = "نوع این سند را شناسایی و آن را برچسب‌گذاری کنید."
@@ -6962,6 +6996,10 @@ yourCloudAccess = "شما به عضو تیم تبدیل می‌شوید و دس�
 deselectAll = "هیچ‌کدام"
 selectAll = "انتخاب همه"
 
+[pageEditor.toolbar]
+redo = "Redo"
+undo = "Undo"
+
 [pageExtracter]
 title = "استخراج صفحات"
 
@@ -7800,14 +7838,11 @@ cannotTagLink = "این پیوند را نمی‌توان برچسب‌گذار�
 cannotTagPage = "محتوای این صفحه را نمی‌توان برچسب‌گذاری کرد."
 contentGroup = "محتوا"
 customTag = "{{role}} (برچسب سفارشی)"
-decorativeInfo = "صفحه‌خوان‌ها تصاویر تزئینی را نادیده می‌گیرند. از آن برای حاشیه‌ها، پس‌زمینه‌ها و تصاویر دیگری که اطلاعاتی ندارند استفاده کنید."
-decorativeLabel = "تصویر تزئینی"
-description = "توضیح تصویر"
-descriptionInfo = "صفحه‌خوان‌ها این متن را به جای تصویر می‌خوانند."
+describeLinks_one = "Describe link"
+describeLinks_other = "Describe {{count}} links"
 encrypted = "برچسب‌ها در فایل رمزگذاری‌شده قابل ویرایش نیستند"
 figureDescription = "توضیح شکل"
 figureDescriptionInfo = "صفحه‌خوان‌ها این را به‌جای شکل می‌خوانند."
-formFieldDescription = "توضیح فیلد"
 formulaDescription = "توضیح فرمول"
 formulaDescriptionInfo = "صفحه‌خوان‌ها این را به‌جای فرمول می‌خوانند. آن را همان‌طور که با صدای بلند می‌گویید بیان کنید، مانند \"x squared plus one\"."
 heading = "دسترس‌پذیری"
@@ -7818,7 +7853,6 @@ markedTagged = "سند کاملاً برچسب‌گذاری‌شده است"
 markedTaggedHint = "به نمایشگرهای PDF می‌گوید از برچسب‌های دسترس‌پذیری استفاده کنند. زمانی آن را تیک بزنید که همه‌چیز برچسب‌گذاری شده باشد."
 markedWithUntagged = "برخی محتوا برچسب ندارند، بنابراین صفحه‌خوان‌ها ممکن است از آن‌ها بگذرند."
 missingDescriptions = "توضیحات ناموجود"
-mixedContent = "شکل شامل محتوای دیگری است"
 mixedTags = "مخلوط"
 needsDescriptionBadge = "بدون توضیح"
 nextToReview = "مورد بعدی برای بازبینی"
@@ -7826,12 +7860,10 @@ notFigure = "به‌عنوان بخشی از متن برچسب‌گذاری شد
 removeTag = "حذف برچسب"
 saveFailed = "تغییرات دسترس‌پذیری شما ذخیره نشد، بنابراین فایل ذخیره نشد. آن‌ها را واگرد کنید و دوباره تلاش کنید."
 selectedText = "متن انتخاب‌شده"
-tagFormField = "برچسب‌گذاری فیلد فرم"
 tagging = "در حال برچسب‌گذاری صفحات"
 tagLabel = "برچسب"
 tagLinks_one = "برچسب‌گذاری پیوند"
 tagLinks_other = "برچسب‌گذاری {{count}} پیوند"
-tagUntagged = "برچسب‌گذاری خودکار سند"
 tagUntaggedHint = "به‌طور خودکار برچسب‌های دسترس‌پذیری را در سراسر سند اضافه می‌کند. نتیجه خام است: پس از آن سرعنوان‌ها، فهرست‌ها و ترتیب خواندن را بررسی کنید."
 unknownTag = "اینجا قابل خواندن نیست"
 unmarkedWithTags = "برخی نمایشگرهای PDF به‌هرحال از برچسب‌ها استفاده می‌کنند و ممکن است از محتوای بدون برچسب بگذرند."
@@ -7856,7 +7888,7 @@ heading = "سرفصل‌ها"
 mixedNumbering = "سرفصل‌های شماره‌دار و بدون شماره را با هم ترکیب می‌کند"
 none = "بدون سرفصل"
 onPage = "سرفصل در صفحه {{page}}"
-problems = "مشکلات سرفصل"
+problemCount = "{{count}} to fix"
 skippedLevel = "پس از سرفصل {{previous}} یک سطح را رد می‌کند"
 
 [pdfTextEditor.inspector.accessibility.tagName]
@@ -7911,13 +7943,11 @@ title = "عنوان"
 allLanguages = "همهٔ زبان‌ها"
 cannotSetDocument = "زبان این سند را نمی‌توان تغییر داد."
 cannotSetText = "زبان این متن را نمی‌توان تغییر داد."
-documentHint = "زبانی که صفحه‌خوان‌ها استفاده می‌کنند مگر اینکه بخشی از متن زبان خودش را تنظیم کند."
 documentLabel = "زبان"
 documentLocked = "زبان یک سند رمزنگاری‌شده را نمی‌توان اینجا تغییر داد."
 inDocument = "در این سند"
 innerLabel = "زبان برچسب {{number}}"
 label = "زبان"
-missing = "هیچ زبانی تنظیم نشده است. صفحه‌خوان‌ها حدس می‌زنند و ممکن است کل سند را با صدای نادرست بخوانند."
 mixed = "مخلوط"
 noMatch = "هیچ زبان مطابقی نیست. به‌جای آن کدش را تایپ کنید، مانند mt یا en-IE."
 placeholder = "انتخاب زبان"
@@ -7948,6 +7978,52 @@ renderFailed = "رندر صفحه ناموفق بود"
 [pdfTextEditor.password]
 incorrect = "رمز عبور نادرست است - دوباره تلاش کنید."
 label = "رمز عبور"
+
+[pdfTextEditor.review]
+allDone = "All text and images are tagged"
+close = "Close accessibility settings"
+counting = "still counting"
+left = "{{count}} left to tag"
+next = "Next untagged (N)"
+noneLeft = "No text or images left to tag"
+previous = "Previous untagged (Shift+N)"
+untaggedCount = "{{count}} untagged"
+untaggedPosition = "{{index}} of {{count}} untagged"
+
+[pdfTextEditor.review.badge]
+described = "Described"
+noDescription = "Needs a description"
+untagged = "Needs a tag"
+
+[pdfTextEditor.review.card]
+autoAdvance = "Go to the next item after tagging"
+done = "Tagged"
+figureQuestion = "What does this figure show?"
+formulaPlaceholder = "For example: x squared plus one"
+formulaQuestion = "How is this formula read aloud?"
+imagePlaceholder = "Describe the image"
+imageQuestion = "What does this image show?"
+label = "Accessibility review"
+pickHint = "Click a block or an image on the page, or press the arrow to go to the next one still to tag. Shift-click to tag several at once."
+saveDescription = "Save description"
+selectedCount_one = "{{count}} block selected"
+selectedCount_other = "{{count}} blocks selected"
+showAllTags = "Show tags on every block"
+skipQuestion = "Or skip it for screen readers"
+textQuestion = "What is this text?"
+todo = "Needs attention"
+
+[pdfTextEditor.review.closePrompt]
+body = "Your tags are not in your workspace yet. Closing accessibility settings without saving loses them."
+discard = "Discard"
+keep = "Keep tagging"
+save = "Save and close"
+title = "Save your tags?"
+
+[pdfTextEditor.review.summary]
+progress = "Tagging progress"
+tagged = "{{done}} of {{total}} tagged"
+title = "Tagging"
 
 [pdfTextEditor.rulers]
 guide = "راهنمای تراز در {{value}} {{unit}} - برای حذف، آن را روی خط‌کش بکشید"
@@ -8129,6 +8205,10 @@ title = "تفاوت پیش‌نمایش"
 [pdfTextEditor.tooltip.textFocus]
 text = "این فضای کاری بر ویرایش متن و جابه‌جایی تصاویر توکار تمرکز دارد. آثار هنری پیچیده صفحه، ابزارک‌های فرم و گرافیک‌های لایه‌ای برای خروجی حفظ می‌شوند اما در اینجا کاملاً قابل ویرایش نیستند."
 title = "تمرکز متن و تصویر"
+
+[pdfTextEditor.trail]
+save = "Save"
+saveTooltip = "Save to your workspace ({{shortcut}})"
 
 [PDFToCSV]
 header = "PDF به CSV"
@@ -10321,6 +10401,10 @@ title = "پایپ‌لاین‌ها"
 
 [portal.pipelines.actions]
 newCustomPipeline = "Pipeline سفارشی جدید"
+
+[portal.pipelines.activity]
+build = "Build pipeline"
+title = "Frequent workflows"
 
 [portal.pipelines.all]
 title = "همه pipelineها"
@@ -14338,6 +14422,20 @@ noTools = "هیچ ابزاری موجود نیست"
 [tooltip]
 close = "بستن راهنما"
 
+[toolWorkflows]
+draftName = "{{first}} + {{count}} more steps"
+longName = "{{first}} → … → {{last}} ({{count}} steps)"
+
+[toolWorkflows.ranBy]
+install = "Your colleagues have done this {{count, number}} times."
+team = "Your team has done this {{count, number}} times."
+user = "You've done this {{count, number}} times."
+
+[toolWorkflows.ranByShort]
+install = "Colleagues ran this {{count, number}} times"
+team = "Your team ran this {{count, number}} times"
+user = "You ran this {{count, number}} times"
+
 [unlockPDFForms]
 description = "این ابزار محدودیت‌های فقط‌خواندنی را از فیلدهای فرم PDF حذف می‌کند تا قابل ویرایش و پرشدن شوند."
 submit = "باز کردن قفل فرم‌ها"
@@ -15114,6 +15212,7 @@ readAloud = "خواندن با صدای بلند"
 readAloudLanguage = "زبان"
 readAloudSpeed = "سرعت"
 redact = "پنهان‌سازی"
+reviewAccessibility = "Review accessibility"
 rotateLeft = "چرخش به چپ"
 rotateRight = "چرخش به راست"
 ruler = "خط‌کش / اندازه‌گیری"

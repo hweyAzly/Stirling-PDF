@@ -2361,6 +2361,10 @@ title = "Pokreni automatizaciju"
 [automate.selection]
 title = "Izbor automatizacije"
 
+[automate.selection.activity]
+description = "Save it as an automation and run it with one click."
+title = "Frequent workflows"
+
 [automate.selection.createNew]
 title = "Kreiraj novu automatizaciju"
 
@@ -2971,31 +2975,36 @@ stepTitle = "Ovaj uređaj"
 [certSign.error]
 failed = "Došlo je do greške pri obradi potpisa."
 
-[certSign.format]
-pkcs11 = "USB token"
-windowsStore = "Windows skladište sertifikata"
-
 [certSign.hardware]
-certificate = "Sertifikat"
+allExpired = "None of the digital IDs here can sign today."
+backToDigitalIds = "Back to digital IDs"
 customLibrary = "Prilagođena putanja upravljačkog programa…"
+digitalId = "Digital ID"
 driver = "PKCS#11 upravljački program"
 driverPath = "Putanja biblioteke upravljačkog programa"
 driverPathPlaceholder = "Puna putanja do vašeg PKCS#11 upravljačkog programa (.dll, .so ili .dylib)"
-expired = "istekao"
-expires = "ističe"
+driverSetup = "Read card directly"
+expiredOn = "Expired {{date}}"
+expiresOn = "Expires {{date}}"
+hideExpired = "Hide expired"
 listCerts = "Prikaži sertifikate"
-loading = "Učitavanje sertifikata…"
+macLoadError = "Could not read the macOS keychain"
 noCerts = "Nisu pronađeni sertifikati za potpisivanje"
 noDriver = "PKCS#11 upravljački program nije detektovan. Instalirajte upravljački program za vaš token (npr. OpenSC), zatim ponovo otvorite ovo - ili ručno unesite putanju do upravljačkog programa ispod."
-notYetValid = "još nije važeći"
+notListed = "Don't see your ID?"
+onDevice = "Stored on this device"
+onToken = "On a security key or smart card"
+osStoreHint = "Insert your smart card or security key, then choose your digital ID."
 pin = "PIN tokena"
 pkcs11Hint = "Izaberite PKCS#11 upravljački program za vaš token, unesite PIN, a zatim prikažite sertifikate na tokenu."
 pkcs11LoadError = "Nije moguće pročitati sertifikate sa tokena. Proverite PIN i upravljački program."
-refresh = "Osveži"
-selectCert = "Izaberite sertifikat"
+refreshList = "Refresh list"
 selectDriver = "Izaberite upravljački program"
+serial = "Serial …{{serial}}"
+showExpired = "Show {{count}} expired"
 slot = "Slot (opciono)"
-windowsHint = "Izaberite sertifikat iz Windows skladišta sertifikata. Potpisivanje koristi ključ na vašoj kartici/tokenu - Windows će zatražiti PIN."
+useDriver = "Read the card directly"
+validFrom = "Valid from {{date}}"
 windowsLoadError = "Nije moguće pročitati Windows skladište sertifikata"
 
 [certSign.sessions]
@@ -3035,6 +3044,8 @@ title = "Pravilo palca"
 device = "Ovaj uređaj"
 noOtherSources = "Nema drugih dostupnih izvora sertifikata."
 server = "Server"
+serverCertUnavailable = "The server's signing certificate isn't available."
+signsAs = "Signs as"
 stepTitle = "Izvor sertifikata"
 upload = "Otpremi"
 
@@ -3265,7 +3276,9 @@ checking = "Proveravam..."
 clauseRef = "{{profile}} §{{clauses}}"
 download = "Preuzmi izveštaj o pristupačnosti"
 fileFailed = "neuspešno"
+noFiles = "Select a PDF to check it."
 pickFile = "Prikaži rezultate za"
+retry = "Check again"
 submit = "Proveri pristupačnost"
 
 [checkAccessibility.category]
@@ -3291,6 +3304,7 @@ label = "{{passed}} od {{total}} provera je prošlo"
 download = "Izveštaj o pristupačnosti nije mogao biti napravljen. Pokušajte ponovo."
 fileTitle = "Ovu datoteku nije moguće proveriti"
 partial = "Neke datoteke nije bilo moguće proveriti."
+unreachable = "The server didn't answer. Check it's running, then check again."
 
 [checkAccessibility.facts]
 declares = "Deklariše PDF/UA"
@@ -3313,6 +3327,21 @@ title = "Datoteka ima naslov u svojim metapodacima."
 [checkAccessibility.figures]
 summary_one = "{{count}} slika zahteva opis (strana {{pages}})"
 summary_other = "{{count}} slika zahteva opis (strane {{pages}})"
+
+[checkAccessibility.fix]
+heading = "Fix the headings"
+headingOnPage = "Fix the heading on page {{page}}"
+hide = "Hide tagging tool"
+image = "Describe the images"
+imageOnPage = "Describe the image on page {{page}}"
+link = "Tag the links"
+linkOnPage = "Tag the link on page {{page}}"
+markedTagged = "Mark the document as tagged"
+show = "Show tagging tool"
+tagEverything = "Auto-tag"
+tagging = "Tagging... {{percent}}%"
+untagged = "Tag the content"
+untaggedOnPage = "Tag content on page {{page}}"
 
 [checkAccessibility.issue]
 appliesTo = "Odnosi se na"
@@ -4928,12 +4957,15 @@ closeFile = "Zatvori fajl"
 
 [fileEditor]
 closedFile = "Zatvoreno {{name}}"
+filesAdded_one = "Added {{count}} file"
+filesAdded_other = "Added {{count}} files"
 filesReordered_one = "Datoteka je preraspoređena"
 filesReordered_other = "{{count}} datoteka je preraspoređeno"
 loadedFromStorage_one = "Učitana je {{count}} datoteka iz skladišta"
 loadedFromStorage_other = "Učitano je {{count}} datoteka iz skladišta"
 loadFromStorageFailed = "Učitavanje nekih datoteka iz skladišta nije uspelo"
 pinnedFile = "Zakačeno {{name}}"
+processFilesFailed = "Failed to process files"
 savedAndClosed = "Sačuvano i zatvoreno {{name}}"
 saveFailed = "Čuvanje nije uspelo"
 unpinnedFile = "Otkačeno {{name}}"
@@ -5959,8 +5991,10 @@ title = "Promeni dozvole"
 
 [home.checkAccessibility]
 desc = "Ocenite PDF prema PDF/UA i vidite šta blokira čitače ekrana, bez menjanja dokumenta"
+descWithReview = "Check a PDF against PDF/UA, then tag and describe what screen readers miss"
 tags = "accessibility,a11y,PDF/UA,screen reader,WCAG,Section 508,veraPDF,tagged PDF,alt text,accessibility checker,accessibility report,compliance,UA"
 title = "Proveri PDF pristupačnost"
+titleWithReview = "PDF accessibility"
 
 [home.classify]
 desc = "Prepoznaj koja je ovo vrsta dokumenta i označi ga."
@@ -6962,6 +6996,10 @@ yourCloudAccess = "Postaćete član tima i izgubićete vlasnički pristup."
 deselectAll = "Poništi izbor"
 selectAll = "Izaberi sve"
 
+[pageEditor.toolbar]
+redo = "Redo"
+undo = "Undo"
+
 [pageExtracter]
 title = "Izdvajanje stranica"
 
@@ -7800,14 +7838,11 @@ cannotTagLink = "Ovaj link se ne može označiti."
 cannotTagPage = "Sadržaj ove strane se ne može označiti."
 contentGroup = "Sadržaj"
 customTag = "{{role}} (prilagođena oznaka)"
-decorativeInfo = "Čitači ekrana preskaču dekorativne slike. Koristite ovo za ivice, pozadine i druge slike koje ne nose informacije."
-decorativeLabel = "Dekorativna slika"
-description = "Opis slike"
-descriptionInfo = "Čitači ekrana čitaju ovo umesto slike."
+describeLinks_one = "Describe link"
+describeLinks_other = "Describe {{count}} links"
 encrypted = "Oznake ne mogu da se uređuju u šifrovanoj datoteci"
 figureDescription = "Opis slike"
 figureDescriptionInfo = "Čitači ekrana ovo čitaju umesto slike."
-formFieldDescription = "Opis polja"
 formulaDescription = "Opis formule"
 formulaDescriptionInfo = "Čitači ekrana ovo čitaju umesto formule. Recite to onako kako biste rekli naglas, na primer \"x na kvadrat plus jedan\"."
 heading = "Pristupačnost"
@@ -7818,7 +7853,6 @@ markedTagged = "Dokument je u potpunosti označen"
 markedTaggedHint = "Govori PDF čitačima da koriste oznake pristupačnosti. Označite kada je sve označeno."
 markedWithUntagged = "Deo sadržaja nema oznake, pa ga čitači ekrana mogu preskočiti."
 missingDescriptions = "Nedostaju opisi"
-mixedContent = "Figura sadrži drugi sadržaj"
 mixedTags = "Mešovito"
 needsDescriptionBadge = "Nema opisa"
 nextToReview = "Sledeće za pregled"
@@ -7826,12 +7860,10 @@ notFigure = "Označeno kao deo teksta"
 removeTag = "Ukloni oznaku"
 saveFailed = "Vaše izmene pristupačnosti nisu mogle da budu sačuvane, pa datoteka nije sačuvana. Opozovite ih i pokušajte ponovo."
 selectedText = "Izabrani tekst"
-tagFormField = "Označi polje obrasca"
 tagging = "Označavanje strana"
 tagLabel = "Oznaka"
 tagLinks_one = "Označi link"
 tagLinks_other = "Označi {{count}} linkova"
-tagUntagged = "Automatski označi dokument"
 tagUntaggedHint = "Automatski dodaje oznake pristupačnosti kroz ceo dokument. Rezultat je grub: proverite naslove, liste i redosled čitanja posle toga."
 unknownTag = "Ne može se pročitati ovde"
 unmarkedWithTags = "Neki PDF čitači će ipak koristiti oznake i mogu preskočiti sadržaj bez njih."
@@ -7856,7 +7888,7 @@ heading = "Naslovi"
 mixedNumbering = "Meša numerisane i nenumerisane naslove"
 none = "Nema naslova"
 onPage = "Naslov na strani {{page}}"
-problems = "Problemi sa naslovima"
+problemCount = "{{count}} to fix"
 skippedLevel = "Preskače nivo posle naslova {{previous}}"
 
 [pdfTextEditor.inspector.accessibility.tagName]
@@ -7911,13 +7943,11 @@ title = "Naslov"
 allLanguages = "Svi jezici"
 cannotSetDocument = "Jezik ovog dokumenta se ne može promeniti."
 cannotSetText = "Jezik ovog teksta se ne može promeniti."
-documentHint = "Jezik koji čitači ekrana koriste osim ako ga deo teksta ne promeni."
 documentLabel = "Jezik"
 documentLocked = "Jezik šifrovanog dokumenta se ovde ne može promeniti."
 inDocument = "U ovom dokumentu"
 innerLabel = "Jezik oznake {{number}}"
 label = "Jezik"
-missing = "Nije postavljen jezik. Čitači ekrana će nagađati i mogu ceo dokument čitati pogrešnim glasom."
 mixed = "Mešovito"
 noMatch = "Nema podudarnog jezika. Umesto toga unesite njegov kod, kao što su mt ili en-IE."
 placeholder = "Izaberite jezik"
@@ -7948,6 +7978,52 @@ renderFailed = "Renderovanje stranice nije uspelo"
 [pdfTextEditor.password]
 incorrect = "Pogrešna lozinka - pokušajte ponovo."
 label = "Lozinka"
+
+[pdfTextEditor.review]
+allDone = "All text and images are tagged"
+close = "Close accessibility settings"
+counting = "still counting"
+left = "{{count}} left to tag"
+next = "Next untagged (N)"
+noneLeft = "No text or images left to tag"
+previous = "Previous untagged (Shift+N)"
+untaggedCount = "{{count}} untagged"
+untaggedPosition = "{{index}} of {{count}} untagged"
+
+[pdfTextEditor.review.badge]
+described = "Described"
+noDescription = "Needs a description"
+untagged = "Needs a tag"
+
+[pdfTextEditor.review.card]
+autoAdvance = "Go to the next item after tagging"
+done = "Tagged"
+figureQuestion = "What does this figure show?"
+formulaPlaceholder = "For example: x squared plus one"
+formulaQuestion = "How is this formula read aloud?"
+imagePlaceholder = "Describe the image"
+imageQuestion = "What does this image show?"
+label = "Accessibility review"
+pickHint = "Click a block or an image on the page, or press the arrow to go to the next one still to tag. Shift-click to tag several at once."
+saveDescription = "Save description"
+selectedCount_one = "{{count}} block selected"
+selectedCount_other = "{{count}} blocks selected"
+showAllTags = "Show tags on every block"
+skipQuestion = "Or skip it for screen readers"
+textQuestion = "What is this text?"
+todo = "Needs attention"
+
+[pdfTextEditor.review.closePrompt]
+body = "Your tags are not in your workspace yet. Closing accessibility settings without saving loses them."
+discard = "Discard"
+keep = "Keep tagging"
+save = "Save and close"
+title = "Save your tags?"
+
+[pdfTextEditor.review.summary]
+progress = "Tagging progress"
+tagged = "{{done}} of {{total}} tagged"
+title = "Tagging"
 
 [pdfTextEditor.rulers]
 guide = "Vodič za poravnanje na {{value}} {{unit}} - prevucite na lenjir da uklonite"
@@ -8129,6 +8205,10 @@ title = "Razlike u prikazu"
 [pdfTextEditor.tooltip.textFocus]
 text = "Ovaj radni prostor je usredsređen na uređivanje teksta i premeštanje ugrađenih slika. Složen crtež stranice, vidžeti formulara i slojevita grafika čuvaju se za izvoz, ali ovde nisu u potpunosti izmenjivi."
 title = "Fokus na tekst i sliku"
+
+[pdfTextEditor.trail]
+save = "Save"
+saveTooltip = "Save to your workspace ({{shortcut}})"
 
 [PDFToCSV]
 header = "PDF u CSV"
@@ -10321,6 +10401,10 @@ title = "Procesni tokovi"
 
 [portal.pipelines.actions]
 newCustomPipeline = "Novi prilagođeni tok obrade"
+
+[portal.pipelines.activity]
+build = "Build pipeline"
+title = "Frequent workflows"
 
 [portal.pipelines.all]
 title = "Svi tokovi obrade"
@@ -14338,6 +14422,20 @@ noTools = "Nema dostupnih alata"
 [tooltip]
 close = "Zatvori oblačić"
 
+[toolWorkflows]
+draftName = "{{first}} + {{count}} more steps"
+longName = "{{first}} → … → {{last}} ({{count}} steps)"
+
+[toolWorkflows.ranBy]
+install = "Your colleagues have done this {{count, number}} times."
+team = "Your team has done this {{count, number}} times."
+user = "You've done this {{count, number}} times."
+
+[toolWorkflows.ranByShort]
+install = "Colleagues ran this {{count, number}} times"
+team = "Your team ran this {{count, number}} times"
+user = "You ran this {{count, number}} times"
+
 [unlockPDFForms]
 description = "Ovaj alat će ukloniti ograničenja samo za čitanje sa polja PDF formulara, čineći ih izmenjivim i popunjivim."
 submit = "Remove"
@@ -15114,6 +15212,7 @@ readAloud = "Čitaj naglas"
 readAloudLanguage = "Jezik"
 readAloudSpeed = "Brzina"
 redact = "Zacrni"
+reviewAccessibility = "Review accessibility"
 rotateLeft = "Rotiraj ulevo"
 rotateRight = "Rotiraj udesno"
 ruler = "Lenjir / Merenje"

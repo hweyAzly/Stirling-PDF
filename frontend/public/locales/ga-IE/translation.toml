@@ -2361,6 +2361,10 @@ title = "Rith an tUathoibriú"
 [automate.selection]
 title = "Roghnú Uathoibrithe"
 
+[automate.selection.activity]
+description = "Save it as an automation and run it with one click."
+title = "Frequent workflows"
+
 [automate.selection.createNew]
 title = "Cruthaigh Uathoibriú Nua"
 
@@ -2971,31 +2975,36 @@ stepTitle = "An gléas seo"
 [certSign.error]
 failed = "Tharla earráid agus sínithe á bpróiseáil."
 
-[certSign.format]
-pkcs11 = "Tócan USB"
-windowsStore = "Stór teastas Windows"
-
 [certSign.hardware]
-certificate = "Teastas"
+allExpired = "None of the digital IDs here can sign today."
+backToDigitalIds = "Back to digital IDs"
 customLibrary = "Conair shaincheaptha an tiománaí…"
+digitalId = "Digital ID"
 driver = "Tiománaí PKCS#11"
 driverPath = "Conair leabharlainne an tiománaí"
 driverPathPlaceholder = "An chonair iomlán chuig do thiománaí PKCS#11 (.dll, .so nó .dylib)"
-expired = "imithe in éag"
-expires = "téann in éag"
+driverSetup = "Read card directly"
+expiredOn = "Expired {{date}}"
+expiresOn = "Expires {{date}}"
+hideExpired = "Hide expired"
 listCerts = "Liostaigh teastais"
-loading = "Teastais á léamh…"
+macLoadError = "Could not read the macOS keychain"
 noCerts = "Níor aimsíodh teastais sínithe"
 noDriver = "Níor braitheadh aon tiománaí PKCS#11. Suiteáil tiománaí do thócain (m.sh. OpenSC), ansin oscail é seo arís – nó cuir isteach conair an tiománaí de láimh thíos."
-notYetValid = "ní bailí fós"
+notListed = "Don't see your ID?"
+onDevice = "Stored on this device"
+onToken = "On a security key or smart card"
+osStoreHint = "Insert your smart card or security key, then choose your digital ID."
 pin = "PIN an tócan"
 pkcs11Hint = "Roghnaigh tiománaí PKCS#11 don tócan, cuir isteach an PIN, ansin liostaigh na teastais ar an tócan."
 pkcs11LoadError = "Níorbh fhéidir teastais a léamh ón tócan. Seiceáil an PIN agus an tiománaí."
-refresh = "Athnuaigh"
-selectCert = "Roghnaigh teastas"
+refreshList = "Refresh list"
 selectDriver = "Roghnaigh tiománaí"
+serial = "Serial …{{serial}}"
+showExpired = "Show {{count}} expired"
 slot = "Sliotán (roghnach)"
-windowsHint = "Roghnaigh teastas ó do stór teastas Windows. Úsáideann an síniú an eochair ar do chárta/tócan – iarrfaidh Windows an PIN."
+useDriver = "Read the card directly"
+validFrom = "Valid from {{date}}"
 windowsLoadError = "Níorbh fhéidir stór teastas Windows a léamh"
 
 [certSign.sessions]
@@ -3035,6 +3044,8 @@ title = "Riail ghinearálta"
 device = "An gléas seo"
 noOtherSources = "Níl aon fhoinsí teastais eile ar fáil."
 server = "Freastalaí"
+serverCertUnavailable = "The server's signing certificate isn't available."
+signsAs = "Signs as"
 stepTitle = "Foinse an teastais"
 upload = "Uaslódáil"
 
@@ -3265,7 +3276,9 @@ checking = "Á sheiceáil..."
 clauseRef = "{{profile}} §{{clauses}}"
 download = "Íosluchtaigh tuairisc inrochtaineachta"
 fileFailed = "teipthe"
+noFiles = "Select a PDF to check it."
 pickFile = "Taispeáin torthaí do"
+retry = "Check again"
 submit = "Seiceáil inrochtaineacht"
 
 [checkAccessibility.category]
@@ -3291,6 +3304,7 @@ label = "{{passed}} as {{total}} seiceálacha rite"
 download = "Níorbh fhéidir an tuairisc inrochtaineachta a chruthú. Déan iarracht arís."
 fileTitle = "Níorbh fhéidir an comhad seo a sheiceáil"
 partial = "Níorbh fhéidir roinnt comhad a sheiceáil."
+unreachable = "The server didn't answer. Check it's running, then check again."
 
 [checkAccessibility.facts]
 declares = "Deir PDF/UA"
@@ -3313,6 +3327,21 @@ title = "Tá teideal i meiteashonraí an chomhaid."
 [checkAccessibility.figures]
 summary_one = "Tá cur síos ag teastáil ó {{count}} íomhá (leathanach {{pages}})"
 summary_other = "Tá cur síos ag teastáil ó {{count}} íomhánna (leathanaigh {{pages}})"
+
+[checkAccessibility.fix]
+heading = "Fix the headings"
+headingOnPage = "Fix the heading on page {{page}}"
+hide = "Hide tagging tool"
+image = "Describe the images"
+imageOnPage = "Describe the image on page {{page}}"
+link = "Tag the links"
+linkOnPage = "Tag the link on page {{page}}"
+markedTagged = "Mark the document as tagged"
+show = "Show tagging tool"
+tagEverything = "Auto-tag"
+tagging = "Tagging... {{percent}}%"
+untagged = "Tag the content"
+untaggedOnPage = "Tag content on page {{page}}"
 
 [checkAccessibility.issue]
 appliesTo = "Baineann le"
@@ -4928,12 +4957,15 @@ closeFile = "Dún comhad"
 
 [fileEditor]
 closedFile = "Dúnadh {{name}}"
+filesAdded_one = "Added {{count}} file"
+filesAdded_other = "Added {{count}} files"
 filesReordered_one = "Athordaíodh comhad"
 filesReordered_other = "Athordaíodh {{count}} chomhad"
 loadedFromStorage_one = "Luchtaíodh {{count}} chomhad ón stóráil"
 loadedFromStorage_other = "Luchtaíodh {{count}} chomhad ón stóráil"
 loadFromStorageFailed = "Theip ar roinnt comhad a luchtú ón stóráil"
 pinnedFile = "Pionnáladh {{name}}"
+processFilesFailed = "Failed to process files"
 savedAndClosed = "Sábháladh agus dúnadh {{name}}"
 saveFailed = "Theip ar shábháil"
 unpinnedFile = "Díphionnáladh {{name}}"
@@ -5959,8 +5991,10 @@ title = "Athrú Ceadanna"
 
 [home.checkAccessibility]
 desc = "Faigh scór PDF i gcoinne PDF/UA agus féach cad a chuireann bac ar léitheoirí scáileáin, gan é a athrú"
+descWithReview = "Check a PDF against PDF/UA, then tag and describe what screen readers miss"
 tags = "accessibility,a11y,PDF/UA,screen reader,WCAG,Section 508,veraPDF,tagged PDF,alt text,accessibility checker,accessibility report,compliance,UA"
 title = "Seiceáil inrochtaineacht PDF"
+titleWithReview = "PDF accessibility"
 
 [home.classify]
 desc = "Aithin cén cineál doiciméid é seo agus clibeáil é."
@@ -6962,6 +6996,10 @@ yourCloudAccess = "Beidh tú i do bhall foirne agus caillfidh tú rochtain úin�
 deselectAll = "Dada"
 selectAll = "Roghnaigh Gach Rud"
 
+[pageEditor.toolbar]
+redo = "Redo"
+undo = "Undo"
+
 [pageExtracter]
 title = "Leathanaigh Sliocht"
 
@@ -7800,14 +7838,11 @@ cannotTagLink = "Ní féidir an nasc seo a chlibeáil."
 cannotTagPage = "Ní féidir ábhar an leathanaigh seo a chlibeáil."
 contentGroup = "Ábhar"
 customTag = "{{role}} (clib shaincheaptha)"
-decorativeInfo = "Scipeálann léitheoirí scáileáin íomhánna maisiúla. Úsáid í le haghaidh teorainneacha, cúlraí agus íomhánna eile nach n-iompraíonn aon fhaisnéis."
-decorativeLabel = "Íomhá mhaisiúil"
-description = "Cur síos ar íomhá"
-descriptionInfo = "Léann léitheoirí scáileáin é seo amach in ionad na híomhá."
+describeLinks_one = "Describe link"
+describeLinks_other = "Describe {{count}} links"
 encrypted = "Ní féidir clibeanna a chur in eagar i gcomhad criptithe"
 figureDescription = "Cur síos ar an bhfigiúr"
 figureDescriptionInfo = "Léann léitheoirí scáileáin é seo amach in ionad an fhigiúir."
-formFieldDescription = "Cur síos ar an réimse"
 formulaDescription = "Cur síos ar an bhfoirmle"
 formulaDescriptionInfo = "Léann léitheoirí scáileáin é seo amach in ionad na foirmle. Abair mar a déarfá os ard é, mar shampla \"x sa chearn móide a haon\"."
 heading = "Inrochtaineacht"
@@ -7818,7 +7853,6 @@ markedTagged = "Tá an doiciméad clibeáilte go hiomlán"
 markedTaggedHint = "Deirtear le léitheoirí PDF na clibeanna inrochtaineachta a úsáid. Cuir tic leis nuair atá gach rud clibeáilte."
 markedWithUntagged = "Níl clibeanna ag cuid den ábhar, mar sin d'fhéadfadh léitheoirí scáileáin é a scipeáil."
 missingDescriptions = "Cur síos ar iarraidh"
-mixedContent = "Tá ábhar eile san fhíor"
 mixedTags = "Measctha"
 needsDescriptionBadge = "Gan cur síos"
 nextToReview = "An chéad cheann eile le hathbhreithniú"
@@ -7826,12 +7860,10 @@ notFigure = "Clibáilte mar chuid den téacs"
 removeTag = "Bain clib"
 saveFailed = "Níorbh fhéidir do chuid athruithe inrochtaineachta a shábháil, mar sin níor sábháladh an comhad. Cealaigh iad agus bain triail eile as."
 selectedText = "Téacs roghnaithe"
-tagFormField = "Clibeáil réimse foirme"
 tagging = "Clibeáil leathanaigh"
 tagLabel = "Clib"
 tagLinks_one = "Clibeáil nasc"
 tagLinks_other = "Clibeáil {{count}} nasc"
-tagUntagged = "Uath-chlibeáil doiciméad"
 tagUntaggedHint = "Cuireann sé clibeanna inrochtaineachta leis an doiciméad go huathoibríoch. Tá an toradh garbh: seiceáil ceannteidil, liostaí agus ord léitheoireachta ina dhiaidh."
 unknownTag = "Ní féidir é a léamh anseo"
 unmarkedWithTags = "Úsáidfidh roinnt amharcán PDF na clibeanna ar aon chaoi agus d'fhéadfadh siad ábhar gan chlib a scipeáil."
@@ -7856,7 +7888,7 @@ heading = "Ceannteidil"
 mixedNumbering = "Meascann sé ceannteidil uimhrithe agus neamh-uimhrithe"
 none = "Gan cheannteidil"
 onPage = "Ceannteideal ar leathanach {{page}}"
-problems = "Fadhbanna le ceannteidil"
+problemCount = "{{count}} to fix"
 skippedLevel = "Scipeálann sé leibhéal i ndiaidh Cheannteideal {{previous}}"
 
 [pdfTextEditor.inspector.accessibility.tagName]
@@ -7911,13 +7943,11 @@ title = "Teideal"
 allLanguages = "Gach teanga"
 cannotSetDocument = "Ní féidir teanga an doiciméid a athrú."
 cannotSetText = "Ní féidir teanga an téacs seo a athrú."
-documentHint = "An teanga a úsáideann léitheoirí scáileáin mura leagann cuid den téacs a teanga féin."
 documentLabel = "Teanga"
 documentLocked = "Ní féidir teanga doiciméid chriptithe a athrú anseo."
 inDocument = "Sa doiciméad seo"
 innerLabel = "Teanga clibe {{number}}"
 label = "Teanga"
-missing = "Níl teanga socraithe. Déanfaidh léitheoirí scáileáin buille faoi thuairim, agus seans go léifidh siad an doiciméad ar fad sa ghlór mícheart."
 mixed = "Measctha"
 noMatch = "Níl aon teanga comhoiriúnach. Clóscríobh a cód ina ionad sin, m.sh. mt nó en-IE."
 placeholder = "Roghnaigh teanga"
@@ -7948,6 +7978,52 @@ renderFailed = "Theip ar leathanach a rindreáil"
 [pdfTextEditor.password]
 incorrect = "Pasfhocal mícheart - bain triail eile as."
 label = "Pasfhocal"
+
+[pdfTextEditor.review]
+allDone = "All text and images are tagged"
+close = "Close accessibility settings"
+counting = "still counting"
+left = "{{count}} left to tag"
+next = "Next untagged (N)"
+noneLeft = "No text or images left to tag"
+previous = "Previous untagged (Shift+N)"
+untaggedCount = "{{count}} untagged"
+untaggedPosition = "{{index}} of {{count}} untagged"
+
+[pdfTextEditor.review.badge]
+described = "Described"
+noDescription = "Needs a description"
+untagged = "Needs a tag"
+
+[pdfTextEditor.review.card]
+autoAdvance = "Go to the next item after tagging"
+done = "Tagged"
+figureQuestion = "What does this figure show?"
+formulaPlaceholder = "For example: x squared plus one"
+formulaQuestion = "How is this formula read aloud?"
+imagePlaceholder = "Describe the image"
+imageQuestion = "What does this image show?"
+label = "Accessibility review"
+pickHint = "Click a block or an image on the page, or press the arrow to go to the next one still to tag. Shift-click to tag several at once."
+saveDescription = "Save description"
+selectedCount_one = "{{count}} block selected"
+selectedCount_other = "{{count}} blocks selected"
+showAllTags = "Show tags on every block"
+skipQuestion = "Or skip it for screen readers"
+textQuestion = "What is this text?"
+todo = "Needs attention"
+
+[pdfTextEditor.review.closePrompt]
+body = "Your tags are not in your workspace yet. Closing accessibility settings without saving loses them."
+discard = "Discard"
+keep = "Keep tagging"
+save = "Save and close"
+title = "Save your tags?"
+
+[pdfTextEditor.review.summary]
+progress = "Tagging progress"
+tagged = "{{done}} of {{total}} tagged"
+title = "Tagging"
 
 [pdfTextEditor.rulers]
 guide = "Treoir ailínithe ag {{value}} {{unit}} - tarraing ar rialóir chun í a bhaint"
@@ -8129,6 +8205,10 @@ title = "Réamhamharc ar an Éagsúlacht"
 [pdfTextEditor.tooltip.textFocus]
 text = "Díríonn an spás oibre seo ar théacs a chur in eagar agus íomhánna leabaithe a athshuíomh. Coinnítear saothar ealaíne leathanaigh casta, giuirléidí foirmeacha, agus grafaicí srathacha le haghaidh onnmhairithe ach ní féidir iad a chur in eagar go hiomlán anseo."
 title = "Fócas Téacs agus Íomhá"
+
+[pdfTextEditor.trail]
+save = "Save"
+saveTooltip = "Save to your workspace ({{shortcut}})"
 
 [PDFToCSV]
 header = "Ó CSV go PDF"
@@ -10321,6 +10401,10 @@ title = "Píblínte"
 
 [portal.pipelines.actions]
 newCustomPipeline = "Píblíne saincheaptha nua"
+
+[portal.pipelines.activity]
+build = "Build pipeline"
+title = "Frequent workflows"
 
 [portal.pipelines.all]
 title = "Gach píblíne"
@@ -14338,6 +14422,20 @@ noTools = "Níl aon uirlisí ar fáil"
 [tooltip]
 close = "Dún an leid"
 
+[toolWorkflows]
+draftName = "{{first}} + {{count}} more steps"
+longName = "{{first}} → … → {{last}} ({{count}} steps)"
+
+[toolWorkflows.ranBy]
+install = "Your colleagues have done this {{count, number}} times."
+team = "Your team has done this {{count, number}} times."
+user = "You've done this {{count, number}} times."
+
+[toolWorkflows.ranByShort]
+install = "Colleagues ran this {{count, number}} times"
+team = "Your team ran this {{count, number}} times"
+user = "You ran this {{count, number}} times"
+
 [unlockPDFForms]
 description = "Bainfidh an uirlis seo srianta léamh-amáin ó réimsí foirme PDF, rud a fhágann go mbeidh siad in-eagarthóireachta agus inlíonta."
 submit = "Díghlasáil Foirmeacha"
@@ -15114,6 +15212,7 @@ readAloud = "Léigh os ard"
 readAloudLanguage = "Teanga"
 readAloudSpeed = "Luas"
 redact = "Ceil"
+reviewAccessibility = "Review accessibility"
 rotateLeft = "Rothlaigh go clé"
 rotateRight = "Rothlaigh go deas"
 ruler = "Rialóir / Tomhas"

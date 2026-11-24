@@ -2361,6 +2361,10 @@ title = "རང་འགུལ་ཅན་འཛིན།"
 [automate.selection]
 title = "རང་འགུལ་གྱིས་འདེམས་པ།"
 
+[automate.selection.activity]
+description = "Save it as an automation and run it with one click."
+title = "Frequent workflows"
+
 [automate.selection.createNew]
 title = "རང་འགུལ་ཅན་གསར་པ་བསྐྲུན་པ།"
 
@@ -2971,31 +2975,36 @@ stepTitle = "ཐབས་འཕྲུལ་འདི"
 [certSign.error]
 failed = "མིང་རྟགས་ལས་སྣོན་བྱེད་སྐབས་ནོར་འཁྲུལ་བྱུང་ཡོད།"
 
-[certSign.format]
-pkcs11 = "USB Token"
-windowsStore = "Windows དཔང་ཡིག་མཛོད"
-
 [certSign.hardware]
-certificate = "དཔང་ཡིག"
+allExpired = "None of the digital IDs here can sign today."
+backToDigitalIds = "Back to digital IDs"
 customLibrary = "རང་གཞིའི driver འགྲོ་ལམ…"
+digitalId = "Digital ID"
 driver = "PKCS#11 driver"
 driverPath = "driver དཔེ་མཛོད་འགྲོ་ལམ"
 driverPathPlaceholder = "ཁྱེད་ཀྱི PKCS#11 driver གྱི་འགྲོ་ལམ་ཆ་ཚང (.dll, .so ཡང་ན .dylib)"
-expired = "དུས་ཚོད་འདས"
-expires = "དུས་ཚོད་མཇུག"
+driverSetup = "Read card directly"
+expiredOn = "Expired {{date}}"
+expiresOn = "Expires {{date}}"
+hideExpired = "Hide expired"
 listCerts = "དཔང་ཡིག་ཐོ་བཀོད"
-loading = "དཔང་ཡིག་ཀློག་བཞིན…"
+macLoadError = "Could not read the macOS keychain"
 noCerts = "མིང་རྟགས་བྱེད་པའི་དཔང་ཡིག་མ་རྙེད"
 noDriver = "PKCS#11 driver མ་ཚོར། ཁྱེད་ཀྱི token གྱི driver (དཔེར་ན OpenSC) བཙུགས་རྗེས འདི་ཡང་བསྐྱར་ཁ་ཕྱེ - ཡང་ན་འོག་ཏུ driver འགྲོ་ལམ་ལག་ཐོག་ཏུ་འཇུག"
-notYetValid = "ད་དུང་ཆོག་མིན"
+notListed = "Don't see your ID?"
+onDevice = "Stored on this device"
+onToken = "On a security key or smart card"
+osStoreHint = "Insert your smart card or security key, then choose your digital ID."
 pin = "Token PIN"
 pkcs11Hint = "ཁྱེད་ཀྱི token གྱི PKCS#11 driver འདེམས་ནས PIN འཇུག་པ། དེའི་རྗེས token ནང་གི་དཔང་ཡིག་ཐོ་བཀོད།"
 pkcs11LoadError = "token ནས་དཔང་ཡིག་ཀློག་མ་ཐུབ། PIN དང driver ཞིབ་བཤེར་བྱེད།"
-refresh = "གསར་སྒྱུར"
-selectCert = "དཔང་ཡིག་འདེམས"
+refreshList = "Refresh list"
 selectDriver = "driver འདེམས"
+serial = "Serial …{{serial}}"
+showExpired = "Show {{count}} expired"
 slot = "Slot (འདེམས་རུང་)"
-windowsHint = "Windows དཔང་ཡིག་མཛོད་ནས དཔང་ཡིག་ཞིག་འདེམས། མིང་རྟགས་ནི ཁྱེད་ཀྱི card/token ཡི་ལྡེ་མིག་སྤྱོད་པས་བྱེད - Windows ནས PIN འཇུག་བསྐུར་བྱེད།"
+useDriver = "Read the card directly"
+validFrom = "Valid from {{date}}"
 windowsLoadError = "Windows དཔང་ཡིག་མཛོད་ཀློག་མ་ཐུབ"
 
 [certSign.sessions]
@@ -3035,6 +3044,8 @@ title = "མཐེ་བོང་གི་སྒྲིག་གཞི།"
 device = "ཐབས་འཕྲུལ་འདི"
 noOtherSources = "ལག་ཁྱེར་འབྱུང་ཁུངས་གཞན་མེད།"
 server = "སར་བར"
+serverCertUnavailable = "The server's signing certificate isn't available."
+signsAs = "Signs as"
 stepTitle = "དཔང་ཡིག་ཁུངས"
 upload = "ཡར་འཇུག"
 
@@ -3265,7 +3276,9 @@ checking = "ཞིབ་བཤེར་བཞིན་..."
 clauseRef = "{{profile}} §{{clauses}}"
 download = "འཇུག་སྤྱོད་སླ་བའི་སྙན་ཞུ་ཕབ་ལེན"
 fileFailed = "ཕམ་པ"
+noFiles = "Select a PDF to check it."
 pickFile = "མཇུག་འབྲས་མངོན་པ"
+retry = "Check again"
 submit = "འཇུག་སྤྱོད་སླ་བ་ཞིབ་བཤེར"
 
 [checkAccessibility.category]
@@ -3291,6 +3304,7 @@ label = "ཞིབ་བཤེར {{total}} ནས་ {{passed}} འགྲུབ
 download = "འཇུག་སྤྱོད་སླ་བའི་སྙན་ཞུ་བཟོ་མ་ཐུབ། ཡང་བསྐྱར་ཚོད་ལྟ།"
 fileTitle = "ཡིག་ཆ་འདི་ཞིབ་བཤེར་མ་ཐུབ།"
 partial = "ཡིག་ཆ་ཁ་ཤས་ཞིབ་བཤེར་མ་ཐུབ།"
+unreachable = "The server didn't answer. Check it's running, then check again."
 
 [checkAccessibility.facts]
 declares = "PDF/UA གསལ་བཀོད་ཡོད"
@@ -3313,6 +3327,21 @@ title = "མེ་ཊ་གནས་བརྡ་ནང་ཁ་བྱང་ཡ�
 [checkAccessibility.figures]
 summary_one = "པར་རིས {{count}} ལ་འགྲེལ་བཤད་དགོས (ཤོག་ངོས {{pages}})"
 summary_other = "པར་རིས {{count}} ལ་འགྲེལ་བཤད་དགོས (ཤོག་ངོས {{pages}})"
+
+[checkAccessibility.fix]
+heading = "Fix the headings"
+headingOnPage = "Fix the heading on page {{page}}"
+hide = "Hide tagging tool"
+image = "Describe the images"
+imageOnPage = "Describe the image on page {{page}}"
+link = "Tag the links"
+linkOnPage = "Tag the link on page {{page}}"
+markedTagged = "Mark the document as tagged"
+show = "Show tagging tool"
+tagEverything = "Auto-tag"
+tagging = "Tagging... {{percent}}%"
+untagged = "Tag the content"
+untaggedOnPage = "Tag content on page {{page}}"
 
 [checkAccessibility.issue]
 appliesTo = "ག་ལ་འཇུག"
@@ -4928,12 +4957,15 @@ closeFile = "ཡིག་ཆ་ཁ་རྒྱག"
 
 [fileEditor]
 closedFile = "{{name}} སྒོ་བརྒྱབ་ཟིན"
+filesAdded_one = "Added {{count}} file"
+filesAdded_other = "Added {{count}} files"
 filesReordered_one = "ཡིག་ཆའི་གོ་རིམ་བསྐྱར་སྒྲིག་བྱས"
 filesReordered_other = "ཡིག་ཆ {{count}} ཡི་གོ་རིམ་བསྐྱར་སྒྲིག་བྱས"
 loadedFromStorage_one = "ཉར་སྣོད་ནས་ཡིག་ཆ {{count}} བླངས"
 loadedFromStorage_other = "ཉར་སྣོད་ནས་ཡིག་ཆ {{count}} བླངས"
 loadFromStorageFailed = "ཉར་སྣོད་ནས་ཡིག་ཆ་ཁ་ཤས་འཇུག་མ་ཐུབ"
 pinnedFile = "{{name}} གཏན་འཇགས་བྱས"
+processFilesFailed = "Failed to process files"
 savedAndClosed = "{{name}} ཉར་ནས་ཁ་བརྒྱབ"
 saveFailed = "ཉར་མ་ཐུབ"
 unpinnedFile = "{{name}} གཏན་འཇགས་ལས་བཏོན"
@@ -5959,8 +5991,10 @@ title = "འཕོ་འགྱུར།"
 
 [home.checkAccessibility]
 desc = "PDF ཞིབ་བཤེར་བྱས་ PDF/UA ལྟར་ཚད་འཇལ་ཞིང་ screen reader ལ་གོམ་འགྲོ་བྱེད་པ་ག་རེ་ཡིན་མཐོང་། ཡིག་ཆ་བསྒྱུར་མེད།"
+descWithReview = "Check a PDF against PDF/UA, then tag and describe what screen readers miss"
 tags = "accessibility,a11y,PDF/UA,screen reader,WCAG,Section 508,veraPDF,tagged PDF,alt text,accessibility checker,accessibility report,compliance,UA"
 title = "PDF འཇུག་སྤྱོད་སླ་བ་ཞིབ་བཤེར"
+titleWithReview = "PDF accessibility"
 
 [home.classify]
 desc = "ཡིག་ཆ་འདི་རིགས་གང་ཡིན་པ་ངོས་འཛིན་བྱས་ནས་ཤོ་བྱང་སྦྱོར།"
@@ -6962,6 +6996,10 @@ yourCloudAccess = "ཁྱེད་ཚོགས་ཆུང་ཚོགས་མ�
 deselectAll = "མེད"
 selectAll = "ཚང་མ་འདེམས"
 
+[pageEditor.toolbar]
+redo = "Redo"
+undo = "Undo"
+
 [pageExtracter]
 title = "ཤོག་ངོས།"
 
@@ -7800,14 +7838,11 @@ cannotTagLink = "འབྲེལ་མཐུད་འདི་ངོ་རྟག
 cannotTagPage = "ཤོག་ངོས་འདིའི་ནང་དོན་ངོ་རྟགས་མི་ཐུབ།"
 contentGroup = "ནང་དོན"
 customTag = "{{role}} (རང་བཟོས་མཚོན་རྟགས)"
-decorativeInfo = "བརྙན་ཡོལ་ཀློག་ཆས་ཀྱིས་མཛེས་བཟོའི་པར་རིས་མཆོངས་འགྲོ། མཐའ་སྒྲོམ། རྒྱབ་ལྗོངས། ཆ་འཕྲིན་མེད་པའི་པར་རིས་གཞན་ལ་སྤྱོད།"
-decorativeLabel = "མཛེས་བཟོའི་པར་རིས"
-description = "པར་རིས་འགྲེལ་བཤད"
-descriptionInfo = "བརྙན་ཡོལ་ཀློག་ཆས་ཀྱིས་འདི་པར་རིས་ཀྱི་ཚབ་ཏུ་ཀློག"
+describeLinks_one = "Describe link"
+describeLinks_other = "Describe {{count}} links"
 encrypted = "གསང་སྡོམ་བྱས་པའི་ཡིག་ཆའི་ནང་མཚོན་རྟགས་རྩོམ་སྒྲིག་མི་ཐུབ"
 figureDescription = "དཔེ་རིས་ཀྱི་འགྲེལ་བཤད"
 figureDescriptionInfo = "Screen reader ཡིས་དཔེ་རིས་ཀྱི་ཚབ་ཏུ་འདི་སྐད་ཀྱིས་ཀློག་དོ།"
-formFieldDescription = "ཡིག་སྒམ་འགྲེལ་བཤད"
 formulaDescription = "Formula འགྲེལ་བཤད"
 formulaDescriptionInfo = "Screen reader ཡིས་ formula གི་ཚབ་ཏུ་འདི་སྐད་ཀྱིས་ཀློག་དོ། ཁྲོད་སྐད་དུ་ལྟར་བཤད་དགོས་པས། དཔེར་ན \"x squared plus one\" ལྟ་བུ།"
 heading = "འཛུལ་སྤྱོད་སྟབས་བདེ"
@@ -7818,7 +7853,6 @@ markedTagged = "ཡིག་ཆ་ཡོངས་རྫོགས་ངོ་ར�
 markedTaggedHint = "PDF ཀློག་ཆས་ལ་འཇུག་སྤྱོད་སླ་བའི་ངོ་རྟགས་སྤྱོད་ཟེར་བརྡ་ཐུབ། ཡོངས་རྫོགས་ངོ་རྟགས་བཀོད་ཚར་རྗེས་རྟགས་བཀལ།"
 markedWithUntagged = "ནང་དོན་ཁ་ཤས་ལ་ངོ་རྟགས་མེད་པས་ screen reader ཚོས་མཆོངས་སྲིད།"
 missingDescriptions = "འགྲེལ་བཤད་ཆད་པ"
-mixedContent = "པར་རིས་ནང་ནང་དོན་གཞན་འདུས་ཡོད"
 mixedTags = "མཉམ་སྦྲེལ"
 needsDescriptionBadge = "འགྲེལ་བཤད་མེད"
 nextToReview = "རྗེས་མ་བསྐྱར་ཞིབ"
@@ -7826,12 +7860,10 @@ notFigure = "ཡི་གེའི་ཆ་ཤས་སུ་མཚོན་ར�
 removeTag = "མཚོན་རྟགས་སུབ"
 saveFailed = "ཁྱེད་ཀྱི་འཛུལ་སྤྱོད་སྟབས་བདེའི་བཟོ་བཅོས་ཉར་ཚགས་མ་ཐུབ་པས། ཡིག་ཆ་ཉར་ཚགས་མ་བྱས། དེ་དག་ཕྱིར་བཤོལ་ནས་ཡང་བསྐྱར་ཚོད་ལྟ་བྱོས།"
 selectedText = "བདམས་པའི་ཡི་གེ"
-tagFormField = "དེབ་གཏུབ་ཡིག་སྒམ་ངོ་རྟགས"
 tagging = "ཤོག་ངོས་ངོ་རྟགས་བཀོལ་བཞིན་"
 tagLabel = "མཚོན་རྟགས"
 tagLinks_one = "འབྲེལ་མཐུད་ངོ་རྟགས"
 tagLinks_other = "འབྲེལ་མཐུད {{count}} ངོ་རྟགས"
-tagUntagged = "ཡིག་ཆ་རང་འགུལ་ངོ་རྟགས"
 tagUntaggedHint = "ཡིག་ཆ་ཧྲིལ་བོར་འཇུག་སྤྱོད་སླ་བའི་ངོ་རྟགས་རང་འགུལ་ངང་ཁ་སྣོན། མཐའ་འཁྱོལ་འདི་ཕྲ་མོ་ཡིན་པས་ ཁ་བྱང་། རེའུ་མིག དང་ཀློག་གོ་རིམ་ལ་བསྐྱར་ཞིབ་བྱོས།"
 unknownTag = "འདིར་ཀློག་མི་ཐུབ"
 unmarkedWithTags = "PDF ཀློག་ཆས་ཁ་ཤས་ལ་ངོ་རྟགས་སྤྱོད་པར་སྲིད་པས་ ངོ་རྟགས་མེད་པའི་ནང་དོན་མཆོངས་སྲིད།"
@@ -7856,7 +7888,7 @@ heading = "ཁ་བྱང"
 mixedNumbering = "ཨང་རྟགས་ཡོད་པ་དང་མེད་པའི་ཁ་བྱང་འདྲེས་ཡོད"
 none = "ཁ་བྱང་མེད"
 onPage = "ཤོག་ངོས་ {{page}} ཋང་གི་ཁ་བྱང"
-problems = "ཁ་བྱང་གི་གནད་དོན"
+problemCount = "{{count}} to fix"
 skippedLevel = "ཁ་བྱང་ {{previous}} རྗེས་རིམ་པ་གཅིག་མཆོངས་ཡོད"
 
 [pdfTextEditor.inspector.accessibility.tagName]
@@ -7911,13 +7943,11 @@ title = "མཚན་བྱང"
 allLanguages = "སྐད་ཡིག་ཚང་མ"
 cannotSetDocument = "ཡིག་ཆ་འདིའི་སྐད་ཡིག་བསྒྱུར་མི་ཐུབ།"
 cannotSetText = "ཡིག་ཚིག་འདིའི་སྐད་ཡིག་བསྒྱུར་མི་ཐུབ།"
-documentHint = "ཡིག་ཆའི་སྐད་ཡིག — དེར་མེད་ན་ཡིག་ཚིག་ཁ་ཤས་རང་ཉིད་ཀྱི་སྐད་ཡིག་སྒྲིག་པ་ཡིན།"
 documentLabel = "སྐད་ཡིག"
 documentLocked = "གསང་སྡོམ་ཡོད་པའི་ཡིག་ཆའི་སྐད་ཡིག་ནཱ་ལ་བསྒྱུར་མི་ཐུབ།"
 inDocument = "ཡིག་ཆ་འདིར"
 innerLabel = "ངོ་རྟགས {{number}} སྐད་ཡིག"
 label = "སྐད་ཡིག"
-missing = "སྐད་ཡིག་མེད། screen reader ཚོས་ཚོར་བསླུངས་ནས་ ཡིག་ཆ་ཧྲིལ་བོ་སྐད་ཡིག་ཕྱི་རོལ་གྱིས་ཀློག་སྲིད།"
 mixed = "མཉམ་སྦྲེལ"
 noMatch = "མཐུན་སྐད་མེད། དེའི་ཚོད་རྟགས་ཨང་འཇུག — དཔེ་མཚོན mt ཡང་ན་ en-IE བཟུམ།"
 placeholder = "སྐད་ཡིག་འདེམས"
@@ -7948,6 +7978,52 @@ renderFailed = "ཤོག་ངོས render བྱེད་ཕམ"
 [pdfTextEditor.password]
 incorrect = "གསང་ཚིག་ནོར་འདུག - ཡང་བསྐྱར་ཚོད་ལྟ།"
 label = "གསང་ཚིག"
+
+[pdfTextEditor.review]
+allDone = "All text and images are tagged"
+close = "Close accessibility settings"
+counting = "still counting"
+left = "{{count}} left to tag"
+next = "Next untagged (N)"
+noneLeft = "No text or images left to tag"
+previous = "Previous untagged (Shift+N)"
+untaggedCount = "{{count}} untagged"
+untaggedPosition = "{{index}} of {{count}} untagged"
+
+[pdfTextEditor.review.badge]
+described = "Described"
+noDescription = "Needs a description"
+untagged = "Needs a tag"
+
+[pdfTextEditor.review.card]
+autoAdvance = "Go to the next item after tagging"
+done = "Tagged"
+figureQuestion = "What does this figure show?"
+formulaPlaceholder = "For example: x squared plus one"
+formulaQuestion = "How is this formula read aloud?"
+imagePlaceholder = "Describe the image"
+imageQuestion = "What does this image show?"
+label = "Accessibility review"
+pickHint = "Click a block or an image on the page, or press the arrow to go to the next one still to tag. Shift-click to tag several at once."
+saveDescription = "Save description"
+selectedCount_one = "{{count}} block selected"
+selectedCount_other = "{{count}} blocks selected"
+showAllTags = "Show tags on every block"
+skipQuestion = "Or skip it for screen readers"
+textQuestion = "What is this text?"
+todo = "Needs attention"
+
+[pdfTextEditor.review.closePrompt]
+body = "Your tags are not in your workspace yet. Closing accessibility settings without saving loses them."
+discard = "Discard"
+keep = "Keep tagging"
+save = "Save and close"
+title = "Save your tags?"
+
+[pdfTextEditor.review.summary]
+progress = "Tagging progress"
+tagged = "{{done}} of {{total}} tagged"
+title = "Tagging"
 
 [pdfTextEditor.rulers]
 guide = "{{value}} {{unit}} ལ་སྙོམས་སྒྲིག་སྟོན་ཐིག - སུབ་པར ruler ཐོག་འདྲུད"
@@ -8129,6 +8205,10 @@ title = "སྔོན་ལྟ། འགྱུར་བ།"
 [pdfTextEditor.tooltip.textFocus]
 text = "ལས་ཀའི་ས་ཁོངས་འདིས་ཡིག་ཆ་རྩོམ་སྒྲིག་དང་བཙུགས་པའི་པར་རིས་བརྗེ་སྒྱུར་བྱེད་པར་གཙོ་བོར་བལྟས་ཡོད། ཤོག་ངོས་སྒྱུ་རྩལ་གྱི་ལས་ཀ་སྣ་ཚོགས་དང་། འབྲི་ཤོག་གི་ཝི་ཇེཊ། དེ་བཞིན་བང་རིམ་ཅན་གྱི་རི་མོ་བཅས་ཕྱིར་གཏོང་ཆེད་དུ་ཉར་ཚགས་བྱས་ཡོད་ཀྱང་། འདིར་ཆ་ཚང་རྩོམ་སྒྲིག་བྱེད་ཐུབ་ཀྱི་མེད།"
 title = "ཡིག་ཆ་དང་པར་རིས་དམིགས་ཡུལ།"
+
+[pdfTextEditor.trail]
+save = "Save"
+saveTooltip = "Save to your workspace ({{shortcut}})"
 
 [PDFToCSV]
 header = "PDF ནས་ CSV བར།"
@@ -10321,6 +10401,10 @@ title = "ལས་རིམ་རྒྱུན"
 
 [portal.pipelines.actions]
 newCustomPipeline = "Custom pipeline གསར་པ"
+
+[portal.pipelines.activity]
+build = "Build pipeline"
+title = "Frequent workflows"
 
 [portal.pipelines.all]
 title = "Pipeline ཚང་མ"
@@ -14338,6 +14422,20 @@ noTools = "ལག་ཆ་མེད་པ།"
 [tooltip]
 close = "མལ་བྱེད་ཁ་རྒྱག"
 
+[toolWorkflows]
+draftName = "{{first}} + {{count}} more steps"
+longName = "{{first}} → … → {{last}} ({{count}} steps)"
+
+[toolWorkflows.ranBy]
+install = "Your colleagues have done this {{count, number}} times."
+team = "Your team has done this {{count, number}} times."
+user = "You've done this {{count, number}} times."
+
+[toolWorkflows.ranByShort]
+install = "Colleagues ran this {{count, number}} times"
+team = "Your team ran this {{count, number}} times"
+user = "You ran this {{count, number}} times"
+
 [unlockPDFForms]
 description = "ལག་ཆ་འདིས་PDFཡིག་ཆའི་ས་ཁོངས་ནས་ཀློག་ཐུབ་པའི་ཚད་བཀག་མེད་པར་བཟོས་པས་དེ་དག་རྩོམ་སྒྲིག་བྱེད་ཐུབ་པ་དང་བཀང་ཐུབ་པ་རེད།"
 submit = "འབྲི་ཤོག་ཕྱེ་བ།"
@@ -15114,6 +15212,7 @@ readAloud = "སྒྲ་སྐད་ཀློག"
 readAloudLanguage = "སྐད་ཡིག"
 readAloudSpeed = "མགྱོགས་ཚད"
 redact = "སྦ་བཅོས"
+reviewAccessibility = "Review accessibility"
 rotateLeft = "གཡོན་སྐོར"
 rotateRight = "གཡས་སྐོར"
 ruler = "འཇལ་ཆས / ཚད་འཇལ"

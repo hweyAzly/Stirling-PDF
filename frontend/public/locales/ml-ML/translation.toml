@@ -2361,6 +2361,10 @@ title = "ഓട്ടോമേഷൻ നടത്തുക"
 [automate.selection]
 title = "ഓട്ടോമേഷൻ തിരഞ്ഞെടുക്കൽ"
 
+[automate.selection.activity]
+description = "Save it as an automation and run it with one click."
+title = "Frequent workflows"
+
 [automate.selection.createNew]
 title = "പുതിയ ഓട്ടോമേഷൻ സൃഷ്ടിക്കുക"
 
@@ -2971,31 +2975,36 @@ stepTitle = "ഈ ഉപകരണം"
 [certSign.error]
 failed = "സിഗ്നേച്ചറുകൾ പ്രോസസ്സ് ചെയ്യുന്നതിനിടെ ഒരു പിശക് സംഭവിച്ചു."
 
-[certSign.format]
-pkcs11 = "USB ടോക്കൺ"
-windowsStore = "Windows സർട്ടിഫിക്കറ്റ് സ്റ്റോർ"
-
 [certSign.hardware]
-certificate = "സർട്ടിഫിക്കറ്റ്"
+allExpired = "None of the digital IDs here can sign today."
+backToDigitalIds = "Back to digital IDs"
 customLibrary = "ഇച്ഛാനുസൃത ഡ്രൈവർ പാത്ത്…"
+digitalId = "Digital ID"
 driver = "PKCS#11 ഡ്രൈവർ"
 driverPath = "ഡ്രൈവർ ലൈബ്രറി പാത്ത്"
 driverPathPlaceholder = "നിങ്ങളുടെ PKCS#11 ഡ്രൈവറിലേക്കുള്ള പൂർണ്ണ പാത്ത് (.dll, .so അല്ലെങ്കിൽ .dylib)"
-expired = "കാലഹരണപ്പെട്ടു"
-expires = "കാലഹരണപ്പെടും"
+driverSetup = "Read card directly"
+expiredOn = "Expired {{date}}"
+expiresOn = "Expires {{date}}"
+hideExpired = "Hide expired"
 listCerts = "സർട്ടിഫിക്കറ്റുകൾ പട്ടികപ്പെടുത്തുക"
-loading = "സർട്ടിഫിക്കറ്റുകൾ വായിക്കുന്നു…"
+macLoadError = "Could not read the macOS keychain"
 noCerts = "സൈൻ ചെയ്യാനുള്ള സർട്ടിഫിക്കറ്റുകൾ കണ്ടെത്തിയില്ല"
 noDriver = "ഒരു PKCS#11 ഡ്രൈവർ കണ്ടെത്തിയില്ല. നിങ്ങളുടെ ടോക്കണിന്റെ ഡ്രൈവർ (ഉദാ. OpenSC) ഇൻസ്റ്റാൾ ചെയ്ത് ഇത് വീണ്ടും തുറക്കുക - അല്ലെങ്കിൽ താഴെ ഡ്രൈവർ പാത്ത് കൈയോടെ നൽകുക."
-notYetValid = "ഇനിയും സാധുവല്ല"
+notListed = "Don't see your ID?"
+onDevice = "Stored on this device"
+onToken = "On a security key or smart card"
+osStoreHint = "Insert your smart card or security key, then choose your digital ID."
 pin = "ടോക്കൺ PIN"
 pkcs11Hint = "നിങ്ങളുടെ ടോക്കണിന്റെ PKCS#11 ഡ്രൈവർ തിരഞ്ഞെടുക്കുക, PIN നൽകുക, പിന്നെ ടോക്കണിലുള്ള സർട്ടിഫിക്കറ്റുകൾ പട്ടികപ്പെടുത്തുക."
 pkcs11LoadError = "ടോക്കണിലிருந்து സർട്ടിഫിക്കറ്റുകൾ വായിക്കാൻ കഴിഞ്ഞില്ല. PINയും ഡ്രൈവറും പരിശോധന ചെയ്യുക."
-refresh = "പുതുക്കുക"
-selectCert = "സർട്ടിഫിക്കറ്റ് തിരഞ്ഞെടുക്കുക"
+refreshList = "Refresh list"
 selectDriver = "ഡ്രൈവർ തിരഞ്ഞെടുക്കുക"
+serial = "Serial …{{serial}}"
+showExpired = "Show {{count}} expired"
 slot = "സ്ലോട്ട് (ഐച്ഛികം)"
-windowsHint = "നിങ്ങളുടെ Windows സർട്ടിഫിക്കറ്റ് സ്റ്റോറിൽ നിന്ന് ഒരു സർട്ടിഫിക്കറ്റ് തിരഞ്ഞെടുക്കുക. സൈൻ ചെയ്യുന്നതിന് നിങ്ങളുടെ കാർഡ്/ടോക്കണിലെ കീ ഉപയോഗിക്കും - Windows PIN ആവശ്യപ്പെടും."
+useDriver = "Read the card directly"
+validFrom = "Valid from {{date}}"
 windowsLoadError = "Windows സർട്ടിഫിക്കറ്റ് സ്റ്റോർ വായിക്കാൻ കഴിഞ്ഞില്ല"
 
 [certSign.sessions]
@@ -3035,6 +3044,8 @@ title = "പൊതു മാർഗ്ഗസൂചന"
 device = "ഈ ഉപകരണം"
 noOtherSources = "മറ്റ് സർട്ടിഫിക്കറ്റ് ഉറവിടങ്ങൾ ലഭ്യമല്ല."
 server = "സെർവർ"
+serverCertUnavailable = "The server's signing certificate isn't available."
+signsAs = "Signs as"
 stepTitle = "സർട്ടിഫിക്കറ്റിന്റെ ഉറവിടം"
 upload = "അപ്‌ലോഡ്"
 
@@ -3265,7 +3276,9 @@ checking = "പരിശോധിക്കുന്നു..."
 clauseRef = "{{profile}} §{{clauses}}"
 download = "പ്രവേശനക്ഷമത റിപ്പോർട്ട് ഡൗൺലോഡ് ചെയ്യുക"
 fileFailed = "പരാജയപ്പെട്ടു"
+noFiles = "Select a PDF to check it."
 pickFile = "ഇതിനായുള്ള ഫലങ്ങൾ കാണിക്കുക"
+retry = "Check again"
 submit = "പ്രവേശനക്ഷമത പരിശോധിക്കുക"
 
 [checkAccessibility.category]
@@ -3291,6 +3304,7 @@ label = "{{total}} പരിശോധനകളിൽ {{passed}} എണ്ണം 
 download = "പ്രവേശനക്ഷമത റിപ്പോർട്ട് സൃഷ്ടിക്കാൻ കഴിഞ്ഞില്ല. വീണ്ടും ശ്രമിക്കുക."
 fileTitle = "ഈ ഫയൽ പരിശോധിക്കാൻ കഴിഞ്ഞില്ല"
 partial = "ചില ഫയലുകൾ പരിശോധിക്കാൻ കഴിഞ്ഞില്ല."
+unreachable = "The server didn't answer. Check it's running, then check again."
 
 [checkAccessibility.facts]
 declares = "PDF/UA പ്രഖ്യാപിക്കുന്നു"
@@ -3313,6 +3327,21 @@ title = "ഫയലിന്റെ മെറ്റാഡാറ്റയിൽ ഒ
 [checkAccessibility.figures]
 summary_one = "{{count}} ചിത്രം വിവരണം ആവശ്യമുണ്ട് (പേജ് {{pages}})"
 summary_other = "{{count}} ചിത്രങ്ങൾക്ക് വിവരണം ആവശ്യമുണ്ട് (പേജുകൾ {{pages}})"
+
+[checkAccessibility.fix]
+heading = "Fix the headings"
+headingOnPage = "Fix the heading on page {{page}}"
+hide = "Hide tagging tool"
+image = "Describe the images"
+imageOnPage = "Describe the image on page {{page}}"
+link = "Tag the links"
+linkOnPage = "Tag the link on page {{page}}"
+markedTagged = "Mark the document as tagged"
+show = "Show tagging tool"
+tagEverything = "Auto-tag"
+tagging = "Tagging... {{percent}}%"
+untagged = "Tag the content"
+untaggedOnPage = "Tag content on page {{page}}"
 
 [checkAccessibility.issue]
 appliesTo = "പ്രയോഗിക്കുന്നത്"
@@ -4928,12 +4957,15 @@ closeFile = "ഫയൽ അടയ്ക്കുക"
 
 [fileEditor]
 closedFile = "{{name}} അടച്ചു"
+filesAdded_one = "Added {{count}} file"
+filesAdded_other = "Added {{count}} files"
 filesReordered_one = "ഫയൽ പുനഃക്രമീകരിച്ചു"
 filesReordered_other = "{{count}} ഫയലുകൾ പുനഃക്രമീകരിച്ചു"
 loadedFromStorage_one = "സ്റ്റോറേജിൽ നിന്ന് {{count}} ഫയൽ ലോഡ് ചെയ്തു"
 loadedFromStorage_other = "സ്റ്റോറേജിൽ നിന്ന് {{count}} ഫയലുകൾ ലോഡ് ചെയ്തു"
 loadFromStorageFailed = "സ്റ്റോറേജിൽ നിന്ന് ചില ഫയലുകൾ ലോഡ് ചെയ്യാൻ പരാജയപ്പെട്ടു"
 pinnedFile = "{{name}} പിൻ ചെയ്തു"
+processFilesFailed = "Failed to process files"
 savedAndClosed = "{{name}} സംരക്ഷിച്ച് അടച്ചു"
 saveFailed = "സംരക്ഷണം പരാജയപ്പെട്ടു"
 unpinnedFile = "{{name}} പിൻ ഒഴിവാക്കി"
@@ -5959,8 +5991,10 @@ title = "അനുമതികൾ മാറ്റുക"
 
 [home.checkAccessibility]
 desc = "ഒരു PDF-നെ PDF/UA-നോട് സ്കോർ ചെയ്ത്, സ്ക്രീൻ റീഡറുകളെ തടയുന്നതെന്താണെന്ന് മാറ്റമൊന്നുമില്ലാതെ കാണുക"
+descWithReview = "Check a PDF against PDF/UA, then tag and describe what screen readers miss"
 tags = "accessibility,a11y,PDF/UA,screen reader,WCAG,Section 508,veraPDF,tagged PDF,alt text,accessibility checker,accessibility report,compliance,UA"
 title = "PDF പ്രവേശനക്ഷമത പരിശോധിക്കുക"
+titleWithReview = "PDF accessibility"
 
 [home.classify]
 desc = "ഇത് ഏത് തരത്തിലുള്ള ഡോക്യുമെന്റാണെന്ന് തിരിച്ചറിഞ്ഞ് ടാഗ് ചെയ്യുക."
@@ -6962,6 +6996,10 @@ yourCloudAccess = "നിങ്ങൾ ടീം അംഗമാകും, ഉട
 deselectAll = "ഒന്നുമില്ല"
 selectAll = "എല്ലാം തിരഞ്ഞെടുക്കുക"
 
+[pageEditor.toolbar]
+redo = "Redo"
+undo = "Undo"
+
 [pageExtracter]
 title = "പേജുകൾ വേർതിരിച്ചെടുക്കുക"
 
@@ -7800,14 +7838,11 @@ cannotTagLink = "ഈ ലിങ്ക് ടാഗ് ചെയ്യാനാക
 cannotTagPage = "ഈ പേജിന്റെ ഉള്ളടക്കം ടാഗ് ചെയ്യാനാകില്ല."
 contentGroup = "ഉള്ളടക്കം"
 customTag = "{{role}} (ഇഷ്ടാനുസൃത ടാഗ്)"
-decorativeInfo = "സ്ക്രീൻ റീഡറുകൾ അലങ്കാര ചിത്രങ്ങൾ ഒഴിവാക്കുന്നു. അതിരുകൾ, പശ്ചാത്തലങ്ങൾ, വിവരങ്ങളൊന്നും നൽകാത്ത മറ്റ് ചിത്രങ്ങൾ എന്നിവയ്‌ക്ക് ഇത് ഉപയോഗിക്കുക."
-decorativeLabel = "അലങ്കാര ചിത്രം"
-description = "ചിത്ര വിവരണം"
-descriptionInfo = "സ്ക്രീൻ റീഡറുകൾ ചിത്രത്തിന് പകരം ഇത് വായിക്കും."
+describeLinks_one = "Describe link"
+describeLinks_other = "Describe {{count}} links"
 encrypted = "എൻക്രിപ്റ്റ് ചെയ്ത ഫയലിൽ ടാഗുകൾ എഡിറ്റ് ചെയ്യാൻ കഴിയില്ല"
 figureDescription = "ചിത്രത്തിന്റെ വിവരണം"
 figureDescriptionInfo = "സ്ക്രീൻ റീഡറുകൾ ചിത്രത്തിനുപകരം ഇത് വായിക്കും."
-formFieldDescription = "ഫീൽഡ് വിവരണം"
 formulaDescription = "സൂത്രത്തിന്റെ വിവരണം"
 formulaDescriptionInfo = "സ്ക്രീൻ റീഡറുകൾ സൂത്രത്തിനുപകരം ഇത് വായിക്കും. നിങ്ങൾ ശബ്ദമായി പറയുന്നതുപോലെ എഴുതുക; ഉദാഹരണത്തിന്, “x ന്റെ വർഗം പ്ലസ് ഒന്ന്”."
 heading = "പ്രവേശനക്ഷമത"
@@ -7818,7 +7853,6 @@ markedTagged = "ഡോക്യുമെന്റ് പൂർണ്ണമായ
 markedTaggedHint = "PDF റീഡറുകൾ പ്രവേശനക്ഷമത ടാഗുകൾ ഉപയോഗിക്കണമെന്ന് പറയുന്നു. എല്ലാം ടാഗ് ചെയ്ത് കഴിഞ്ഞാൽ ടിക്ക് ചെയ്യുക."
 markedWithUntagged = "ചില ഉള്ളടക്കങ്ങൾക്ക് ടാഗുകൾ ഇല്ല, അതിനാൽ സ്ക്രീൻ റീഡറുകൾ അവ ഒഴിവാക്കാം."
 missingDescriptions = "വിവരണങ്ങൾ ഇല്ല"
-mixedContent = "ഫിഗറിൽ മറ്റ് ഉള്ളടക്കം ഉൾപ്പെടുന്നു"
 mixedTags = "മിശ്രിതം"
 needsDescriptionBadge = "വിവരണം ഇല്ല"
 nextToReview = "അവലോകനത്തിനുള്ള അടുത്തത്"
@@ -7826,12 +7860,10 @@ notFigure = "ടെക്സ്റ്റിന്റെ ഭാഗമായി �
 removeTag = "ടാഗ് നീക്കം ചെയ്യുക"
 saveFailed = "നിങ്ങളുടെ പ്രവേശനക്ഷമത മാറ്റങ്ങൾ സംരക്ഷിക്കാൻ കഴിഞ്ഞില്ല, അതിനാൽ ഫയൽ സംരക്ഷിച്ചില്ല. അവ പഴയപടിയാക്കി വീണ്ടും ശ്രമിക്കുക."
 selectedText = "തിരഞ്ഞെടുത്ത ടെക്സ്റ്റ്"
-tagFormField = "ഫോം ഫീൽഡ് ടാഗ് ചെയ്യുക"
 tagging = "പേജുകൾ ടാഗ് ചെയ്യുന്നു"
 tagLabel = "ടാഗ്"
 tagLinks_one = "ലിങ്ക് ടാഗ് ചെയ്യുക"
 tagLinks_other = "{{count}} ലിങ്കുകൾ ടാഗ് ചെയ്യുക"
-tagUntagged = "ഡോക്യുമെന്റ് ഓട്ടോ-ടാഗ് ചെയ്യുക"
 tagUntaggedHint = "ഡോക്യുമെന്റിന് മുഴുവൻ പ്രവേശനക്ഷമത ടാഗുകൾ സ്വയമേവ ചേർക്കുന്നു. ഫലം ഏകദേശമാണ്: പിന്നാലെ തലക്കെട്ടുകൾ, ലിസ്റ്റുകൾ, വായനാക്രമം എന്നിവ പരിശോധിക്കുക."
 unknownTag = "ഇവിടെ വായിക്കാൻ കഴിയില്ല"
 unmarkedWithTags = "ചില PDF വ്യൂവറുകൾ എങ്കിലും ടാഗുകൾ ഉപയോഗിക്കും, ടാഗില്ലാത്ത ഉള്ളടക്കം ഒഴിവാക്കാം."
@@ -7856,7 +7888,7 @@ heading = "തലക്കെട്ടുകൾ"
 mixedNumbering = "നമ്പർ ചെയ്തതും നമ്പർ ചെയ്യാത്തതുമായ തലക്കെട്ടുകൾ കലർത്തുന്നു"
 none = "തലക്കെട്ടുകളില്ല"
 onPage = "പേജ് {{page}}-ലെ തലക്കെട്ട്"
-problems = "തലക്കെട്ട് പ്രശ്നങ്ങൾ"
+problemCount = "{{count}} to fix"
 skippedLevel = "തലക്കെട്ട് {{previous}}-ന് ശേഷം ഒരു ലെവൽ ഒഴിവാക്കുന്നു"
 
 [pdfTextEditor.inspector.accessibility.tagName]
@@ -7911,13 +7943,11 @@ title = "ശീർഷകം"
 allLanguages = "എല്ലാ ഭാഷകളും"
 cannotSetDocument = "ഈ ഡോക്യുമെന്റിന്റെ ഭാഷ മാറ്റാനാവില്ല."
 cannotSetText = "ഈ ടെക്സ്റ്റിന്റെ ഭാഷ മാറ്റാനാകില്ല."
-documentHint = "ഒരു ഭാഗം സ്വന്തം ഭാഷ സജ്ജമാക്കുന്നില്ലെങ്കിൽ സ്ക്രീൻ റീഡറുകൾ ഉപയോഗിക്കുന്ന ഭാഷ."
 documentLabel = "ഭാഷ"
 documentLocked = "എൻക്രിപ്റ്റ് ചെയ്ത ഡോക്യുമെന്റിന്റെ ഭാഷ ഇവിടെ മാറ്റാനാകില്ല."
 inDocument = "ഈ ഡോക്യുമെന്റിൽ"
 innerLabel = "ടാഗ് {{number}}-ന്റെ ഭാഷ"
 label = "ഭാഷ"
-missing = "ഭാഷ സജ്ജമാക്കിയിട്ടില്ല. സ്ക്രീൻ റീഡറുകൾ അനുമാനിക്കും, മുഴുവൻ ഡോക്യുമെന്റ് തെറ്റായ ശബ്ദത്തിൽ വായിച്ചേക്കാം."
 mixed = "മിശ്രിതം"
 noMatch = "ഒത്ത ഭാഷയില്ല. പകരം അതിന്റെ കോഡ് ടൈപ്പ് ചെയ്യുക, ഉദാ: mt അല്ലെങ്കിൽ en-IE."
 placeholder = "ഭാഷ തിരഞ്ഞെടുക്കുക"
@@ -7948,6 +7978,52 @@ renderFailed = "പേജ് റെൻഡർ ചെയ്യാൻ പരാജ�
 [pdfTextEditor.password]
 incorrect = "തെറ്റായ പാസ്‌വേഡ് - വീണ്ടും ശ്രമിക്കുക."
 label = "പാസ്‌വേഡ്"
+
+[pdfTextEditor.review]
+allDone = "All text and images are tagged"
+close = "Close accessibility settings"
+counting = "still counting"
+left = "{{count}} left to tag"
+next = "Next untagged (N)"
+noneLeft = "No text or images left to tag"
+previous = "Previous untagged (Shift+N)"
+untaggedCount = "{{count}} untagged"
+untaggedPosition = "{{index}} of {{count}} untagged"
+
+[pdfTextEditor.review.badge]
+described = "Described"
+noDescription = "Needs a description"
+untagged = "Needs a tag"
+
+[pdfTextEditor.review.card]
+autoAdvance = "Go to the next item after tagging"
+done = "Tagged"
+figureQuestion = "What does this figure show?"
+formulaPlaceholder = "For example: x squared plus one"
+formulaQuestion = "How is this formula read aloud?"
+imagePlaceholder = "Describe the image"
+imageQuestion = "What does this image show?"
+label = "Accessibility review"
+pickHint = "Click a block or an image on the page, or press the arrow to go to the next one still to tag. Shift-click to tag several at once."
+saveDescription = "Save description"
+selectedCount_one = "{{count}} block selected"
+selectedCount_other = "{{count}} blocks selected"
+showAllTags = "Show tags on every block"
+skipQuestion = "Or skip it for screen readers"
+textQuestion = "What is this text?"
+todo = "Needs attention"
+
+[pdfTextEditor.review.closePrompt]
+body = "Your tags are not in your workspace yet. Closing accessibility settings without saving loses them."
+discard = "Discard"
+keep = "Keep tagging"
+save = "Save and close"
+title = "Save your tags?"
+
+[pdfTextEditor.review.summary]
+progress = "Tagging progress"
+tagged = "{{done}} of {{total}} tagged"
+title = "Tagging"
 
 [pdfTextEditor.rulers]
 guide = "{{value}} {{unit}}ൽ alignment guide - നീക്കംചെയ്യാൻ rulerലേക്ക് വലിച്ചിടുക"
@@ -8129,6 +8205,10 @@ title = "പ്രിവ്യൂ വ്യത്യാസങ്ങൾ"
 [pdfTextEditor.tooltip.textFocus]
 text = "ഈ വർക്‌സ്‌പേസ് ടെക്സ്റ്റ് എഡിറ്റിംഗിലും എംബെഡുചെയ്ത ചിത്രങ്ങളുടെ സ്ഥാനമാറ്റത്തിലും ശ്രദ്ധ കേന്ദ്രീകരിക്കുന്നു. സങ്കീർണ്ണമായ പേജ് ആർട്ട്‌വർക്ക്, ഫോം വിഡ്ജറ്റുകൾ, ലെയേർഡ് ഗ്രാഫിക്സ് എന്നിവ എക്സ്പോർട്ടിനായി നിലനിർത്തും, പക്ഷേ ഇവിടെ പൂർണ്ണമായി എഡിറ്റ് ചെയ്യാനാകില്ല."
 title = "ടെക്സ്റ്റും ചിത്രവും കേന്ദ്രീകരിക്കുന്നത്"
+
+[pdfTextEditor.trail]
+save = "Save"
+saveTooltip = "Save to your workspace ({{shortcut}})"
 
 [PDFToCSV]
 header = "PDF CSV-ലേക്ക്"
@@ -10321,6 +10401,10 @@ title = "പൈപ്പ്‌ലൈനുകൾ"
 
 [portal.pipelines.actions]
 newCustomPipeline = "പുതിയ custom pipeline"
+
+[portal.pipelines.activity]
+build = "Build pipeline"
+title = "Frequent workflows"
 
 [portal.pipelines.all]
 title = "എല്ലാ Pipelines"
@@ -14338,6 +14422,20 @@ noTools = "ടൂളുകൾ ലഭ്യമല്ല"
 [tooltip]
 close = "ടൂൾടിപ്പ് അടയ്ക്കുക"
 
+[toolWorkflows]
+draftName = "{{first}} + {{count}} more steps"
+longName = "{{first}} → … → {{last}} ({{count}} steps)"
+
+[toolWorkflows.ranBy]
+install = "Your colleagues have done this {{count, number}} times."
+team = "Your team has done this {{count, number}} times."
+user = "You've done this {{count, number}} times."
+
+[toolWorkflows.ranByShort]
+install = "Colleagues ran this {{count, number}} times"
+team = "Your team ran this {{count, number}} times"
+user = "You ran this {{count, number}} times"
+
 [unlockPDFForms]
 description = "ഈ ടൂൾ PDF ഫോമിലെ read-only നിയന്ത്രണങ്ങൾ നീക്കം ചെയ്ത് അവ എഡിറ്റുചെയ്യാവുന്നതും പൂരിപ്പിക്കാവുന്നതുമാക്കും."
 submit = "Forms അൺലോക്ക് ചെയ്യുക"
@@ -15114,6 +15212,7 @@ readAloud = "വായിച്ച് കേൾപ്പിക്കുക"
 readAloudLanguage = "ഭാഷ"
 readAloudSpeed = "വേഗം"
 redact = "റെഡാക്റ്റ്"
+reviewAccessibility = "Review accessibility"
 rotateLeft = "ഇടത്തേക്ക് തിരിക്കുക"
 rotateRight = "വലത്തേക്ക് തിരിക്കുക"
 ruler = "റൂളർ / അളക്കൽ"

@@ -2361,6 +2361,10 @@ title = "Ejecutar automatización"
 [automate.selection]
 title = "Selección de automatización"
 
+[automate.selection.activity]
+description = "Save it as an automation and run it with one click."
+title = "Frequent workflows"
+
 [automate.selection.createNew]
 title = "Crear nueva automatización"
 
@@ -2971,31 +2975,36 @@ stepTitle = "Este dispositivo"
 [certSign.error]
 failed = "Se produjo un error al procesar las firmas."
 
-[certSign.format]
-pkcs11 = "Token USB"
-windowsStore = "Almacén de certificados de Windows"
-
 [certSign.hardware]
-certificate = "Certificado"
+allExpired = "None of the digital IDs here can sign today."
+backToDigitalIds = "Back to digital IDs"
 customLibrary = "Ruta del controlador personalizada…"
+digitalId = "Digital ID"
 driver = "Controlador PKCS#11"
 driverPath = "Ruta de la biblioteca del controlador"
 driverPathPlaceholder = "Ruta completa a su controlador PKCS#11 (.dll, .so o .dylib)"
-expired = "caducado"
-expires = "caduca"
+driverSetup = "Read card directly"
+expiredOn = "Expired {{date}}"
+expiresOn = "Expires {{date}}"
+hideExpired = "Hide expired"
 listCerts = "Listar certificados"
-loading = "Leyendo certificados…"
+macLoadError = "Could not read the macOS keychain"
 noCerts = "No se encontraron certificados de firma"
 noDriver = "No se detectó ningún controlador PKCS#11. Instale el controlador de su token (p. ej., OpenSC), luego vuelva a abrir esto - o introduzca manualmente la ruta del controlador a continuación."
-notYetValid = "aún no válido"
+notListed = "Don't see your ID?"
+onDevice = "Stored on this device"
+onToken = "On a security key or smart card"
+osStoreHint = "Insert your smart card or security key, then choose your digital ID."
 pin = "PIN del token"
 pkcs11Hint = "Seleccione el controlador PKCS#11 de su token, introduzca el PIN y luego liste los certificados del token."
 pkcs11LoadError = "No se pudieron leer los certificados del token. Compruebe el PIN y el controlador."
-refresh = "Actualizar"
-selectCert = "Seleccionar certificado"
+refreshList = "Refresh list"
 selectDriver = "Seleccionar controlador"
+serial = "Serial …{{serial}}"
+showExpired = "Show {{count}} expired"
 slot = "Ranura (opcional)"
-windowsHint = "Elija un certificado de su almacén de certificados de Windows. La firma utiliza la clave de su tarjeta/token - Windows solicitará el PIN."
+useDriver = "Read the card directly"
+validFrom = "Valid from {{date}}"
 windowsLoadError = "No se pudo leer el almacén de certificados de Windows"
 
 [certSign.sessions]
@@ -3035,6 +3044,8 @@ title = "Regla general"
 device = "Este dispositivo"
 noOtherSources = "No hay otras fuentes de certificados disponibles."
 server = "Servidor"
+serverCertUnavailable = "The server's signing certificate isn't available."
+signsAs = "Signs as"
 stepTitle = "Origen del certificado"
 upload = "Subir"
 
@@ -3265,7 +3276,9 @@ checking = "Comprobando..."
 clauseRef = "{{profile}} §{{clauses}}"
 download = "Descargar informe de accesibilidad"
 fileFailed = "fallido"
+noFiles = "Select a PDF to check it."
 pickFile = "Mostrar resultados de"
+retry = "Check again"
 submit = "Comprobar accesibilidad"
 
 [checkAccessibility.category]
@@ -3291,6 +3304,7 @@ label = "{{passed}} de {{total}} comprobaciones superadas"
 download = "No se pudo crear el informe de accesibilidad. Inténtalo de nuevo."
 fileTitle = "No se pudo comprobar este archivo"
 partial = "No se pudieron comprobar algunos archivos."
+unreachable = "The server didn't answer. Check it's running, then check again."
 
 [checkAccessibility.facts]
 declares = "Declara PDF/UA"
@@ -3313,6 +3327,21 @@ title = "El archivo tiene un título en sus metadatos."
 [checkAccessibility.figures]
 summary_one = "{{count}} imagen necesita una descripción (página {{pages}})"
 summary_other = "{{count}} imágenes necesitan una descripción (páginas {{pages}})"
+
+[checkAccessibility.fix]
+heading = "Fix the headings"
+headingOnPage = "Fix the heading on page {{page}}"
+hide = "Hide tagging tool"
+image = "Describe the images"
+imageOnPage = "Describe the image on page {{page}}"
+link = "Tag the links"
+linkOnPage = "Tag the link on page {{page}}"
+markedTagged = "Mark the document as tagged"
+show = "Show tagging tool"
+tagEverything = "Auto-tag"
+tagging = "Tagging... {{percent}}%"
+untagged = "Tag the content"
+untaggedOnPage = "Tag content on page {{page}}"
 
 [checkAccessibility.issue]
 appliesTo = "Se aplica a"
@@ -4928,12 +4957,15 @@ closeFile = "Cerrar archivo"
 
 [fileEditor]
 closedFile = "{{name}} cerrado"
+filesAdded_one = "Added {{count}} file"
+filesAdded_other = "Added {{count}} files"
 filesReordered_one = "Archivo reordenado"
 filesReordered_other = "{{count}} archivos reordenados"
 loadedFromStorage_one = "Se cargó {{count}} archivo desde el almacenamiento"
 loadedFromStorage_other = "Se cargaron {{count}} archivos desde el almacenamiento"
 loadFromStorageFailed = "No se pudieron cargar algunos archivos desde el almacenamiento"
 pinnedFile = "{{name}} fijado"
+processFilesFailed = "Failed to process files"
 savedAndClosed = "{{name}} guardado y cerrado"
 saveFailed = "Error al guardar"
 unpinnedFile = "{{name}} desfijado"
@@ -5959,8 +5991,10 @@ title = "Cambiar permisos"
 
 [home.checkAccessibility]
 desc = "Califica un PDF según PDF/UA y ve qué bloquea a los lectores de pantalla, sin cambiarlo"
+descWithReview = "Check a PDF against PDF/UA, then tag and describe what screen readers miss"
 tags = "accesibilidad,a11y,PDF/UA,lector de pantalla,WCAG,Section 508,veraPDF,PDF etiquetado,texto alternativo,comprobador de accesibilidad,informe de accesibilidad,cumplimiento,UA"
 title = "Comprobar accesibilidad de PDF"
+titleWithReview = "PDF accessibility"
 
 [home.classify]
 desc = "Identifica qué tipo de documento es y etiquétalo."
@@ -6962,6 +6996,10 @@ yourCloudAccess = "Pasará a ser miembro del equipo y perderá el acceso de prop
 deselectAll = "Ninguno"
 selectAll = "Marcar todo"
 
+[pageEditor.toolbar]
+redo = "Redo"
+undo = "Undo"
+
 [pageExtracter]
 title = "Extraer Páginas"
 
@@ -7800,14 +7838,11 @@ cannotTagLink = "Este enlace no se puede etiquetar."
 cannotTagPage = "El contenido de esta página no se puede etiquetar."
 contentGroup = "Contenido"
 customTag = "{{role}} (etiqueta personalizada)"
-decorativeInfo = "Los lectores de pantalla omiten las imágenes decorativas. Úsalo para bordes, fondos y otras imágenes que no aportan información."
-decorativeLabel = "Imagen decorativa"
-description = "Descripción de la imagen"
-descriptionInfo = "Los lectores de pantalla leen esto en lugar de la imagen."
+describeLinks_one = "Describe link"
+describeLinks_other = "Describe {{count}} links"
 encrypted = "Las etiquetas no se pueden editar en un archivo cifrado"
 figureDescription = "Descripción de la figura"
 figureDescriptionInfo = "Los lectores de pantalla leen esto en lugar de la figura."
-formFieldDescription = "Descripción del campo"
 formulaDescription = "Descripción de la fórmula"
 formulaDescriptionInfo = "Los lectores de pantalla leen esto en lugar de la fórmula. Exprésalo como lo dirías en voz alta, por ejemplo, «x al cuadrado más uno»."
 heading = "Accesibilidad"
@@ -7818,7 +7853,6 @@ markedTagged = "El documento está totalmente etiquetado"
 markedTaggedHint = "Indica a los lectores de PDF que usen las etiquetas de accesibilidad. Márcalo cuando todo esté etiquetado."
 markedWithUntagged = "Parte del contenido no tiene etiquetas, por lo que los lectores de pantalla pueden omitirlo."
 missingDescriptions = "Descripciones que faltan"
-mixedContent = "La figura incluye otro contenido"
 mixedTags = "Mixto"
 needsDescriptionBadge = "Sin descripción"
 nextToReview = "Siguiente por revisar"
@@ -7826,12 +7860,10 @@ notFigure = "Etiquetado como parte del texto"
 removeTag = "Eliminar etiqueta"
 saveFailed = "No se han podido guardar tus cambios de accesibilidad, por lo que el archivo no se ha guardado. Deshazlos e inténtalo de nuevo."
 selectedText = "Texto seleccionado"
-tagFormField = "Etiquetar campo de formulario"
 tagging = "Etiquetando páginas"
 tagLabel = "Etiqueta"
 tagLinks_one = "Etiquetar enlace"
 tagLinks_other = "Etiquetar {{count}} enlaces"
-tagUntagged = "Etiquetar el documento automáticamente"
 tagUntaggedHint = "Añade automáticamente etiquetas de accesibilidad en todo el documento. El resultado es aproximado: comprueba después los encabezados, las listas y el orden de lectura."
 unknownTag = "No se puede leer aquí"
 unmarkedWithTags = "Algunos visores de PDF usarán igualmente las etiquetas y pueden omitir el contenido que no las tenga."
@@ -7856,7 +7888,7 @@ heading = "Encabezados"
 mixedNumbering = "Mezcla encabezados numerados y sin numerar"
 none = "Sin encabezados"
 onPage = "Encabezado en la página {{page}}"
-problems = "Problemas de encabezados"
+problemCount = "{{count}} to fix"
 skippedLevel = "Omite un nivel después de Encabezado {{previous}}"
 
 [pdfTextEditor.inspector.accessibility.tagName]
@@ -7911,13 +7943,11 @@ title = "Título"
 allLanguages = "Todos los idiomas"
 cannotSetDocument = "El idioma de este documento no se puede cambiar."
 cannotSetText = "El idioma de este texto no se puede cambiar."
-documentHint = "El idioma que usarán los lectores de pantalla salvo que una parte del texto establezca el suyo propio."
 documentLabel = "Idioma"
 documentLocked = "El idioma de un documento cifrado no se puede cambiar aquí."
 inDocument = "En este documento"
 innerLabel = "Idioma de la etiqueta {{number}}"
 label = "Idioma"
-missing = "Sin idioma establecido. Los lectores de pantalla lo adivinarán y pueden leer todo el documento con una voz incorrecta."
 mixed = "Mixto"
 noMatch = "No hay idioma coincidente. Escribe su código, como mt o en-IE."
 placeholder = "Selecciona un idioma"
@@ -7948,6 +7978,52 @@ renderFailed = "No se pudo renderizar la página"
 [pdfTextEditor.password]
 incorrect = "Contraseña incorrecta; inténtalo de nuevo."
 label = "Contraseña"
+
+[pdfTextEditor.review]
+allDone = "All text and images are tagged"
+close = "Close accessibility settings"
+counting = "still counting"
+left = "{{count}} left to tag"
+next = "Next untagged (N)"
+noneLeft = "No text or images left to tag"
+previous = "Previous untagged (Shift+N)"
+untaggedCount = "{{count}} untagged"
+untaggedPosition = "{{index}} of {{count}} untagged"
+
+[pdfTextEditor.review.badge]
+described = "Described"
+noDescription = "Needs a description"
+untagged = "Needs a tag"
+
+[pdfTextEditor.review.card]
+autoAdvance = "Go to the next item after tagging"
+done = "Tagged"
+figureQuestion = "What does this figure show?"
+formulaPlaceholder = "For example: x squared plus one"
+formulaQuestion = "How is this formula read aloud?"
+imagePlaceholder = "Describe the image"
+imageQuestion = "What does this image show?"
+label = "Accessibility review"
+pickHint = "Click a block or an image on the page, or press the arrow to go to the next one still to tag. Shift-click to tag several at once."
+saveDescription = "Save description"
+selectedCount_one = "{{count}} block selected"
+selectedCount_other = "{{count}} blocks selected"
+showAllTags = "Show tags on every block"
+skipQuestion = "Or skip it for screen readers"
+textQuestion = "What is this text?"
+todo = "Needs attention"
+
+[pdfTextEditor.review.closePrompt]
+body = "Your tags are not in your workspace yet. Closing accessibility settings without saving loses them."
+discard = "Discard"
+keep = "Keep tagging"
+save = "Save and close"
+title = "Save your tags?"
+
+[pdfTextEditor.review.summary]
+progress = "Tagging progress"
+tagged = "{{done}} of {{total}} tagged"
+title = "Tagging"
 
 [pdfTextEditor.rulers]
 guide = "Guía de alineación en {{value}} {{unit}}; arrástrala a una regla para eliminarla"
@@ -8129,6 +8205,10 @@ title = "Variaciones de la vista previa"
 [pdfTextEditor.tooltip.textFocus]
 text = "Este espacio de trabajo se centra en editar texto y recolocar imágenes incrustadas. Las ilustraciones de página complejas, widgets de formularios y gráficos por capas se preservan para la exportación pero no son totalmente editables aquí."
 title = "Enfoque en texto e imagen"
+
+[pdfTextEditor.trail]
+save = "Save"
+saveTooltip = "Save to your workspace ({{shortcut}})"
 
 [PDFToCSV]
 header = "PDF a CSV"
@@ -10321,6 +10401,10 @@ title = "Pipelines"
 
 [portal.pipelines.actions]
 newCustomPipeline = "Nuevo flujo personalizado"
+
+[portal.pipelines.activity]
+build = "Build pipeline"
+title = "Frequent workflows"
 
 [portal.pipelines.all]
 title = "Todos los flujos"
@@ -14338,6 +14422,20 @@ noTools = "No hay herramientas disponibles"
 [tooltip]
 close = "Cerrar información sobre herramientas"
 
+[toolWorkflows]
+draftName = "{{first}} + {{count}} more steps"
+longName = "{{first}} → … → {{last}} ({{count}} steps)"
+
+[toolWorkflows.ranBy]
+install = "Your colleagues have done this {{count, number}} times."
+team = "Your team has done this {{count, number}} times."
+user = "You've done this {{count, number}} times."
+
+[toolWorkflows.ranByShort]
+install = "Colleagues ran this {{count, number}} times"
+team = "Your team ran this {{count, number}} times"
+user = "You ran this {{count, number}} times"
+
 [unlockPDFForms]
 description = "Esta herramienta eliminará las restricciones de solo lectura de los campos de formulario PDF, haciéndolos editables y rellenables."
 submit = "Eliminar"
@@ -15114,6 +15212,7 @@ readAloud = "Leer en voz alta"
 readAloudLanguage = "Idioma"
 readAloudSpeed = "Velocidad"
 redact = "Redactar"
+reviewAccessibility = "Review accessibility"
 rotateLeft = "Girar a la izquierda"
 rotateRight = "Girar a la derecha"
 ruler = "Regla / Medir"

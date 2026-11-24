@@ -2361,6 +2361,10 @@ title = "Kør automatisering"
 [automate.selection]
 title = "Valg af automatisering"
 
+[automate.selection.activity]
+description = "Save it as an automation and run it with one click."
+title = "Frequent workflows"
+
 [automate.selection.createNew]
 title = "Opret ny automatisering"
 
@@ -2971,31 +2975,36 @@ stepTitle = "Denne enhed"
 [certSign.error]
 failed = "Der opstod en fejl under behandling af signaturer."
 
-[certSign.format]
-pkcs11 = "USB-token"
-windowsStore = "Windows-certifikatlager"
-
 [certSign.hardware]
-certificate = "Certifikat"
+allExpired = "None of the digital IDs here can sign today."
+backToDigitalIds = "Back to digital IDs"
 customLibrary = "Brugerdefineret driversti…"
+digitalId = "Digital ID"
 driver = "PKCS#11-driver"
 driverPath = "Sti til driverbibliotek"
 driverPathPlaceholder = "Fuld sti til din PKCS#11-driver (.dll, .so eller .dylib)"
-expired = "udløbet"
-expires = "udløber"
+driverSetup = "Read card directly"
+expiredOn = "Expired {{date}}"
+expiresOn = "Expires {{date}}"
+hideExpired = "Hide expired"
 listCerts = "Vis certifikater"
-loading = "Læser certifikater…"
+macLoadError = "Could not read the macOS keychain"
 noCerts = "Ingen signeringscertifikater fundet"
 noDriver = "Ingen PKCS#11-driver blev fundet. Installer din tokens driver (f.eks. OpenSC), genåbn dette - eller indtast driverstien manuelt nedenfor."
-notYetValid = "endnu ikke gyldig"
+notListed = "Don't see your ID?"
+onDevice = "Stored on this device"
+onToken = "On a security key or smart card"
+osStoreHint = "Insert your smart card or security key, then choose your digital ID."
 pin = "PIN til token"
 pkcs11Hint = "Vælg din tokens PKCS#11-driver, indtast PIN-koden, og vis derefter certifikaterne på tokenet."
 pkcs11LoadError = "Kunne ikke læse certifikater fra tokenet. Kontroller PIN-koden og driveren."
-refresh = "Opdater"
-selectCert = "Vælg certifikat"
+refreshList = "Refresh list"
 selectDriver = "Vælg driver"
+serial = "Serial …{{serial}}"
+showExpired = "Show {{count}} expired"
 slot = "Slot (valgfrit)"
-windowsHint = "Vælg et certifikat fra dit Windows-certifikatlager. Signering bruger nøglen på dit kort/token - Windows vil bede om PIN-koden."
+useDriver = "Read the card directly"
+validFrom = "Valid from {{date}}"
 windowsLoadError = "Kunne ikke læse Windows-certifikatlageret"
 
 [certSign.sessions]
@@ -3035,6 +3044,8 @@ title = "Tommelregel"
 device = "Denne enhed"
 noOtherSources = "Ingen andre certifikatkilder er tilgængelige."
 server = "Server"
+serverCertUnavailable = "The server's signing certificate isn't available."
+signsAs = "Signs as"
 stepTitle = "Certifikatkilde"
 upload = "Upload"
 
@@ -3265,7 +3276,9 @@ checking = "Kontrollerer..."
 clauseRef = "{{profile}} §{{clauses}}"
 download = "Download tilgængelighedsrapport"
 fileFailed = "mislykkedes"
+noFiles = "Select a PDF to check it."
 pickFile = "Vis resultater for"
+retry = "Check again"
 submit = "Kontroller tilgængelighed"
 
 [checkAccessibility.category]
@@ -3291,6 +3304,7 @@ label = "{{passed}} af {{total}} kontroller bestået"
 download = "Tilgængelighedsrapporten kunne ikke oprettes. Prøv igen."
 fileTitle = "Denne fil kunne ikke kontrolleres"
 partial = "Nogle filer kunne ikke kontrolleres."
+unreachable = "The server didn't answer. Check it's running, then check again."
 
 [checkAccessibility.facts]
 declares = "Erklærer PDF/UA"
@@ -3313,6 +3327,21 @@ title = "Filen har en titel i sine metadata."
 [checkAccessibility.figures]
 summary_one = "{{count}} billede mangler en beskrivelse (side {{pages}})"
 summary_other = "{{count}} billeder mangler en beskrivelse (sider {{pages}})"
+
+[checkAccessibility.fix]
+heading = "Fix the headings"
+headingOnPage = "Fix the heading on page {{page}}"
+hide = "Hide tagging tool"
+image = "Describe the images"
+imageOnPage = "Describe the image on page {{page}}"
+link = "Tag the links"
+linkOnPage = "Tag the link on page {{page}}"
+markedTagged = "Mark the document as tagged"
+show = "Show tagging tool"
+tagEverything = "Auto-tag"
+tagging = "Tagging... {{percent}}%"
+untagged = "Tag the content"
+untaggedOnPage = "Tag content on page {{page}}"
 
 [checkAccessibility.issue]
 appliesTo = "Gælder for"
@@ -4928,12 +4957,15 @@ closeFile = "Luk fil"
 
 [fileEditor]
 closedFile = "Lukkede {{name}}"
+filesAdded_one = "Added {{count}} file"
+filesAdded_other = "Added {{count}} files"
 filesReordered_one = "Fil omarrangeret"
 filesReordered_other = "{{count}} filer omarrangeret"
 loadedFromStorage_one = "Indlæste {{count}} fil fra lager"
 loadedFromStorage_other = "Indlæste {{count}} filer fra lager"
 loadFromStorageFailed = "Kunne ikke indlæse nogle filer fra lager"
 pinnedFile = "Fastgjorde {{name}}"
+processFilesFailed = "Failed to process files"
 savedAndClosed = "Gemte og lukkede {{name}}"
 saveFailed = "Gemning mislykkedes"
 unpinnedFile = "Frigjorde {{name}}"
@@ -5959,8 +5991,10 @@ title = "Ændre Tilladelser"
 
 [home.checkAccessibility]
 desc = "Bedøm en PDF mod PDF/UA og se, hvad der spærrer for skærmlæsere – uden at ændre den"
+descWithReview = "Check a PDF against PDF/UA, then tag and describe what screen readers miss"
 tags = "accessibility,a11y,PDF/UA,screen reader,WCAG,Section 508,veraPDF,tagged PDF,alt text,accessibility checker,accessibility report,compliance,UA"
 title = "Kontrollér PDF-tilgængelighed"
+titleWithReview = "PDF accessibility"
 
 [home.classify]
 desc = "Identificér, hvilken slags dokument dette er, og mærk det."
@@ -6962,6 +6996,10 @@ yourCloudAccess = "Du bliver teammedlem og mister ejeradgang."
 deselectAll = "Ingen"
 selectAll = "Marker alle"
 
+[pageEditor.toolbar]
+redo = "Redo"
+undo = "Undo"
+
 [pageExtracter]
 title = "Udtræk Sider"
 
@@ -7800,14 +7838,11 @@ cannotTagLink = "Dette link kan ikke tagges."
 cannotTagPage = "Denne sides indhold kan ikke tagges."
 contentGroup = "Indhold"
 customTag = "{{role}} (brugerdefineret tag)"
-decorativeInfo = "Skærmlæsere springer dekorative billeder over. Brug det til rammer, baggrunde og andre billeder, der ikke indeholder information."
-decorativeLabel = "Dekorativt billede"
-description = "Billedbeskrivelse"
-descriptionInfo = "Skærmlæsere læser dette op i stedet for billedet."
+describeLinks_one = "Describe link"
+describeLinks_other = "Describe {{count}} links"
 encrypted = "Tags kan ikke redigeres i en krypteret fil"
 figureDescription = "Figurbeskrivelse"
 figureDescriptionInfo = "Skærmlæsere læser dette op i stedet for figuren."
-formFieldDescription = "Feltbeskrivelse"
 formulaDescription = "Formelbeskrivelse"
 formulaDescriptionInfo = "Skærmlæsere læser dette op i stedet for formlen. Sig det, som du ville sige det højt, f.eks. \"x i anden plus en\"."
 heading = "Tilgængelighed"
@@ -7818,7 +7853,6 @@ markedTagged = "Dokumentet er fuldt tagget"
 markedTaggedHint = "Fortæller PDF-læsere at bruge tilgængelighedstags. Sæt flueben, når alt er tagget."
 markedWithUntagged = "Noget indhold har ingen tags, så skærmlæsere kan springe det over."
 missingDescriptions = "Manglende beskrivelser"
-mixedContent = "Figur indeholder andet indhold"
 mixedTags = "Blandet"
 needsDescriptionBadge = "Ingen beskrivelse"
 nextToReview = "Næste til gennemgang"
@@ -7826,12 +7860,10 @@ notFigure = "Tagget som en del af teksten"
 removeTag = "Fjern tag"
 saveFailed = "Dine ændringer af tilgængelighed kunne ikke gemmes, så filen blev ikke gemt. Fortryd dem, og prøv igen."
 selectedText = "Markeret tekst"
-tagFormField = "Opmærk formularfelt"
 tagging = "Tagger sider"
 tagLabel = "Tag"
 tagLinks_one = "Tag link"
 tagLinks_other = "Tag {{count}} links"
-tagUntagged = "Auto-tag dokument"
 tagUntaggedHint = "Tilføjer automatisk tilgængelighedstags i hele dokumentet. Resultatet er groft: Kontroller overskrifter, lister og læserækkefølge bagefter."
 unknownTag = "Kan ikke læses her"
 unmarkedWithTags = "Nogle PDF-visere vil bruge tags alligevel og kan springe indhold uden dem over."
@@ -7856,7 +7888,7 @@ heading = "Overskrifter"
 mixedNumbering = "Blander nummererede og unummererede overskrifter"
 none = "Ingen overskrifter"
 onPage = "Overskrift på side {{page}}"
-problems = "Overskriftsproblemer"
+problemCount = "{{count}} to fix"
 skippedLevel = "Springer et niveau over efter Overskrift {{previous}}"
 
 [pdfTextEditor.inspector.accessibility.tagName]
@@ -7911,13 +7943,11 @@ title = "Titel"
 allLanguages = "Alle sprog"
 cannotSetDocument = "Dette dokuments sprog kan ikke ændres."
 cannotSetText = "Denne teksts sprog kan ikke ændres."
-documentHint = "Det sprog, skærmlæsere bruger, medmindre en del af teksten angiver sit eget."
 documentLabel = "Sprog"
 documentLocked = "Et krypteret dokuments sprog kan ikke ændres her."
 inDocument = "I dette dokument"
 innerLabel = "Sprog for tag {{number}}"
 label = "Sprog"
-missing = "Intet sprog angivet. Skærmlæsere vil gætte og kan læse hele dokumentet op med forkert stemme."
 mixed = "Blandet"
 noMatch = "Intet matchende sprog. Skriv i stedet dets kode, f.eks. mt eller en-IE."
 placeholder = "Vælg sprog"
@@ -7948,6 +7978,52 @@ renderFailed = "Kunne ikke gengive side"
 [pdfTextEditor.password]
 incorrect = "Forkert adgangskode - prøv igen."
 label = "Adgangskode"
+
+[pdfTextEditor.review]
+allDone = "All text and images are tagged"
+close = "Close accessibility settings"
+counting = "still counting"
+left = "{{count}} left to tag"
+next = "Next untagged (N)"
+noneLeft = "No text or images left to tag"
+previous = "Previous untagged (Shift+N)"
+untaggedCount = "{{count}} untagged"
+untaggedPosition = "{{index}} of {{count}} untagged"
+
+[pdfTextEditor.review.badge]
+described = "Described"
+noDescription = "Needs a description"
+untagged = "Needs a tag"
+
+[pdfTextEditor.review.card]
+autoAdvance = "Go to the next item after tagging"
+done = "Tagged"
+figureQuestion = "What does this figure show?"
+formulaPlaceholder = "For example: x squared plus one"
+formulaQuestion = "How is this formula read aloud?"
+imagePlaceholder = "Describe the image"
+imageQuestion = "What does this image show?"
+label = "Accessibility review"
+pickHint = "Click a block or an image on the page, or press the arrow to go to the next one still to tag. Shift-click to tag several at once."
+saveDescription = "Save description"
+selectedCount_one = "{{count}} block selected"
+selectedCount_other = "{{count}} blocks selected"
+showAllTags = "Show tags on every block"
+skipQuestion = "Or skip it for screen readers"
+textQuestion = "What is this text?"
+todo = "Needs attention"
+
+[pdfTextEditor.review.closePrompt]
+body = "Your tags are not in your workspace yet. Closing accessibility settings without saving loses them."
+discard = "Discard"
+keep = "Keep tagging"
+save = "Save and close"
+title = "Save your tags?"
+
+[pdfTextEditor.review.summary]
+progress = "Tagging progress"
+tagged = "{{done}} of {{total}} tagged"
+title = "Tagging"
 
 [pdfTextEditor.rulers]
 guide = "Justeringshjælpelinje ved {{value}} {{unit}} - træk den over på en lineal for at fjerne"
@@ -8129,6 +8205,10 @@ title = "Afvigelser i forhåndsvisning"
 [pdfTextEditor.tooltip.textFocus]
 text = "Dette arbejdsområde fokuserer på redigering af tekst og omplacering af indlejrede billeder. Komplekst sidegrafik, formular-widgets og lagdelte grafikker bevares til eksport, men kan ikke redigeres fuldt ud her."
 title = "Fokus på tekst og billeder"
+
+[pdfTextEditor.trail]
+save = "Save"
+saveTooltip = "Save to your workspace ({{shortcut}})"
 
 [PDFToCSV]
 header = "PDF til CSV"
@@ -10321,6 +10401,10 @@ title = "Pipelines"
 
 [portal.pipelines.actions]
 newCustomPipeline = "Ny brugerdefineret pipeline"
+
+[portal.pipelines.activity]
+build = "Build pipeline"
+title = "Frequent workflows"
 
 [portal.pipelines.all]
 title = "Alle pipelines"
@@ -14338,6 +14422,20 @@ noTools = "Ingen værktøjer tilgængelige"
 [tooltip]
 close = "Luk værktøjstip"
 
+[toolWorkflows]
+draftName = "{{first}} + {{count}} more steps"
+longName = "{{first}} → … → {{last}} ({{count}} steps)"
+
+[toolWorkflows.ranBy]
+install = "Your colleagues have done this {{count, number}} times."
+team = "Your team has done this {{count, number}} times."
+user = "You've done this {{count, number}} times."
+
+[toolWorkflows.ranByShort]
+install = "Colleagues ran this {{count, number}} times"
+team = "Your team ran this {{count, number}} times"
+user = "You ran this {{count, number}} times"
+
 [unlockPDFForms]
 description = "Dette værktøj fjerner skrivebeskyttelse fra PDF-formularfelter, så de kan redigeres og udfyldes."
 submit = "Lås formularer op"
@@ -15114,6 +15212,7 @@ readAloud = "Oplæsning"
 readAloudLanguage = "Sprog"
 readAloudSpeed = "Hastighed"
 redact = "Maskér"
+reviewAccessibility = "Review accessibility"
 rotateLeft = "Roter til venstre"
 rotateRight = "Roter til højre"
 ruler = "Lineal / Måling"

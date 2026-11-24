@@ -2361,6 +2361,10 @@ title = "Avtomatlaşdırmanı İşə sal"
 [automate.selection]
 title = "Avtomatlaşdırma Seçimi"
 
+[automate.selection.activity]
+description = "Save it as an automation and run it with one click."
+title = "Frequent workflows"
+
 [automate.selection.createNew]
 title = "Yeni Avtomatlaşdırma Yaradın"
 
@@ -2971,31 +2975,36 @@ stepTitle = "Bu cihaz"
 [certSign.error]
 failed = "İmzaları emal edərkən xəta baş verdi."
 
-[certSign.format]
-pkcs11 = "USB Token"
-windowsStore = "Windows sertifikat anbarı"
-
 [certSign.hardware]
-certificate = "Sertifikat"
+allExpired = "None of the digital IDs here can sign today."
+backToDigitalIds = "Back to digital IDs"
 customLibrary = "Xüsusi sürücü yolu…"
+digitalId = "Digital ID"
 driver = "PKCS#11 sürücüsü"
 driverPath = "Sürücü kitabxanasının yolu"
 driverPathPlaceholder = "PKCS#11 sürücünüzə tam yol (.dll, .so və ya .dylib)"
-expired = "müddəti bitib"
-expires = "başа çatır"
+driverSetup = "Read card directly"
+expiredOn = "Expired {{date}}"
+expiresOn = "Expires {{date}}"
+hideExpired = "Hide expired"
 listCerts = "Sertifikatları siyahıya al"
-loading = "Sertifikatlar oxunur…"
+macLoadError = "Could not read the macOS keychain"
 noCerts = "İmzalama sertifikatları tapılmadı"
 noDriver = "Heç bir PKCS#11 sürücüsü aşkar edilmədi. Tokeninizin sürücüsünü (məs., OpenSC) quraşdırın, sonra bunu yenidən açın — və ya aşağıda sürücünün yolunu əl ilə daxil edin."
-notYetValid = "hələ etibarlı deyil"
+notListed = "Don't see your ID?"
+onDevice = "Stored on this device"
+onToken = "On a security key or smart card"
+osStoreHint = "Insert your smart card or security key, then choose your digital ID."
 pin = "Token PIN-i"
 pkcs11Hint = "Tokeniniz üçün PKCS#11 sürücüsünü seçin, PIN-i daxil edin, sonra tokendəki sertifikatları siyahıya alın."
 pkcs11LoadError = "Tokendən sertifikatları oxumaq mümkün olmadı. PIN-i və sürücünü yoxlayın."
-refresh = "Yenilə"
-selectCert = "Sertifikatı seçin"
+refreshList = "Refresh list"
 selectDriver = "Sürücünü seçin"
+serial = "Serial …{{serial}}"
+showExpired = "Show {{count}} expired"
 slot = "Slot (istəyə bağlı)"
-windowsHint = "Windows sertifikat anbarınızdan bir sertifikat seçin. İmzalama kartınızdakı/tokeninizdəki açardan istifadə edəcək — Windows PIN-i soruşacaq."
+useDriver = "Read the card directly"
+validFrom = "Valid from {{date}}"
 windowsLoadError = "Windows sertifikat anbarını oxumaq mümkün olmadı"
 
 [certSign.sessions]
@@ -3035,6 +3044,8 @@ title = "Qayda"
 device = "Bu cihaz"
 noOtherSources = "Başqa sertifikat mənbələri mövcud deyil."
 server = "Server"
+serverCertUnavailable = "The server's signing certificate isn't available."
+signsAs = "Signs as"
 stepTitle = "Sertifikat mənbəyi"
 upload = "Yüklə"
 
@@ -3265,7 +3276,9 @@ checking = "Yoxlanılır..."
 clauseRef = "{{profile}} §{{clauses}}"
 download = "Əlçatanlıq hesabatını yüklə"
 fileFailed = "uğursuz oldu"
+noFiles = "Select a PDF to check it."
 pickFile = "Nəticələri göstər"
+retry = "Check again"
 submit = "Əlçatanlığı yoxla"
 
 [checkAccessibility.category]
@@ -3291,6 +3304,7 @@ label = "{{total}} yoxlamadan {{passed}}-i keçdi"
 download = "Əlçatanlıq hesabatı yaradıla bilmədi. Yenidən cəhd edin."
 fileTitle = "Bu fayl yoxlana bilmədi"
 partial = "Bəzi faylları yoxlamaq mümkün olmadı."
+unreachable = "The server didn't answer. Check it's running, then check again."
 
 [checkAccessibility.facts]
 declares = "PDF/UA elan edir"
@@ -3313,6 +3327,21 @@ title = "Faylın metaməlumatında başlıq var."
 [checkAccessibility.figures]
 summary_one = "{{count}} şəkilə təsvir lazımdır (səhifə {{pages}})"
 summary_other = "{{count}} şəkilə təsvir lazımdır (səhifələr {{pages}})"
+
+[checkAccessibility.fix]
+heading = "Fix the headings"
+headingOnPage = "Fix the heading on page {{page}}"
+hide = "Hide tagging tool"
+image = "Describe the images"
+imageOnPage = "Describe the image on page {{page}}"
+link = "Tag the links"
+linkOnPage = "Tag the link on page {{page}}"
+markedTagged = "Mark the document as tagged"
+show = "Show tagging tool"
+tagEverything = "Auto-tag"
+tagging = "Tagging... {{percent}}%"
+untagged = "Tag the content"
+untaggedOnPage = "Tag content on page {{page}}"
 
 [checkAccessibility.issue]
 appliesTo = "Aiddir"
@@ -4928,12 +4957,15 @@ closeFile = "Faylı bağla"
 
 [fileEditor]
 closedFile = "{{name}} bağlandı"
+filesAdded_one = "Added {{count}} file"
+filesAdded_other = "Added {{count}} files"
 filesReordered_one = "Faylın sırası dəyişdirildi"
 filesReordered_other = "{{count}} faylın sırası dəyişdirildi"
 loadedFromStorage_one = "Yaddaşdan {{count}} fayl yükləndi"
 loadedFromStorage_other = "Yaddaşdan {{count}} fayl yükləndi"
 loadFromStorageFailed = "Bəzi faylları yaddaşdan yükləmək alınmadı"
 pinnedFile = "{{name}} sabitləndi"
+processFilesFailed = "Failed to process files"
 savedAndClosed = "{{name}} saxlanıldı və bağlandı"
 saveFailed = "Saxlama alınmadı"
 unpinnedFile = "{{name}} sabitlənmədən çıxarıldı"
@@ -5959,8 +5991,10 @@ title = "İcazələri Dəyişdir"
 
 [home.checkAccessibility]
 desc = "PDF-i PDF/UA-ya görə qiymətləndir və ekran oxuyucularına nə mane olur, bunu faylı dəyişmədən gör"
+descWithReview = "Check a PDF against PDF/UA, then tag and describe what screen readers miss"
 tags = "accessibility,a11y,PDF/UA,screen reader,WCAG,Section 508,veraPDF,tagged PDF,alt text,accessibility checker,accessibility report,compliance,UA"
 title = "PDF əlçatanlığını yoxla"
+titleWithReview = "PDF accessibility"
 
 [home.classify]
 desc = "Bunun hansı növ sənəd olduğunu müəyyənləşdirin və etiketləyin."
@@ -6962,6 +6996,10 @@ yourCloudAccess = "Siz komanda üzvü olacaqsınız və sahib girişini itirəc�
 deselectAll = "Heç biri"
 selectAll = "Hamısını işarələ"
 
+[pageEditor.toolbar]
+redo = "Redo"
+undo = "Undo"
+
 [pageExtracter]
 title = "Səhifələri çıxar"
 
@@ -7800,14 +7838,11 @@ cannotTagLink = "Bu keçidi teqləmək olmur."
 cannotTagPage = "Bu səhifənin məzmununu teqləmək olmur."
 contentGroup = "Məzmun"
 customTag = "{{role}} (xüsusi teq)"
-decorativeInfo = "Ekran oxuyucuları dekorativ şəkilləri ötürür. Bunu haşiyələr, fonlar və məlumat daşımayan digər şəkillər üçün istifadə edin."
-decorativeLabel = "Dekorativ şəkil"
-description = "Şəkil təsviri"
-descriptionInfo = "Ekran oxuyucuları bunu şəklin əvəzinə oxuyur."
+describeLinks_one = "Describe link"
+describeLinks_other = "Describe {{count}} links"
 encrypted = "Şifrələnmiş faylda teqlər redaktə edilə bilməz"
 figureDescription = "Şəkil təsviri"
 figureDescriptionInfo = "Ekran oxuyucuları bunu şəkil əvəzinə səsləndirir."
-formFieldDescription = "Sahənin təsviri"
 formulaDescription = "Formula təsviri"
 formulaDescriptionInfo = "Ekran oxuyucuları bunu formula əvəzinə səsləndirir. Bunu sanki ucadan deyirmiş kimi ifadə edin, məsələn, \"x kvadrat üstəgəl bir\"."
 heading = "Əlçatanlıq"
@@ -7818,7 +7853,6 @@ markedTagged = "Sənəd tam teqlənib"
 markedTaggedHint = "PDF oxuyucularına əlçatanlıq teqlərindən istifadə etməyi bildirir. Hər şey teqləndikdən sonra bunu işarələyin."
 markedWithUntagged = "Bəzi məzmun teqlənməyib, buna görə ekran oxuyucuları onu ötürə bilər."
 missingDescriptions = "Çatışmayan təsvirlər"
-mixedContent = "Şəkil digər məzmunu ehtiva edir"
 mixedTags = "Qarışıq"
 needsDescriptionBadge = "Təsvir yoxdur"
 nextToReview = "Baxış üçün növbəti"
@@ -7826,12 +7860,10 @@ notFigure = "Mətnin bir hissəsi kimi teqlənib"
 removeTag = "Teqi sil"
 saveFailed = "Əlçatanlıq dəyişiklikləriniz yadda saxlanıla bilmədi, buna görə də fayl yadda saxlanmadı. Onları geri alın və yenidən cəhd edin."
 selectedText = "Seçilmiş mətn"
-tagFormField = "Forma sahəsini teqləyin"
 tagging = "Səhifələrin teqlənməsi"
 tagLabel = "Teq"
 tagLinks_one = "Keçidi teqlə"
 tagLinks_other = "{{count}} keçidi teqlə"
-tagUntagged = "Sənədi avtomatik teqlə"
 tagUntaggedHint = "Sənəd boyunca əlçatanlıq teqlərini avtomatik əlavə edir. Nəticə təxmindir: sonra başlıqları, siyahıları və oxunuş ardıcıllığını yoxlayın."
 unknownTag = "Burada oxuna bilməz"
 unmarkedWithTags = "Bəzi PDF oxuyucuları yenə də teqlərdən istifadə edəcək və teqsiz məzmunu ötürə bilər."
@@ -7856,7 +7888,7 @@ heading = "Başlıqlar"
 mixedNumbering = "Nömrəli və nömrəsiz başlıqlar qarışıqdır"
 none = "Başlıq yoxdur"
 onPage = "{{page}} səhifəsində başlıq"
-problems = "Başlıq problemləri"
+problemCount = "{{count}} to fix"
 skippedLevel = "Başlıq {{previous}}-dən sonra bir səviyyəni buraxır"
 
 [pdfTextEditor.inspector.accessibility.tagName]
@@ -7911,13 +7943,11 @@ title = "Başlıq"
 allLanguages = "Bütün dillər"
 cannotSetDocument = "Bu sənədin dilini dəyişmək olmur."
 cannotSetText = "Bu mətnin dilini dəyişmək olmur."
-documentHint = "Mətnin bir hissəsi öz dilini təyin etmədikcə, ekran oxuyucularının istifadə etdiyi dildir."
 documentLabel = "Dil"
 documentLocked = "Şifrələnmiş sənədin dilini burada dəyişmək olmur."
 inDocument = "Bu sənəddə"
 innerLabel = "Teq {{number}} dili"
 label = "Dil"
-missing = "Dil təyin edilməyib. Ekran oxuyucuları təxmin edəcək və bütün sənədi səhv səslə oxuya bilər."
 mixed = "Qarışıq"
 noMatch = "Uyğun dil yoxdur. Onun kodunu yazın, məsələn mt və ya en-IE."
 placeholder = "Dil seçin"
@@ -7948,6 +7978,52 @@ renderFailed = "Səhifəni göstərmək alınmadı"
 [pdfTextEditor.password]
 incorrect = "Yanlış parol - yenidən cəhd edin."
 label = "Parol"
+
+[pdfTextEditor.review]
+allDone = "All text and images are tagged"
+close = "Close accessibility settings"
+counting = "still counting"
+left = "{{count}} left to tag"
+next = "Next untagged (N)"
+noneLeft = "No text or images left to tag"
+previous = "Previous untagged (Shift+N)"
+untaggedCount = "{{count}} untagged"
+untaggedPosition = "{{index}} of {{count}} untagged"
+
+[pdfTextEditor.review.badge]
+described = "Described"
+noDescription = "Needs a description"
+untagged = "Needs a tag"
+
+[pdfTextEditor.review.card]
+autoAdvance = "Go to the next item after tagging"
+done = "Tagged"
+figureQuestion = "What does this figure show?"
+formulaPlaceholder = "For example: x squared plus one"
+formulaQuestion = "How is this formula read aloud?"
+imagePlaceholder = "Describe the image"
+imageQuestion = "What does this image show?"
+label = "Accessibility review"
+pickHint = "Click a block or an image on the page, or press the arrow to go to the next one still to tag. Shift-click to tag several at once."
+saveDescription = "Save description"
+selectedCount_one = "{{count}} block selected"
+selectedCount_other = "{{count}} blocks selected"
+showAllTags = "Show tags on every block"
+skipQuestion = "Or skip it for screen readers"
+textQuestion = "What is this text?"
+todo = "Needs attention"
+
+[pdfTextEditor.review.closePrompt]
+body = "Your tags are not in your workspace yet. Closing accessibility settings without saving loses them."
+discard = "Discard"
+keep = "Keep tagging"
+save = "Save and close"
+title = "Save your tags?"
+
+[pdfTextEditor.review.summary]
+progress = "Tagging progress"
+tagged = "{{done}} of {{total}} tagged"
+title = "Tagging"
 
 [pdfTextEditor.rulers]
 guide = "{{value}} {{unit}} mövqeyində düzləndirmə bələdçisi - silmək üçün xətkeşin üzərinə sürükləyin"
@@ -8129,6 +8205,10 @@ title = "Ön baxış fərqliliyi"
 [pdfTextEditor.tooltip.textFocus]
 text = "Bu iş sahəsi mətni redaktə etməyə və daxil edilmiş şəkilləri yenidən yerləşdirməyə fokuslanır. Mürəkkəb səhifə qrafikası, forma vidcetləri və laylı qrafika ixrac üçün qorunur, lakin burada tam redaktə edilə bilmir."
 title = "Mətn və şəkil fokuslanması"
+
+[pdfTextEditor.trail]
+save = "Save"
+saveTooltip = "Save to your workspace ({{shortcut}})"
 
 [PDFToCSV]
 header = "PDF-i CSV-ə"
@@ -10321,6 +10401,10 @@ title = "Pipeline-lar"
 
 [portal.pipelines.actions]
 newCustomPipeline = "Yeni xüsusi pipeline"
+
+[portal.pipelines.activity]
+build = "Build pipeline"
+title = "Frequent workflows"
 
 [portal.pipelines.all]
 title = "Bütün pipeline-lar"
@@ -14338,6 +14422,20 @@ noTools = "Heç bir alət mövcud deyil"
 [tooltip]
 close = "İpucunu bağla"
 
+[toolWorkflows]
+draftName = "{{first}} + {{count}} more steps"
+longName = "{{first}} → … → {{last}} ({{count}} steps)"
+
+[toolWorkflows.ranBy]
+install = "Your colleagues have done this {{count, number}} times."
+team = "Your team has done this {{count, number}} times."
+user = "You've done this {{count, number}} times."
+
+[toolWorkflows.ranByShort]
+install = "Colleagues ran this {{count, number}} times"
+team = "Your team ran this {{count, number}} times"
+user = "You ran this {{count, number}} times"
+
 [unlockPDFForms]
 description = "Bu alət PDF forma sahələrindəki yalnız-oxu məhdudiyyətlərini siləcək, beləliklə onlar redaktə və doldurula bilən olacaq."
 submit = "Formaların kilidini aç"
@@ -15114,6 +15212,7 @@ readAloud = "Səsləndir"
 readAloudLanguage = "Dil"
 readAloudSpeed = "Sürət"
 redact = "Gizlət"
+reviewAccessibility = "Review accessibility"
 rotateLeft = "Sola çevir"
 rotateRight = "Sağa çevir"
 ruler = "Xətkeş / Ölçmə"

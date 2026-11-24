@@ -2361,6 +2361,10 @@ title = "Spustit automatizaci"
 [automate.selection]
 title = "Výběr automatizace"
 
+[automate.selection.activity]
+description = "Save it as an automation and run it with one click."
+title = "Frequent workflows"
+
 [automate.selection.createNew]
 title = "Vytvořit novou automatizaci"
 
@@ -2971,31 +2975,36 @@ stepTitle = "Toto zařízení"
 [certSign.error]
 failed = "Při zpracování podpisů došlo k chybě."
 
-[certSign.format]
-pkcs11 = "USB token"
-windowsStore = "Úložiště certifikátů Windows"
-
 [certSign.hardware]
-certificate = "Certifikát"
+allExpired = "None of the digital IDs here can sign today."
+backToDigitalIds = "Back to digital IDs"
 customLibrary = "Vlastní cesta k ovladači…"
+digitalId = "Digital ID"
 driver = "Ovladač PKCS#11"
 driverPath = "Cesta ke knihovně ovladače"
 driverPathPlaceholder = "Úplná cesta k vašemu ovladači PKCS#11 (.dll, .so nebo .dylib)"
-expired = "platnost vypršela"
-expires = "platnost vyprší"
+driverSetup = "Read card directly"
+expiredOn = "Expired {{date}}"
+expiresOn = "Expires {{date}}"
+hideExpired = "Hide expired"
 listCerts = "Zobrazit certifikáty"
-loading = "Načítání certifikátů…"
+macLoadError = "Could not read the macOS keychain"
 noCerts = "Nebyly nalezeny žádné certifikáty pro podepisování"
 noDriver = "Nebyl zjištěn žádný ovladač PKCS#11. Nainstalujte ovladač vašeho tokenu (např. OpenSC), poté toto znovu otevřete - nebo níže ručně zadejte cestu k ovladači."
-notYetValid = "dosud neplatný"
+notListed = "Don't see your ID?"
+onDevice = "Stored on this device"
+onToken = "On a security key or smart card"
+osStoreHint = "Insert your smart card or security key, then choose your digital ID."
 pin = "PIN tokenu"
 pkcs11Hint = "Vyberte ovladač PKCS#11 vašeho tokenu, zadejte PIN a poté zobrazte certifikáty na tokenu."
 pkcs11LoadError = "Nelze přečíst certifikáty z tokenu. Zkontrolujte PIN a ovladač."
-refresh = "Obnovit"
-selectCert = "Vybrat certifikát"
+refreshList = "Refresh list"
 selectDriver = "Vybrat ovladač"
+serial = "Serial …{{serial}}"
+showExpired = "Show {{count}} expired"
 slot = "Slot (volitelné)"
-windowsHint = "Vyberte certifikát z úložiště certifikátů Windows. Při podepisování se použije klíč na vaší kartě/tokenu - Windows vás vyzve k zadání PINu."
+useDriver = "Read the card directly"
+validFrom = "Valid from {{date}}"
 windowsLoadError = "Nelze přečíst úložiště certifikátů Windows"
 
 [certSign.sessions]
@@ -3035,6 +3044,8 @@ title = "Obecné pravidlo"
 device = "Toto zařízení"
 noOtherSources = "Nejsou k dispozici žádné další zdroje certifikátů."
 server = "Server"
+serverCertUnavailable = "The server's signing certificate isn't available."
+signsAs = "Signs as"
 stepTitle = "Zdroj certifikátu"
 upload = "Nahrát"
 
@@ -3265,7 +3276,9 @@ checking = "Kontroluji..."
 clauseRef = "{{profile}} §{{clauses}}"
 download = "Stáhnout zprávu o přístupnosti"
 fileFailed = "selhalo"
+noFiles = "Select a PDF to check it."
 pickFile = "Zobrazit výsledky pro"
+retry = "Check again"
 submit = "Zkontrolovat přístupnost"
 
 [checkAccessibility.category]
@@ -3291,6 +3304,7 @@ label = "{{passed}} z {{total}} kontrol úspěšně prošlo"
 download = "Zprávu o přístupnosti se nepodařilo vytvořit. Zkuste to znovu."
 fileTitle = "Tento soubor se nepodařilo zkontrolovat"
 partial = "Některé soubory se nepodařilo zkontrolovat."
+unreachable = "The server didn't answer. Check it's running, then check again."
 
 [checkAccessibility.facts]
 declares = "Deklaruje PDF/UA"
@@ -3313,6 +3327,21 @@ title = "Soubor má v metadatech název."
 [checkAccessibility.figures]
 summary_one = "{{count}} obrázek potřebuje popis (strana {{pages}})"
 summary_other = "{{count}} obrázků potřebuje popis (strany {{pages}})"
+
+[checkAccessibility.fix]
+heading = "Fix the headings"
+headingOnPage = "Fix the heading on page {{page}}"
+hide = "Hide tagging tool"
+image = "Describe the images"
+imageOnPage = "Describe the image on page {{page}}"
+link = "Tag the links"
+linkOnPage = "Tag the link on page {{page}}"
+markedTagged = "Mark the document as tagged"
+show = "Show tagging tool"
+tagEverything = "Auto-tag"
+tagging = "Tagging... {{percent}}%"
+untagged = "Tag the content"
+untaggedOnPage = "Tag content on page {{page}}"
 
 [checkAccessibility.issue]
 appliesTo = "Týká se"
@@ -4928,12 +4957,15 @@ closeFile = "Zavřít soubor"
 
 [fileEditor]
 closedFile = "Soubor {{name}} zavřen"
+filesAdded_one = "Added {{count}} file"
+filesAdded_other = "Added {{count}} files"
 filesReordered_one = "Soubor přeřazen"
 filesReordered_other = "Přeřazeno {{count}} souborů"
 loadedFromStorage_one = "Načten {{count}} soubor z úložiště"
 loadedFromStorage_other = "Načteno {{count}} souborů z úložiště"
 loadFromStorageFailed = "Nepodařilo se načíst některé soubory z úložiště"
 pinnedFile = "Soubor {{name}} připnut"
+processFilesFailed = "Failed to process files"
 savedAndClosed = "Uloženo a zavřeno {{name}}"
 saveFailed = "Uložení selhalo"
 unpinnedFile = "Soubor {{name}} odepnut"
@@ -5959,8 +5991,10 @@ title = "Změnit oprávnění"
 
 [home.checkAccessibility]
 desc = "Ohodnoťte PDF podle PDF/UA a zjistěte, co brání čtečkám obrazovky, aniž byste jej měnili"
+descWithReview = "Check a PDF against PDF/UA, then tag and describe what screen readers miss"
 tags = "accessibility,a11y,PDF/UA,screen reader,WCAG,Section 508,veraPDF,tagged PDF,alt text,accessibility checker,accessibility report,compliance,UA"
 title = "Zkontrolovat přístupnost PDF"
+titleWithReview = "PDF accessibility"
 
 [home.classify]
 desc = "Určete, o jaký druh dokumentu jde, a označte ho štítkem."
@@ -6962,6 +6996,10 @@ yourCloudAccess = "Stanete se členem týmu a ztratíte přístup vlastníka."
 deselectAll = "Žádné"
 selectAll = "Zaškrtnout vše"
 
+[pageEditor.toolbar]
+redo = "Redo"
+undo = "Undo"
+
 [pageExtracter]
 title = "Extrahovat stránky"
 
@@ -7800,14 +7838,11 @@ cannotTagLink = "Tento odkaz nelze otagovat."
 cannotTagPage = "Obsah této stránky nelze otagovat."
 contentGroup = "Obsah"
 customTag = "{{role}} (vlastní tag)"
-decorativeInfo = "Čtečky obrazovky přeskakují dekorativní obrázky. Použijte pro okraje, pozadí a jiné obrázky, které nenesou žádné informace."
-decorativeLabel = "Dekorativní obrázek"
-description = "Popis obrázku"
-descriptionInfo = "Čtečky obrazovky toto přečtou místo obrázku."
+describeLinks_one = "Describe link"
+describeLinks_other = "Describe {{count}} links"
 encrypted = "Tagy nelze upravovat v šifrovaném souboru"
 figureDescription = "Popis obrázku"
 figureDescriptionInfo = "Čtečky obrazovky to čtou místo obrázku."
-formFieldDescription = "Popis pole"
 formulaDescription = "Popis vzorce"
 formulaDescriptionInfo = "Čtečky obrazovky to čtou místo vzorce. Napište to tak, jak byste to řekli nahlas, například \"x na druhou plus jedna\"."
 heading = "Přístupnost"
@@ -7818,7 +7853,6 @@ markedTagged = "Dokument je plně otagován"
 markedTaggedHint = "Říká čtečkám PDF, aby používaly tagy přístupnosti. Zaškrtněte, až je vše otagováno."
 markedWithUntagged = "Některý obsah nemá tagy, proto jej mohou čtečky obrazovky přeskočit."
 missingDescriptions = "Chybějící popisy"
-mixedContent = "Obrázek obsahuje další obsah"
 mixedTags = "Smíšené"
 needsDescriptionBadge = "Bez popisu"
 nextToReview = "Další ke kontrole"
@@ -7826,12 +7860,10 @@ notFigure = "Označeno jako součást textu"
 removeTag = "Odebrat tag"
 saveFailed = "Vaše změny přístupnosti se nepodařilo uložit, soubor tedy nebyl uložen. Vraťte je zpět a zkuste to znovu."
 selectedText = "Vybraný text"
-tagFormField = "Označit pole formuláře"
 tagging = "Tagování stránek"
 tagLabel = "Tag"
 tagLinks_one = "Otagovat odkaz"
 tagLinks_other = "Otagovat {{count}} odkazů"
-tagUntagged = "Automaticky otagovat dokument"
 tagUntaggedHint = "Automaticky přidá tagy přístupnosti v celém dokumentu. Výsledek je hrubý: poté zkontrolujte nadpisy, seznamy a pořadí čtení."
 unknownTag = "Zde nelze přečíst"
 unmarkedWithTags = "Někteří prohlížeči PDF tagy i tak použijí a mohou přeskočit obsah bez nich."
@@ -7856,7 +7888,7 @@ heading = "Nadpisy"
 mixedNumbering = "Míchá číslované a nečíslované nadpisy"
 none = "Žádné nadpisy"
 onPage = "Nadpis na stránce {{page}}"
-problems = "Problémy s nadpisy"
+problemCount = "{{count}} to fix"
 skippedLevel = "Přeskakuje úroveň po Nadpisu {{previous}}"
 
 [pdfTextEditor.inspector.accessibility.tagName]
@@ -7911,13 +7943,11 @@ title = "Název"
 allLanguages = "Všechny jazyky"
 cannotSetDocument = "Jazyk tohoto dokumentu nelze změnit."
 cannotSetText = "Jazyk tohoto textu nelze změnit."
-documentHint = "Jazyk, který čtečky obrazovky použijí, pokud si část textu nenastaví vlastní."
 documentLabel = "Jazyk"
 documentLocked = "U šifrovaného dokumentu nelze jazyk změnit zde."
 inDocument = "V tomto dokumentu"
 innerLabel = "Jazyk tagu {{number}}"
 label = "Jazyk"
-missing = "Není nastaven žádný jazyk. Čtečky obrazovky budou hádat a mohou číst celý dokument špatným hlasem."
 mixed = "Smíšené"
 noMatch = "Žádný odpovídající jazyk. Zadejte místo toho jeho kód, například mt nebo en-IE."
 placeholder = "Vyberte jazyk"
@@ -7948,6 +7978,52 @@ renderFailed = "Nepodařilo se vykreslit stránku"
 [pdfTextEditor.password]
 incorrect = "Nesprávné heslo – zkuste to znovu."
 label = "Heslo"
+
+[pdfTextEditor.review]
+allDone = "All text and images are tagged"
+close = "Close accessibility settings"
+counting = "still counting"
+left = "{{count}} left to tag"
+next = "Next untagged (N)"
+noneLeft = "No text or images left to tag"
+previous = "Previous untagged (Shift+N)"
+untaggedCount = "{{count}} untagged"
+untaggedPosition = "{{index}} of {{count}} untagged"
+
+[pdfTextEditor.review.badge]
+described = "Described"
+noDescription = "Needs a description"
+untagged = "Needs a tag"
+
+[pdfTextEditor.review.card]
+autoAdvance = "Go to the next item after tagging"
+done = "Tagged"
+figureQuestion = "What does this figure show?"
+formulaPlaceholder = "For example: x squared plus one"
+formulaQuestion = "How is this formula read aloud?"
+imagePlaceholder = "Describe the image"
+imageQuestion = "What does this image show?"
+label = "Accessibility review"
+pickHint = "Click a block or an image on the page, or press the arrow to go to the next one still to tag. Shift-click to tag several at once."
+saveDescription = "Save description"
+selectedCount_one = "{{count}} block selected"
+selectedCount_other = "{{count}} blocks selected"
+showAllTags = "Show tags on every block"
+skipQuestion = "Or skip it for screen readers"
+textQuestion = "What is this text?"
+todo = "Needs attention"
+
+[pdfTextEditor.review.closePrompt]
+body = "Your tags are not in your workspace yet. Closing accessibility settings without saving loses them."
+discard = "Discard"
+keep = "Keep tagging"
+save = "Save and close"
+title = "Save your tags?"
+
+[pdfTextEditor.review.summary]
+progress = "Tagging progress"
+tagged = "{{done}} of {{total}} tagged"
+title = "Tagging"
 
 [pdfTextEditor.rulers]
 guide = "Vodítko zarovnání na {{value}} {{unit}} – přetažením na pravítko ho odstraníte"
@@ -8129,6 +8205,10 @@ title = "Odchylky náhledu"
 [pdfTextEditor.tooltip.textFocus]
 text = "Tento pracovní prostor se zaměřuje na úpravu textu a přemisťování vložených obrázků. Složité grafické prvky stránky, formulářové widgety a vrstvená grafika jsou pro export zachovány, ale zde nejsou plně upravitelné."
 title = "Zaměření na text a obrázky"
+
+[pdfTextEditor.trail]
+save = "Save"
+saveTooltip = "Save to your workspace ({{shortcut}})"
 
 [PDFToCSV]
 header = "PDF na CSV"
@@ -10321,6 +10401,10 @@ title = "Pipeline"
 
 [portal.pipelines.actions]
 newCustomPipeline = "Nová vlastní pipeline"
+
+[portal.pipelines.activity]
+build = "Build pipeline"
+title = "Frequent workflows"
 
 [portal.pipelines.all]
 title = "Všechny pipeline"
@@ -14338,6 +14422,20 @@ noTools = "Žádné dostupné nástroje"
 [tooltip]
 close = "Zavřít nápovědu"
 
+[toolWorkflows]
+draftName = "{{first}} + {{count}} more steps"
+longName = "{{first}} → … → {{last}} ({{count}} steps)"
+
+[toolWorkflows.ranBy]
+install = "Your colleagues have done this {{count, number}} times."
+team = "Your team has done this {{count, number}} times."
+user = "You've done this {{count, number}} times."
+
+[toolWorkflows.ranByShort]
+install = "Colleagues ran this {{count, number}} times"
+team = "Your team ran this {{count, number}} times"
+user = "You ran this {{count, number}} times"
+
 [unlockPDFForms]
 description = "Tento nástroj odstraní omezení „jen pro čtení“ z formulářových polí v PDF, aby byla editovatelná a vyplnitelná."
 submit = "Odemknout formuláře"
@@ -15114,6 +15212,7 @@ readAloud = "Číst nahlas"
 readAloudLanguage = "Jazyk"
 readAloudSpeed = "Rychlost"
 redact = "Začernit"
+reviewAccessibility = "Review accessibility"
 rotateLeft = "Otočit doleva"
 rotateRight = "Otočit doprava"
 ruler = "Pravítko / měření"

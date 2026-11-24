@@ -2361,6 +2361,10 @@ title = "تشغيل الأتمتة"
 [automate.selection]
 title = "اختيار الأتمتة"
 
+[automate.selection.activity]
+description = "Save it as an automation and run it with one click."
+title = "Frequent workflows"
+
 [automate.selection.createNew]
 title = "إنشاء أتمتة جديدة"
 
@@ -2971,31 +2975,36 @@ stepTitle = "هذا الجهاز"
 [certSign.error]
 failed = "حدث خطأ أثناء معالجة التواقيع."
 
-[certSign.format]
-pkcs11 = "رمز USB"
-windowsStore = "مخزن شهادات Windows"
-
 [certSign.hardware]
-certificate = "الشهادة"
+allExpired = "None of the digital IDs here can sign today."
+backToDigitalIds = "Back to digital IDs"
 customLibrary = "مسار برنامج التشغيل المخصص…"
+digitalId = "Digital ID"
 driver = "برنامج تشغيل PKCS#11"
 driverPath = "مسار مكتبة برنامج التشغيل"
 driverPathPlaceholder = "المسار الكامل لبرنامج تشغيل PKCS#11 لديك (.dll أو .so أو .dylib)"
-expired = "منتهية الصلاحية"
-expires = "تنتهي"
+driverSetup = "Read card directly"
+expiredOn = "Expired {{date}}"
+expiresOn = "Expires {{date}}"
+hideExpired = "Hide expired"
 listCerts = "عرض الشهادات"
-loading = "جارٍ قراءة الشهادات…"
+macLoadError = "Could not read the macOS keychain"
 noCerts = "لم يتم العثور على شهادات توقيع"
 noDriver = "لم يتم اكتشاف برنامج تشغيل PKCS#11. ثبّت برنامج تشغيل الرمز لديك (مثل OpenSC)، ثم أعد فتح هذا - أو أدخل مسار برنامج التشغيل يدويًا أدناه."
-notYetValid = "غير صالحة بعد"
+notListed = "Don't see your ID?"
+onDevice = "Stored on this device"
+onToken = "On a security key or smart card"
+osStoreHint = "Insert your smart card or security key, then choose your digital ID."
 pin = "PIN للرمز"
 pkcs11Hint = "اختر برنامج تشغيل PKCS#11 الخاص برمزك، وأدخل رقم PIN، ثم اعرض الشهادات على الرمز."
 pkcs11LoadError = "تعذّر قراءة الشهادات من الرمز. تحقّق من رقم PIN وبرنامج التشغيل."
-refresh = "تحديث"
-selectCert = "حدد الشهادة"
+refreshList = "Refresh list"
 selectDriver = "حدد برنامج التشغيل"
+serial = "Serial …{{serial}}"
+showExpired = "Show {{count}} expired"
 slot = "الفتحة (اختياري)"
-windowsHint = "اختر شهادة من مخزن شهادات Windows لديك. يستخدم التوقيع المفتاح الموجود على بطاقتك/رمزك - سيطالبك Windows بإدخال رقم PIN."
+useDriver = "Read the card directly"
+validFrom = "Valid from {{date}}"
 windowsLoadError = "تعذّر قراءة مخزن شهادات Windows"
 
 [certSign.sessions]
@@ -3035,6 +3044,8 @@ title = "قاعدة عامة"
 device = "هذا الجهاز"
 noOtherSources = "لا تتوفر مصادر شهادات أخرى."
 server = "الخادم"
+serverCertUnavailable = "The server's signing certificate isn't available."
+signsAs = "Signs as"
 stepTitle = "مصدر الشهادة"
 upload = "رفع"
 
@@ -3265,7 +3276,9 @@ checking = "جارٍ التحقق..."
 clauseRef = "{{profile}} §{{clauses}}"
 download = "تنزيل تقرير إمكانية الوصول"
 fileFailed = "فشل"
+noFiles = "Select a PDF to check it."
 pickFile = "عرض النتائج لـ"
+retry = "Check again"
 submit = "تحقق من إمكانية الوصول"
 
 [checkAccessibility.category]
@@ -3291,6 +3304,7 @@ label = "تم اجتياز {{passed}} من أصل {{total}} فحصًا"
 download = "تعذّر إنشاء تقرير إمكانية الوصول. حاول مرة أخرى."
 fileTitle = "تعذّر فحص هذا الملف"
 partial = "تعذّر فحص بعض الملفات."
+unreachable = "The server didn't answer. Check it's running, then check again."
 
 [checkAccessibility.facts]
 declares = "يُصرّح بـ PDF/UA"
@@ -3313,6 +3327,21 @@ title = "للملف عنوان في بياناته الوصفية."
 [checkAccessibility.figures]
 summary_one = "{{count}} صورة تحتاج إلى وصف (الصفحة {{pages}})"
 summary_other = "{{count}} صور تحتاج إلى وصف (الصفحات {{pages}})"
+
+[checkAccessibility.fix]
+heading = "Fix the headings"
+headingOnPage = "Fix the heading on page {{page}}"
+hide = "Hide tagging tool"
+image = "Describe the images"
+imageOnPage = "Describe the image on page {{page}}"
+link = "Tag the links"
+linkOnPage = "Tag the link on page {{page}}"
+markedTagged = "Mark the document as tagged"
+show = "Show tagging tool"
+tagEverything = "Auto-tag"
+tagging = "Tagging... {{percent}}%"
+untagged = "Tag the content"
+untaggedOnPage = "Tag content on page {{page}}"
 
 [checkAccessibility.issue]
 appliesTo = "ينطبق على"
@@ -4928,12 +4957,15 @@ closeFile = "إغلاق الملف"
 
 [fileEditor]
 closedFile = "تم إغلاق {{name}}"
+filesAdded_one = "Added {{count}} file"
+filesAdded_other = "Added {{count}} files"
 filesReordered_one = "تمت إعادة ترتيب الملف"
 filesReordered_other = "تمت إعادة ترتيب {{count}} ملفات"
 loadedFromStorage_one = "تم تحميل {{count}} ملف من التخزين"
 loadedFromStorage_other = "تم تحميل {{count}} ملفات من التخزين"
 loadFromStorageFailed = "فشل تحميل بعض الملفات من التخزين"
 pinnedFile = "تم تثبيت {{name}}"
+processFilesFailed = "Failed to process files"
 savedAndClosed = "تم حفظ وإغلاق {{name}}"
 saveFailed = "فشل الحفظ"
 unpinnedFile = "تم إلغاء تثبيت {{name}}"
@@ -5959,8 +5991,10 @@ title = "تغيير الأذونات"
 
 [home.checkAccessibility]
 desc = "قيّم ملف PDF وفق PDF/UA واعرف ما الذي يعيق قارئات الشاشة، دون تغييره"
+descWithReview = "Check a PDF against PDF/UA, then tag and describe what screen readers miss"
 tags = "إمكانية الوصول,a11y,PDF/UA,قارئ شاشة,WCAG,Section 508,veraPDF,PDF موسوم,نص بديل,مدقق إمكانية الوصول,تقرير إمكانية الوصول,امتثال,UA"
 title = "تحقق من إمكانية وصول PDF"
+titleWithReview = "PDF accessibility"
 
 [home.classify]
 desc = "تحديد نوع هذا المستند ووضع علامة عليه."
@@ -6962,6 +6996,10 @@ yourCloudAccess = "ستصبح عضوًا في الفريق وستفقد وصول
 deselectAll = "لا شيء"
 selectAll = "تحديد الكل"
 
+[pageEditor.toolbar]
+redo = "Redo"
+undo = "Undo"
+
 [pageExtracter]
 title = "استخراج الصفحات"
 
@@ -7800,14 +7838,11 @@ cannotTagLink = "لا يمكن وسم هذا الرابط."
 cannotTagPage = "لا يمكن وسم محتوى هذه الصفحة."
 contentGroup = "المحتوى"
 customTag = "{{role}} (وسم مخصص)"
-decorativeInfo = "تتجاوز قارئات الشاشة الصور الزخرفية. استخدمها للحدود والخلفيات والصور الأخرى التي لا تحمل أي معلومات."
-decorativeLabel = "صورة زخرفية"
-description = "وصف الصورة"
-descriptionInfo = "تقرأ قارئات الشاشة هذا الوصف بدلًا من الصورة."
+describeLinks_one = "Describe link"
+describeLinks_other = "Describe {{count}} links"
 encrypted = "لا يمكن تحرير الوسوم في ملف مشفّر"
 figureDescription = "وصف الشكل"
 figureDescriptionInfo = "تقرأ برامج قراءة الشاشة هذا بدلًا من الشكل."
-formFieldDescription = "وصف الحقل"
 formulaDescription = "وصف المعادلة"
 formulaDescriptionInfo = "تقرأ برامج قراءة الشاشة هذا بدلًا من المعادلة. انطقها كما لو كنت تقولها بصوت عالٍ، مثل \"x تربيع زائد واحد\"."
 heading = "إمكانية الوصول"
@@ -7818,7 +7853,6 @@ markedTagged = "المستند موسوم بالكامل"
 markedTaggedHint = "يخبر قارئات PDF باستخدام وسوم إمكانية الوصول. علّمه بعد وسم كل شيء."
 markedWithUntagged = "بعض المحتوى بلا وسوم، وقد تتخطّاه قارئات الشاشة."
 missingDescriptions = "أوصاف مفقودة"
-mixedContent = "يتضمن الشكل محتوى آخر"
 mixedTags = "مختلط"
 needsDescriptionBadge = "لا يوجد وصف"
 nextToReview = "التالي للمراجعة"
@@ -7826,12 +7860,10 @@ notFigure = "موسوم كجزء من النص"
 removeTag = "إزالة الوسم"
 saveFailed = "تعذّر حفظ تغييرات إمكانية الوصول، لذا لم يتم حفظ الملف. تراجع عنها وحاول مرة أخرى."
 selectedText = "النص المحدد"
-tagFormField = "وسم حقل النموذج"
 tagging = "وسم الصفحات"
 tagLabel = "الوسم"
 tagLinks_one = "وسم الرابط"
 tagLinks_other = "وسم {{count}} روابط"
-tagUntagged = "وسم المستند تلقائيًا"
 tagUntaggedHint = "يضيف وسوم إمكانية الوصول تلقائيًا في أنحاء المستند. النتيجة تقريبية: راجع العناوين والقوائم وترتيب القراءة بعد ذلك."
 unknownTag = "لا يمكن قراءته هنا"
 unmarkedWithTags = "قد تستخدم بعض عارضي PDF الوسوم على أي حال وقد تتخطى المحتوى بدونها."
@@ -7856,7 +7888,7 @@ heading = "العناوين"
 mixedNumbering = "يمزج بين العناوين المرقمة وغير المرقمة"
 none = "لا توجد عناوين"
 onPage = "عنوان في الصفحة {{page}}"
-problems = "مشكلات العناوين"
+problemCount = "{{count}} to fix"
 skippedLevel = "يتخطى مستوى بعد العنوان {{previous}}"
 
 [pdfTextEditor.inspector.accessibility.tagName]
@@ -7911,13 +7943,11 @@ title = "عنوان"
 allLanguages = "كل اللغات"
 cannotSetDocument = "لا يمكن تغيير لغة هذا المستند."
 cannotSetText = "لا يمكن تغيير لغة هذا النص."
-documentHint = "اللغة التي تستخدمها قارئات الشاشة ما لم يحدد جزء من النص لغته الخاصة."
 documentLabel = "اللغة"
 documentLocked = "لا يمكن تغيير لغة مستند مُشفّر هنا."
 inDocument = "في هذا المستند"
 innerLabel = "لغة الوسم {{number}}"
 label = "اللغة"
-missing = "لا توجد لغة محددة. ستخمن قارئات الشاشة وقد تقرأ المستند كله بصوت غير صحيح."
 mixed = "مختلطة"
 noMatch = "لا توجد لغة مطابقة. اكتب رمزها بدلًا من ذلك، مثل mt أو en-IE."
 placeholder = "اختر اللغة"
@@ -7948,6 +7978,52 @@ renderFailed = "فشل عرض الصفحة"
 [pdfTextEditor.password]
 incorrect = "كلمة المرور غير صحيحة - حاول مرة أخرى."
 label = "كلمة المرور"
+
+[pdfTextEditor.review]
+allDone = "All text and images are tagged"
+close = "Close accessibility settings"
+counting = "still counting"
+left = "{{count}} left to tag"
+next = "Next untagged (N)"
+noneLeft = "No text or images left to tag"
+previous = "Previous untagged (Shift+N)"
+untaggedCount = "{{count}} untagged"
+untaggedPosition = "{{index}} of {{count}} untagged"
+
+[pdfTextEditor.review.badge]
+described = "Described"
+noDescription = "Needs a description"
+untagged = "Needs a tag"
+
+[pdfTextEditor.review.card]
+autoAdvance = "Go to the next item after tagging"
+done = "Tagged"
+figureQuestion = "What does this figure show?"
+formulaPlaceholder = "For example: x squared plus one"
+formulaQuestion = "How is this formula read aloud?"
+imagePlaceholder = "Describe the image"
+imageQuestion = "What does this image show?"
+label = "Accessibility review"
+pickHint = "Click a block or an image on the page, or press the arrow to go to the next one still to tag. Shift-click to tag several at once."
+saveDescription = "Save description"
+selectedCount_one = "{{count}} block selected"
+selectedCount_other = "{{count}} blocks selected"
+showAllTags = "Show tags on every block"
+skipQuestion = "Or skip it for screen readers"
+textQuestion = "What is this text?"
+todo = "Needs attention"
+
+[pdfTextEditor.review.closePrompt]
+body = "Your tags are not in your workspace yet. Closing accessibility settings without saving loses them."
+discard = "Discard"
+keep = "Keep tagging"
+save = "Save and close"
+title = "Save your tags?"
+
+[pdfTextEditor.review.summary]
+progress = "Tagging progress"
+tagged = "{{done}} of {{total}} tagged"
+title = "Tagging"
 
 [pdfTextEditor.rulers]
 guide = "دليل محاذاة عند {{value}} {{unit}} - اسحب إلى مسطرة للإزالة"
@@ -8129,6 +8205,10 @@ title = "اختلاف المعاينة"
 [pdfTextEditor.tooltip.textFocus]
 text = "يركّز هذا المجال على تحرير النص وإعادة تموضع الصور المضمّنة. ستُحفَظ الأعمال الفنية المعقّدة وعناصر النماذج والرسومات الطبقية للتصدير لكنها غير قابلة للتحرير بالكامل هنا."
 title = "تركيز النص والصورة"
+
+[pdfTextEditor.trail]
+save = "Save"
+saveTooltip = "Save to your workspace ({{shortcut}})"
 
 [PDFToCSV]
 header = "PDF إلى CSV"
@@ -10321,6 +10401,10 @@ title = "مسارات العمل"
 
 [portal.pipelines.actions]
 newCustomPipeline = "مسار معالجة مخصص جديد"
+
+[portal.pipelines.activity]
+build = "Build pipeline"
+title = "Frequent workflows"
 
 [portal.pipelines.all]
 title = "كل مسارات المعالجة"
@@ -14338,6 +14422,20 @@ noTools = "لا توجد أدوات متاحة"
 [tooltip]
 close = "إغلاق التلميح"
 
+[toolWorkflows]
+draftName = "{{first}} + {{count}} more steps"
+longName = "{{first}} → … → {{last}} ({{count}} steps)"
+
+[toolWorkflows.ranBy]
+install = "Your colleagues have done this {{count, number}} times."
+team = "Your team has done this {{count, number}} times."
+user = "You've done this {{count, number}} times."
+
+[toolWorkflows.ranByShort]
+install = "Colleagues ran this {{count, number}} times"
+team = "Your team ran this {{count, number}} times"
+user = "You ran this {{count, number}} times"
+
 [unlockPDFForms]
 description = "ستزيل هذه الأداة قيود القراءة فقط من حقول نماذج PDF، لتصبح قابلة للتحرير والملء."
 submit = "إلغاء قفل النماذج"
@@ -15114,6 +15212,7 @@ readAloud = "قراءة بصوت عالٍ"
 readAloudLanguage = "اللغة"
 readAloudSpeed = "السرعة"
 redact = "تنقيح"
+reviewAccessibility = "Review accessibility"
 rotateLeft = "تدوير لليسار"
 rotateRight = "تدوير لليمين"
 ruler = "مسطرة / قياس"

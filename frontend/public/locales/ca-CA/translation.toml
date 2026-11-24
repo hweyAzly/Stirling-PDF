@@ -2361,6 +2361,10 @@ title = "Executa l’automatització"
 [automate.selection]
 title = "Selecció d’automatització"
 
+[automate.selection.activity]
+description = "Save it as an automation and run it with one click."
+title = "Frequent workflows"
+
 [automate.selection.createNew]
 title = "Crea una automatització nova"
 
@@ -2971,31 +2975,36 @@ stepTitle = "Aquest dispositiu"
 [certSign.error]
 failed = "S'ha produït un error en processar les signatures."
 
-[certSign.format]
-pkcs11 = "Token USB"
-windowsStore = "Magatzem de certificats de Windows"
-
 [certSign.hardware]
-certificate = "Certificat"
+allExpired = "None of the digital IDs here can sign today."
+backToDigitalIds = "Back to digital IDs"
 customLibrary = "Camí personalitzat del controlador…"
+digitalId = "Digital ID"
 driver = "Controlador PKCS#11"
 driverPath = "Camí de la biblioteca del controlador"
 driverPathPlaceholder = "Camí complet al vostre controlador PKCS#11 (.dll, .so o .dylib)"
-expired = "caducat"
-expires = "caduca"
+driverSetup = "Read card directly"
+expiredOn = "Expired {{date}}"
+expiresOn = "Expires {{date}}"
+hideExpired = "Hide expired"
 listCerts = "Llista els certificats"
-loading = "S'estan llegint els certificats…"
+macLoadError = "Could not read the macOS keychain"
 noCerts = "No s'han trobat certificats de signatura"
 noDriver = "No s'ha detectat cap controlador PKCS#11. Instal·leu el controlador del vostre token (p. ex., OpenSC), després torneu a obrir això - o introduïu manualment el camí del controlador a continuació."
-notYetValid = "encara no vàlid"
+notListed = "Don't see your ID?"
+onDevice = "Stored on this device"
+onToken = "On a security key or smart card"
+osStoreHint = "Insert your smart card or security key, then choose your digital ID."
 pin = "PIN del token"
 pkcs11Hint = "Seleccioneu el controlador PKCS#11 del vostre token, introduïu el PIN i, a continuació, llisteu els certificats del token."
 pkcs11LoadError = "No s'han pogut llegir els certificats del token. Comproveu el PIN i el controlador."
-refresh = "Actualitza"
-selectCert = "Seleccioneu el certificat"
+refreshList = "Refresh list"
 selectDriver = "Seleccioneu el controlador"
+serial = "Serial …{{serial}}"
+showExpired = "Show {{count}} expired"
 slot = "Ranura (opcional)"
-windowsHint = "Trieu un certificat del vostre magatzem de certificats de Windows. La signatura utilitza la clau de la vostra targeta/token - Windows us demanarà el PIN."
+useDriver = "Read the card directly"
+validFrom = "Valid from {{date}}"
 windowsLoadError = "No s'ha pogut llegir el magatzem de certificats de Windows"
 
 [certSign.sessions]
@@ -3035,6 +3044,8 @@ title = "Regla general"
 device = "Aquest dispositiu"
 noOtherSources = "No hi ha altres fonts de certificats disponibles."
 server = "Servidor"
+serverCertUnavailable = "The server's signing certificate isn't available."
+signsAs = "Signs as"
 stepTitle = "Origen del certificat"
 upload = "Puja"
 
@@ -3265,7 +3276,9 @@ checking = "Comprovant..."
 clauseRef = "{{profile}} §{{clauses}}"
 download = "Descarrega l'informe d'accessibilitat"
 fileFailed = "ha fallat"
+noFiles = "Select a PDF to check it."
 pickFile = "Mostra els resultats de"
+retry = "Check again"
 submit = "Comprova l'accessibilitat"
 
 [checkAccessibility.category]
@@ -3291,6 +3304,7 @@ label = "{{passed}} de {{total}} comprovacions superades"
 download = "No s'ha pogut crear l'informe d'accessibilitat. Torna-ho a intentar."
 fileTitle = "No s'ha pogut comprovar aquest fitxer"
 partial = "Alguns fitxers no s'han pogut comprovar."
+unreachable = "The server didn't answer. Check it's running, then check again."
 
 [checkAccessibility.facts]
 declares = "Declara PDF/UA"
@@ -3313,6 +3327,21 @@ title = "El fitxer té un títol a les seves metadades."
 [checkAccessibility.figures]
 summary_one = "{{count}} imatge necessita una descripció (pàgina {{pages}})"
 summary_other = "{{count}} imatges necessiten una descripció (pàgines {{pages}})"
+
+[checkAccessibility.fix]
+heading = "Fix the headings"
+headingOnPage = "Fix the heading on page {{page}}"
+hide = "Hide tagging tool"
+image = "Describe the images"
+imageOnPage = "Describe the image on page {{page}}"
+link = "Tag the links"
+linkOnPage = "Tag the link on page {{page}}"
+markedTagged = "Mark the document as tagged"
+show = "Show tagging tool"
+tagEverything = "Auto-tag"
+tagging = "Tagging... {{percent}}%"
+untagged = "Tag the content"
+untaggedOnPage = "Tag content on page {{page}}"
 
 [checkAccessibility.issue]
 appliesTo = "S'aplica a"
@@ -4928,12 +4957,15 @@ closeFile = "Tanca el fitxer"
 
 [fileEditor]
 closedFile = "S'ha tancat {{name}}"
+filesAdded_one = "Added {{count}} file"
+filesAdded_other = "Added {{count}} files"
 filesReordered_one = "Fitxer reordenat"
 filesReordered_other = "{{count}} fitxers reordenats"
 loadedFromStorage_one = "S'ha carregat {{count}} fitxer de l'emmagatzematge"
 loadedFromStorage_other = "S'han carregat {{count}} fitxers de l'emmagatzematge"
 loadFromStorageFailed = "No s'han pogut carregar alguns fitxers de l'emmagatzematge"
 pinnedFile = "S'ha fixat {{name}}"
+processFilesFailed = "Failed to process files"
 savedAndClosed = "S'ha desat i tancat {{name}}"
 saveFailed = "Ha fallat el desament"
 unpinnedFile = "S'ha deixat de fixar {{name}}"
@@ -5959,8 +5991,10 @@ title = "Canviar Permissos"
 
 [home.checkAccessibility]
 desc = "Avalua un PDF segons PDF/UA i veu què bloqueja els lectors de pantalla, sense canviar-lo"
+descWithReview = "Check a PDF against PDF/UA, then tag and describe what screen readers miss"
 tags = "accessibilitat,a11y,PDF/UA,lector de pantalla,WCAG,Section 508,veraPDF,PDF etiquetat,text alternatiu,verificador d'accessibilitat,informe d'accessibilitat,compliment,UA"
 title = "Comprova l'accessibilitat del PDF"
+titleWithReview = "PDF accessibility"
 
 [home.classify]
 desc = "Identifica quin tipus de document és i etiqueta'l."
@@ -6962,6 +6996,10 @@ yourCloudAccess = "Passareu a ser membre de l'equip i perdreu l'accés de propie
 deselectAll = "Cap"
 selectAll = "Marca-ho tot"
 
+[pageEditor.toolbar]
+redo = "Redo"
+undo = "Undo"
+
 [pageExtracter]
 title = "Extreu Pàgines"
 
@@ -7800,14 +7838,11 @@ cannotTagLink = "Aquest enllaç no es pot etiquetar."
 cannotTagPage = "El contingut d'aquesta pàgina no es pot etiquetar."
 contentGroup = "Contingut"
 customTag = "{{role}} (etiqueta personalitzada)"
-decorativeInfo = "Els lectors de pantalla ometen les imatges decoratives. Utilitzeu-ho per a vores, fons i altres imatges que no transmeten informació."
-decorativeLabel = "Imatge decorativa"
-description = "Descripció de la imatge"
-descriptionInfo = "Els lectors de pantalla ho llegeixen en lloc de la imatge."
+describeLinks_one = "Describe link"
+describeLinks_other = "Describe {{count}} links"
 encrypted = "No es poden editar les etiquetes en un fitxer xifrat"
 figureDescription = "Descripció de la figura"
 figureDescriptionInfo = "Els lectors de pantalla ho llegeixen en lloc de la figura."
-formFieldDescription = "Descripció del camp"
 formulaDescription = "Descripció de la fórmula"
 formulaDescriptionInfo = "Els lectors de pantalla ho llegeixen en lloc de la fórmula. Digueu-ho com ho diríeu en veu alta, per exemple, «x al quadrat més u»."
 heading = "Accessibilitat"
@@ -7818,7 +7853,6 @@ markedTagged = "El document està totalment etiquetat"
 markedTaggedHint = "Indica als lectors de PDF que utilitzin les etiquetes d'accessibilitat. Marca-ho quan estigui tot etiquetat."
 markedWithUntagged = "Alguns continguts no tenen etiquetes, de manera que els lectors de pantalla poden ometre'ls."
 missingDescriptions = "Descripcions que falten"
-mixedContent = "La figura inclou altres continguts"
 mixedTags = "Barrejat"
 needsDescriptionBadge = "Sense descripció"
 nextToReview = "Següent per revisar"
@@ -7826,12 +7860,10 @@ notFigure = "Etiquetat com a part del text"
 removeTag = "Elimina etiqueta"
 saveFailed = "No s'han pogut desar els canvis d'accessibilitat, de manera que el fitxer no s'ha desat. Desfeu-los i torneu-ho a provar."
 selectedText = "Text seleccionat"
-tagFormField = "Etiqueta el camp de formulari"
 tagging = "Etiquetant pàgines"
 tagLabel = "Etiqueta"
 tagLinks_one = "Etiqueta l'enllaç"
 tagLinks_other = "Etiqueta {{count}} enllaços"
-tagUntagged = "Etiqueta automàticament el document"
 tagUntaggedHint = "Afegeix automàticament etiquetes d'accessibilitat a tot el document. El resultat és aproximat: comprova després els encapçalaments, les llistes i l'ordre de lectura."
 unknownTag = "No es pot llegir aquí"
 unmarkedWithTags = "Alguns visualitzadors de PDF utilitzaran igualment les etiquetes i poden ometre el contingut sense elles."
@@ -7856,7 +7888,7 @@ heading = "Encapçalaments"
 mixedNumbering = "Barreja encapçalaments numerats i no numerats"
 none = "No hi ha encapçalaments"
 onPage = "Encapçalament a la pàgina {{page}}"
-problems = "Problemes d'encapçalaments"
+problemCount = "{{count}} to fix"
 skippedLevel = "Se salta un nivell després d'Encapçalament {{previous}}"
 
 [pdfTextEditor.inspector.accessibility.tagName]
@@ -7911,13 +7943,11 @@ title = "Títol"
 allLanguages = "Tots els idiomes"
 cannotSetDocument = "L'idioma d'aquest document no es pot canviar."
 cannotSetText = "L'idioma d'aquest text no es pot canviar."
-documentHint = "L'idioma que utilitzaran els lectors de pantalla tret que una part del text en defineixi un altre."
 documentLabel = "Idioma"
 documentLocked = "L'idioma d'un document xifrat no es pot canviar aquí."
 inDocument = "En aquest document"
 innerLabel = "Idioma de l'etiqueta {{number}}"
 label = "Idioma"
-missing = "Sense idioma definit. Els lectors de pantalla el deduiran i poden llegir tot el document amb una veu incorrecta."
 mixed = "Barrejat"
 noMatch = "No hi ha cap idioma coincident. Escriu-ne el codi, com ara mt o en-IE."
 placeholder = "Selecciona l'idioma"
@@ -7948,6 +7978,52 @@ renderFailed = "No s'ha pogut renderitzar la pàgina"
 [pdfTextEditor.password]
 incorrect = "Contrasenya incorrecta; torneu-ho a provar."
 label = "Contrasenya"
+
+[pdfTextEditor.review]
+allDone = "All text and images are tagged"
+close = "Close accessibility settings"
+counting = "still counting"
+left = "{{count}} left to tag"
+next = "Next untagged (N)"
+noneLeft = "No text or images left to tag"
+previous = "Previous untagged (Shift+N)"
+untaggedCount = "{{count}} untagged"
+untaggedPosition = "{{index}} of {{count}} untagged"
+
+[pdfTextEditor.review.badge]
+described = "Described"
+noDescription = "Needs a description"
+untagged = "Needs a tag"
+
+[pdfTextEditor.review.card]
+autoAdvance = "Go to the next item after tagging"
+done = "Tagged"
+figureQuestion = "What does this figure show?"
+formulaPlaceholder = "For example: x squared plus one"
+formulaQuestion = "How is this formula read aloud?"
+imagePlaceholder = "Describe the image"
+imageQuestion = "What does this image show?"
+label = "Accessibility review"
+pickHint = "Click a block or an image on the page, or press the arrow to go to the next one still to tag. Shift-click to tag several at once."
+saveDescription = "Save description"
+selectedCount_one = "{{count}} block selected"
+selectedCount_other = "{{count}} blocks selected"
+showAllTags = "Show tags on every block"
+skipQuestion = "Or skip it for screen readers"
+textQuestion = "What is this text?"
+todo = "Needs attention"
+
+[pdfTextEditor.review.closePrompt]
+body = "Your tags are not in your workspace yet. Closing accessibility settings without saving loses them."
+discard = "Discard"
+keep = "Keep tagging"
+save = "Save and close"
+title = "Save your tags?"
+
+[pdfTextEditor.review.summary]
+progress = "Tagging progress"
+tagged = "{{done}} of {{total}} tagged"
+title = "Tagging"
 
 [pdfTextEditor.rulers]
 guide = "Guia d'alineació a {{value}} {{unit}}; arrossegueu-la a un regle per eliminar-la"
@@ -8129,6 +8205,10 @@ title = "Variacions de previsualització"
 [pdfTextEditor.tooltip.textFocus]
 text = "Aquest espai de treball se centra en l’edició de text i el reposicionament d’imatges incrustades. Els elements gràfics complexos, els ginys de formulari i els gràfics amb capes es conserven per a l’exportació però no són totalment editables aquí."
 title = "Enfocament en text i imatge"
+
+[pdfTextEditor.trail]
+save = "Save"
+saveTooltip = "Save to your workspace ({{shortcut}})"
 
 [PDFToCSV]
 header = "PDF a CSV"
@@ -10321,6 +10401,10 @@ title = "Canalitzacions"
 
 [portal.pipelines.actions]
 newCustomPipeline = "Canalització personalitzada nova"
+
+[portal.pipelines.activity]
+build = "Build pipeline"
+title = "Frequent workflows"
 
 [portal.pipelines.all]
 title = "Totes les canalitzacions"
@@ -14338,6 +14422,20 @@ noTools = "No hi ha eines disponibles"
 [tooltip]
 close = "Tanca el missatge emergent"
 
+[toolWorkflows]
+draftName = "{{first}} + {{count}} more steps"
+longName = "{{first}} → … → {{last}} ({{count}} steps)"
+
+[toolWorkflows.ranBy]
+install = "Your colleagues have done this {{count, number}} times."
+team = "Your team has done this {{count, number}} times."
+user = "You've done this {{count, number}} times."
+
+[toolWorkflows.ranByShort]
+install = "Colleagues ran this {{count, number}} times"
+team = "Your team ran this {{count, number}} times"
+user = "You ran this {{count, number}} times"
+
 [unlockPDFForms]
 description = "Aquesta eina eliminarà les restriccions de només lectura dels camps de formulari del PDF, fent-los editables i emplenables."
 submit = "Desbloqueja formularis"
@@ -15114,6 +15212,7 @@ readAloud = "Llegeix en veu alta"
 readAloudLanguage = "Idioma"
 readAloudSpeed = "Velocitat"
 redact = "Censura"
+reviewAccessibility = "Review accessibility"
 rotateLeft = "Gira a l’esquerra"
 rotateRight = "Gira a la dreta"
 ruler = "Regle / Mesura"

@@ -2361,6 +2361,10 @@ title = "运行自动化"
 [automate.selection]
 title = "自动化选择"
 
+[automate.selection.activity]
+description = "Save it as an automation and run it with one click."
+title = "Frequent workflows"
+
 [automate.selection.createNew]
 title = "新建自动化"
 
@@ -2971,31 +2975,36 @@ stepTitle = "此设备"
 [certSign.error]
 failed = "处理签名时发生错误。"
 
-[certSign.format]
-pkcs11 = "USB 令牌"
-windowsStore = "Windows 证书存储"
-
 [certSign.hardware]
-certificate = "证书"
+allExpired = "None of the digital IDs here can sign today."
+backToDigitalIds = "Back to digital IDs"
 customLibrary = "自定义驱动程序路径…"
+digitalId = "Digital ID"
 driver = "PKCS#11 驱动程序"
 driverPath = "驱动程序库路径"
 driverPathPlaceholder = "PKCS#11 驱动程序的完整路径（.dll、.so 或 .dylib）"
-expired = "已过期"
-expires = "到期时间"
+driverSetup = "Read card directly"
+expiredOn = "Expired {{date}}"
+expiresOn = "Expires {{date}}"
+hideExpired = "Hide expired"
 listCerts = "列出证书"
-loading = "正在读取证书…"
+macLoadError = "Could not read the macOS keychain"
 noCerts = "未找到签名证书"
 noDriver = "未检测到 PKCS#11 驱动程序。请安装令牌的驱动程序（例如 OpenSC），然后重新打开此界面 - 或在下方手动输入驱动程序路径。"
-notYetValid = "尚未生效"
+notListed = "Don't see your ID?"
+onDevice = "Stored on this device"
+onToken = "On a security key or smart card"
+osStoreHint = "Insert your smart card or security key, then choose your digital ID."
 pin = "令牌 PIN"
 pkcs11Hint = "选择令牌的 PKCS#11 驱动程序，输入 PIN，然后列出令牌上的证书。"
 pkcs11LoadError = "无法从令牌读取证书。请检查 PIN 和驱动程序。"
-refresh = "刷新"
-selectCert = "选择证书"
+refreshList = "Refresh list"
 selectDriver = "选择驱动程序"
+serial = "Serial …{{serial}}"
+showExpired = "Show {{count}} expired"
 slot = "插槽（可选）"
-windowsHint = "从 Windows 证书存储中选择一个证书。签名将使用您卡片/令牌上的密钥 - Windows 将提示输入 PIN。"
+useDriver = "Read the card directly"
+validFrom = "Valid from {{date}}"
 windowsLoadError = "无法读取 Windows 证书存储"
 
 [certSign.sessions]
@@ -3035,6 +3044,8 @@ title = "经验法则"
 device = "此设备"
 noOtherSources = "没有其他可用的证书来源。"
 server = "服务器"
+serverCertUnavailable = "The server's signing certificate isn't available."
+signsAs = "Signs as"
 stepTitle = "证书来源"
 upload = "上传"
 
@@ -3265,7 +3276,9 @@ checking = "正在检查..."
 clauseRef = "{{profile}} §{{clauses}}"
 download = "下载无障碍报告"
 fileFailed = "失败"
+noFiles = "Select a PDF to check it."
 pickFile = "显示以下文件的结果"
+retry = "Check again"
 submit = "检查无障碍"
 
 [checkAccessibility.category]
@@ -3291,6 +3304,7 @@ label = "已通过 {{passed}}/{{total}} 项检查"
 download = "无法创建无障碍报告。请重试。"
 fileTitle = "无法检查此文件"
 partial = "部分文件无法检查。"
+unreachable = "The server didn't answer. Check it's running, then check again."
 
 [checkAccessibility.facts]
 declares = "声明 PDF/UA"
@@ -3313,6 +3327,21 @@ title = "文件元数据中包含标题。"
 [checkAccessibility.figures]
 summary_one = "有 {{count}} 幅图像需要描述（页码 {{pages}}）"
 summary_other = "有 {{count}} 幅图像需要描述（页码 {{pages}}）"
+
+[checkAccessibility.fix]
+heading = "Fix the headings"
+headingOnPage = "Fix the heading on page {{page}}"
+hide = "Hide tagging tool"
+image = "Describe the images"
+imageOnPage = "Describe the image on page {{page}}"
+link = "Tag the links"
+linkOnPage = "Tag the link on page {{page}}"
+markedTagged = "Mark the document as tagged"
+show = "Show tagging tool"
+tagEverything = "Auto-tag"
+tagging = "Tagging... {{percent}}%"
+untagged = "Tag the content"
+untaggedOnPage = "Tag content on page {{page}}"
 
 [checkAccessibility.issue]
 appliesTo = "适用于"
@@ -4928,12 +4957,15 @@ closeFile = "关闭文件"
 
 [fileEditor]
 closedFile = "已关闭 {{name}}"
+filesAdded_one = "Added {{count}} file"
+filesAdded_other = "Added {{count}} files"
 filesReordered_one = "文件已重新排序"
 filesReordered_other = "{{count}} 个文件已重新排序"
 loadedFromStorage_one = "已从存储加载 {{count}} 个文件"
 loadedFromStorage_other = "已从存储加载 {{count}} 个文件"
 loadFromStorageFailed = "未能从存储加载部分文件"
 pinnedFile = "已固定 {{name}}"
+processFilesFailed = "Failed to process files"
 savedAndClosed = "已保存并关闭 {{name}}"
 saveFailed = "保存失败"
 unpinnedFile = "已取消固定 {{name}}"
@@ -5959,8 +5991,10 @@ title = "更改权限"
 
 [home.checkAccessibility]
 desc = "根据 PDF/UA 为 PDF 打分，查看阻碍屏幕阅读器的因素，且不更改文件"
+descWithReview = "Check a PDF against PDF/UA, then tag and describe what screen readers miss"
 tags = "无障碍,a11y,PDF/UA,屏幕阅读器,WCAG,Section 508,veraPDF,tagged PDF,alt text,无障碍检查器,无障碍报告,合规,UA"
 title = "检查 PDF 无障碍性"
+titleWithReview = "PDF accessibility"
 
 [home.classify]
 desc = "识别此文档的类型并为其添加标签。"
@@ -6962,6 +6996,10 @@ yourCloudAccess = "您将成为团队成员，并失去所有者访问权限。"
 deselectAll = "全不选"
 selectAll = "全选"
 
+[pageEditor.toolbar]
+redo = "Redo"
+undo = "Undo"
+
 [pageExtracter]
 title = "提取页面"
 
@@ -7800,14 +7838,11 @@ cannotTagLink = "无法为此链接加标签。"
 cannotTagPage = "无法为此页面内容加标签。"
 contentGroup = "内容"
 customTag = "{{role}}（自定义标签）"
-decorativeInfo = "屏幕阅读器会跳过装饰性图像。可将其用于边框、背景以及其他不承载信息的图像。"
-decorativeLabel = "装饰性图像"
-description = "图像描述"
-descriptionInfo = "屏幕阅读器会读取此内容来代替图像。"
+describeLinks_one = "Describe link"
+describeLinks_other = "Describe {{count}} links"
 encrypted = "无法编辑加密文件中的标签"
 figureDescription = "图像描述"
 figureDescriptionInfo = "屏幕阅读器会朗读此内容以替代该图像。"
-formFieldDescription = "字段描述"
 formulaDescription = "公式描述"
 formulaDescriptionInfo = "屏幕阅读器会朗读此内容以替代该公式。请按自然口语表达，例如“x 的平方加 1”。"
 heading = "辅助功能"
@@ -7818,7 +7853,6 @@ markedTagged = "文档已完全加标签"
 markedTaggedHint = "告诉 PDF 阅读器使用无障碍标签。一切都已加标签后再勾选。"
 markedWithUntagged = "部分内容没有标签，屏幕阅读器可能会跳过。"
 missingDescriptions = "缺少描述"
-mixedContent = "图形包含其他内容"
 mixedTags = "混合"
 needsDescriptionBadge = "无描述"
 nextToReview = "下一项待审阅"
@@ -7826,12 +7860,10 @@ notFigure = "标记为文本的一部分"
 removeTag = "移除标签"
 saveFailed = "无法保存您的辅助功能更改，因此文件未保存。请撤消这些更改后重试。"
 selectedText = "选中的文本"
-tagFormField = "标记表单字段"
 tagging = "正在为页面加标签"
 tagLabel = "标签"
 tagLinks_one = "为链接加标签"
 tagLinks_other = "为 {{count}} 个链接加标签"
-tagUntagged = "自动为文档加标签"
 tagUntaggedHint = "在整个文档中自动添加无障碍标签。结果较为粗略：之后请检查标题、列表和阅读顺序。"
 unknownTag = "无法在此读取"
 unmarkedWithTags = "部分 PDF 查看器仍会使用标签，且可能跳过没有标签的内容。"
@@ -7856,7 +7888,7 @@ heading = "标题"
 mixedNumbering = "混合使用编号和未编号标题"
 none = "无标题"
 onPage = "第 {{page}} 页上的标题"
-problems = "标题问题"
+problemCount = "{{count}} to fix"
 skippedLevel = "在标题 {{previous}} 后跳过了一个级别"
 
 [pdfTextEditor.inspector.accessibility.tagName]
@@ -7911,13 +7943,11 @@ title = "标题"
 allLanguages = "所有语言"
 cannotSetDocument = "无法更改此文档的语言。"
 cannotSetText = "无法更改此文本的语言。"
-documentHint = "除非文本的某部分设置了自身语言，否则屏幕阅读器使用此语言。"
 documentLabel = "语言"
 documentLocked = "加密文档的语言无法在此更改。"
 inDocument = "此文档内"
 innerLabel = "标签 {{number}} 的语言"
 label = "语言"
-missing = "未设置语言。屏幕阅读器将猜测，可能会以错误的语音读完整个文档。"
 mixed = "混合"
 noMatch = "没有匹配的语言。请直接输入其代码，例如 mt 或 en-IE。"
 placeholder = "选择语言"
@@ -7948,6 +7978,52 @@ renderFailed = "未能渲染页面"
 [pdfTextEditor.password]
 incorrect = "密码不正确 - 请重试。"
 label = "密码"
+
+[pdfTextEditor.review]
+allDone = "All text and images are tagged"
+close = "Close accessibility settings"
+counting = "still counting"
+left = "{{count}} left to tag"
+next = "Next untagged (N)"
+noneLeft = "No text or images left to tag"
+previous = "Previous untagged (Shift+N)"
+untaggedCount = "{{count}} untagged"
+untaggedPosition = "{{index}} of {{count}} untagged"
+
+[pdfTextEditor.review.badge]
+described = "Described"
+noDescription = "Needs a description"
+untagged = "Needs a tag"
+
+[pdfTextEditor.review.card]
+autoAdvance = "Go to the next item after tagging"
+done = "Tagged"
+figureQuestion = "What does this figure show?"
+formulaPlaceholder = "For example: x squared plus one"
+formulaQuestion = "How is this formula read aloud?"
+imagePlaceholder = "Describe the image"
+imageQuestion = "What does this image show?"
+label = "Accessibility review"
+pickHint = "Click a block or an image on the page, or press the arrow to go to the next one still to tag. Shift-click to tag several at once."
+saveDescription = "Save description"
+selectedCount_one = "{{count}} block selected"
+selectedCount_other = "{{count}} blocks selected"
+showAllTags = "Show tags on every block"
+skipQuestion = "Or skip it for screen readers"
+textQuestion = "What is this text?"
+todo = "Needs attention"
+
+[pdfTextEditor.review.closePrompt]
+body = "Your tags are not in your workspace yet. Closing accessibility settings without saving loses them."
+discard = "Discard"
+keep = "Keep tagging"
+save = "Save and close"
+title = "Save your tags?"
+
+[pdfTextEditor.review.summary]
+progress = "Tagging progress"
+tagged = "{{done}} of {{total}} tagged"
+title = "Tagging"
 
 [pdfTextEditor.rulers]
 guide = "位于 {{value}} {{unit}} 的对齐参考线 - 拖到标尺上可移除"
@@ -8129,6 +8205,10 @@ title = "预览差异"
 [pdfTextEditor.tooltip.textFocus]
 text = "此工作区专注于编辑文本与重新定位嵌入图像。复杂页面图形、表单控件和分层图形将在导出时保留，但在此处不可完全编辑。"
 title = "文本与图像聚焦"
+
+[pdfTextEditor.trail]
+save = "Save"
+saveTooltip = "Save to your workspace ({{shortcut}})"
 
 [PDFToCSV]
 header = "将 PDF 转换为 CSV"
@@ -10321,6 +10401,10 @@ title = "流水线"
 
 [portal.pipelines.actions]
 newCustomPipeline = "新建自定义流水线"
+
+[portal.pipelines.activity]
+build = "Build pipeline"
+title = "Frequent workflows"
 
 [portal.pipelines.all]
 title = "所有流水线"
@@ -14338,6 +14422,20 @@ noTools = "没有可用的工具"
 [tooltip]
 close = "关闭工具提示"
 
+[toolWorkflows]
+draftName = "{{first}} + {{count}} more steps"
+longName = "{{first}} → … → {{last}} ({{count}} steps)"
+
+[toolWorkflows.ranBy]
+install = "Your colleagues have done this {{count, number}} times."
+team = "Your team has done this {{count, number}} times."
+user = "You've done this {{count, number}} times."
+
+[toolWorkflows.ranByShort]
+install = "Colleagues ran this {{count, number}} times"
+team = "Your team ran this {{count, number}} times"
+user = "You ran this {{count, number}} times"
+
 [unlockPDFForms]
 description = "该工具将移除 PDF 表单字段的只读限制，使其可编辑、可填写。"
 submit = "解锁表单"
@@ -15114,6 +15212,7 @@ readAloud = "朗读"
 readAloudLanguage = "语言"
 readAloudSpeed = "速度"
 redact = "涂黑"
+reviewAccessibility = "Review accessibility"
 rotateLeft = "向左旋转"
 rotateRight = "向右旋转"
 ruler = "标尺/测量"

@@ -2361,6 +2361,10 @@ title = "Εκτέλεση αυτοματοποίησης"
 [automate.selection]
 title = "Επιλογή αυτοματοποίησης"
 
+[automate.selection.activity]
+description = "Save it as an automation and run it with one click."
+title = "Frequent workflows"
+
 [automate.selection.createNew]
 title = "Δημιουργία νέας αυτοματοποίησης"
 
@@ -2971,31 +2975,36 @@ stepTitle = "Αυτή η συσκευή"
 [certSign.error]
 failed = "Παρουσιάστηκε σφάλμα κατά την επεξεργασία υπογραφών."
 
-[certSign.format]
-pkcs11 = "USB Token"
-windowsStore = "Αποθήκη πιστοποιητικών των Windows"
-
 [certSign.hardware]
-certificate = "Πιστοποιητικό"
+allExpired = "None of the digital IDs here can sign today."
+backToDigitalIds = "Back to digital IDs"
 customLibrary = "Προσαρμοσμένη διαδρομή προγράμματος οδήγησης…"
+digitalId = "Digital ID"
 driver = "Πρόγραμμα οδήγησης PKCS#11"
 driverPath = "Διαδρομή βιβλιοθήκης προγράμματος οδήγησης"
 driverPathPlaceholder = "Πλήρης διαδρομή του προγράμματος οδήγησης PKCS#11 σας (.dll, .so ή .dylib)"
-expired = "έληξε"
-expires = "λήγει"
+driverSetup = "Read card directly"
+expiredOn = "Expired {{date}}"
+expiresOn = "Expires {{date}}"
+hideExpired = "Hide expired"
 listCerts = "Προβολή πιστοποιητικών"
-loading = "Ανάγνωση πιστοποιητικών…"
+macLoadError = "Could not read the macOS keychain"
 noCerts = "Δεν βρέθηκαν πιστοποιητικά υπογραφής"
 noDriver = "Δεν εντοπίστηκε πρόγραμμα οδήγησης PKCS#11. Εγκαταστήστε το πρόγραμμα οδήγησης του token σας (π.χ. OpenSC), έπειτα ανοίξτε ξανά αυτό - ή εισαγάγετε χειροκίνητα παρακάτω τη διαδρομή του προγράμματος οδήγησης."
-notYetValid = "δεν είναι ακόμη έγκυρο"
+notListed = "Don't see your ID?"
+onDevice = "Stored on this device"
+onToken = "On a security key or smart card"
+osStoreHint = "Insert your smart card or security key, then choose your digital ID."
 pin = "PIN του token"
 pkcs11Hint = "Επιλέξτε το πρόγραμμα οδήγησης PKCS#11 του token σας, εισαγάγετε το PIN και έπειτα εμφανίστε τα πιστοποιητικά στο token."
 pkcs11LoadError = "Δεν ήταν δυνατή η ανάγνωση πιστοποιητικών από το token. Ελέγξτε το PIN και το πρόγραμμα οδήγησης."
-refresh = "Ανανέωση"
-selectCert = "Επιλογή πιστοποιητικού"
+refreshList = "Refresh list"
 selectDriver = "Επιλογή προγράμματος οδήγησης"
+serial = "Serial …{{serial}}"
+showExpired = "Show {{count}} expired"
 slot = "Υποδοχή (προαιρετικό)"
-windowsHint = "Επιλέξτε ένα πιστοποιητικό από την αποθήκη πιστοποιητικών των Windows. Η υπογραφή χρησιμοποιεί το κλειδί στην κάρτα/token σας - τα Windows θα ζητήσουν το PIN."
+useDriver = "Read the card directly"
+validFrom = "Valid from {{date}}"
 windowsLoadError = "Δεν ήταν δυνατή η ανάγνωση της αποθήκης πιστοποιητικών των Windows"
 
 [certSign.sessions]
@@ -3035,6 +3044,8 @@ title = "Κανόνας εμπειρίας"
 device = "Αυτή η συσκευή"
 noOtherSources = "Δεν υπάρχουν άλλες διαθέσιμες πηγές πιστοποιητικών."
 server = "Διακομιστής"
+serverCertUnavailable = "The server's signing certificate isn't available."
+signsAs = "Signs as"
 stepTitle = "Πηγή πιστοποιητικού"
 upload = "Μεταφόρτωση"
 
@@ -3265,7 +3276,9 @@ checking = "Γίνεται έλεγχος..."
 clauseRef = "{{profile}} §{{clauses}}"
 download = "Λήψη αναφοράς προσβασιμότητας"
 fileFailed = "απέτυχε"
+noFiles = "Select a PDF to check it."
 pickFile = "Εμφάνιση αποτελεσμάτων για"
+retry = "Check again"
 submit = "Έλεγχος προσβασιμότητας"
 
 [checkAccessibility.category]
@@ -3291,6 +3304,7 @@ label = "Πέρασαν {{passed}} από {{total}} ελέγχους"
 download = "Η αναφορά προσβασιμότητας δεν μπόρεσε να δημιουργηθεί. Δοκιμάστε ξανά."
 fileTitle = "Αυτό το αρχείο δεν μπόρεσε να ελεγχθεί"
 partial = "Ορισμένα αρχεία δεν μπόρεσαν να ελεγχθούν."
+unreachable = "The server didn't answer. Check it's running, then check again."
 
 [checkAccessibility.facts]
 declares = "Δηλώνει PDF/UA"
@@ -3313,6 +3327,21 @@ title = "Το αρχείο έχει τίτλο στα μεταδεδομένα �
 [checkAccessibility.figures]
 summary_one = "Απαιτείται περιγραφή για {{count}} εικόνα (σελίδα {{pages}})"
 summary_other = "Απαιτείται περιγραφή για {{count}} εικόνες (σελίδες {{pages}})"
+
+[checkAccessibility.fix]
+heading = "Fix the headings"
+headingOnPage = "Fix the heading on page {{page}}"
+hide = "Hide tagging tool"
+image = "Describe the images"
+imageOnPage = "Describe the image on page {{page}}"
+link = "Tag the links"
+linkOnPage = "Tag the link on page {{page}}"
+markedTagged = "Mark the document as tagged"
+show = "Show tagging tool"
+tagEverything = "Auto-tag"
+tagging = "Tagging... {{percent}}%"
+untagged = "Tag the content"
+untaggedOnPage = "Tag content on page {{page}}"
 
 [checkAccessibility.issue]
 appliesTo = "Ισχύει για"
@@ -4928,12 +4957,15 @@ closeFile = "Κλείσιμο αρχείου"
 
 [fileEditor]
 closedFile = "Έκλεισε το {{name}}"
+filesAdded_one = "Added {{count}} file"
+filesAdded_other = "Added {{count}} files"
 filesReordered_one = "Το αρχείο αναδιατάχθηκε"
 filesReordered_other = "{{count}} αρχεία αναδιατάχθηκαν"
 loadedFromStorage_one = "Φορτώθηκε {{count}} αρχείο από τον χώρο αποθήκευσης"
 loadedFromStorage_other = "Φορτώθηκαν {{count}} αρχεία από τον χώρο αποθήκευσης"
 loadFromStorageFailed = "Αποτυχία φόρτωσης ορισμένων αρχείων από τον χώρο αποθήκευσης"
 pinnedFile = "Καρφιτσώθηκε το {{name}}"
+processFilesFailed = "Failed to process files"
 savedAndClosed = "Αποθηκεύτηκε και έκλεισε το {{name}}"
 saveFailed = "Η αποθήκευση απέτυχε"
 unpinnedFile = "Ξεκαρφιτσώθηκε το {{name}}"
@@ -5959,8 +5991,10 @@ title = "Αλλαγή δικαιωμάτων"
 
 [home.checkAccessibility]
 desc = "Βαθμολογήστε ένα PDF βάσει του PDF/UA και δείτε τι εμποδίζει τους αναγνώστες οθόνης, χωρίς να το αλλάξετε"
+descWithReview = "Check a PDF against PDF/UA, then tag and describe what screen readers miss"
 tags = "accessibility,a11y,PDF/UA,screen reader,WCAG,Section 508,veraPDF,tagged PDF,alt text,accessibility checker,accessibility report,compliance,UA"
 title = "Έλεγχος προσβασιμότητας PDF"
+titleWithReview = "PDF accessibility"
 
 [home.classify]
 desc = "Προσδιορίστε τι είδους έγγραφο είναι αυτό και προσθέστε του ετικέτα."
@@ -6962,6 +6996,10 @@ yourCloudAccess = "Θα γίνετε μέλος ομάδας και θα χάσ�
 deselectAll = "Κανένα"
 selectAll = "Επιλογή όλων"
 
+[pageEditor.toolbar]
+redo = "Redo"
+undo = "Undo"
+
 [pageExtracter]
 title = "Εξαγωγή σελίδων"
 
@@ -7800,14 +7838,11 @@ cannotTagLink = "Αυτός ο σύνδεσμος δεν μπορεί να ση�
 cannotTagPage = "Το περιεχόμενο αυτής της σελίδας δεν μπορεί να σημανθεί."
 contentGroup = "Περιεχόμενο"
 customTag = "{{role}} (προσαρμοσμένη ετικέτα)"
-decorativeInfo = "Οι αναγνώστες οθόνης παραλείπουν τις διακοσμητικές εικόνες. Χρησιμοποιήστε το για περιγράμματα, φόντα και άλλες εικόνες που δεν μεταφέρουν πληροφορίες."
-decorativeLabel = "Διακοσμητική εικόνα"
-description = "Περιγραφή εικόνας"
-descriptionInfo = "Οι αναγνώστες οθόνης διαβάζουν αυτό αντί για την εικόνα."
+describeLinks_one = "Describe link"
+describeLinks_other = "Describe {{count}} links"
 encrypted = "Δεν είναι δυνατή η επεξεργασία ετικετών σε κρυπτογραφημένο αρχείο"
 figureDescription = "Περιγραφή σχήματος"
 figureDescriptionInfo = "Οι αναγνώστες οθόνης το διαβάζουν αντί για το σχήμα."
-formFieldDescription = "Περιγραφή πεδίου"
 formulaDescription = "Περιγραφή τύπου"
 formulaDescriptionInfo = "Οι αναγνώστες οθόνης το διαβάζουν αντί για τον τύπο. Πείτε το όπως θα το λέγατε προφορικά, όπως \"x στο τετράγωνο συν ένα\"."
 heading = "Προσβασιμότητα"
@@ -7818,7 +7853,6 @@ markedTagged = "Το έγγραφο είναι πλήρως επισημασμέ
 markedTaggedHint = "Ενημερώνει τους αναγνώστες PDF να χρησιμοποιούν τις ετικέτες προσβασιμότητας. Τσεκάρετέ το όταν όλα έχουν σημανθεί."
 markedWithUntagged = "Κάποιο περιεχόμενο δεν έχει ετικέτες, οπότε οι αναγνώστες οθόνης μπορεί να το παραλείψουν."
 missingDescriptions = "Λείπουν περιγραφές"
-mixedContent = "Το σχήμα περιλαμβάνει άλλο περιεχόμενο"
 mixedTags = "Μικτό"
 needsDescriptionBadge = "Χωρίς περιγραφή"
 nextToReview = "Επόμενο προς έλεγχο"
@@ -7826,12 +7860,10 @@ notFigure = "Με ετικέτα ως μέρος του κειμένου"
 removeTag = "Αφαίρεση ετικέτας"
 saveFailed = "Δεν ήταν δυνατή η αποθήκευση των αλλαγών προσβασιμότητας, επομένως το αρχείο δεν αποθηκεύτηκε. Αναιρέστε τις και δοκιμάστε ξανά."
 selectedText = "Επιλεγμένο κείμενο"
-tagFormField = "Επισήμανση πεδίου φόρμας"
 tagging = "Σήμανση σελίδων"
 tagLabel = "Ετικέτα"
 tagLinks_one = "Σήμανση συνδέσμου"
 tagLinks_other = "Σήμανση {{count}} συνδέσμων"
-tagUntagged = "Αυτόματη σήμανση εγγράφου"
 tagUntaggedHint = "Προσθέτει αυτόματα ετικέτες προσβασιμότητας σε όλο το έγγραφο. Το αποτέλεσμα είναι πρόχειρο: ελέγξτε έπειτα τις επικεφαλίδες, τις λίστες και τη σειρά ανάγνωσης."
 unknownTag = "Δεν μπορεί να διαβαστεί εδώ"
 unmarkedWithTags = "Ορισμένοι προβολείς PDF θα χρησιμοποιήσουν ούτως ή άλλως τις ετικέτες και ίσως παραλείψουν περιεχόμενο που δεν τις έχει."
@@ -7856,7 +7888,7 @@ heading = "Επικεφαλίδες"
 mixedNumbering = "Αναμειγνύει αριθμημένες και μη αριθμημένες επικεφαλίδες"
 none = "Δεν υπάρχουν επικεφαλίδες"
 onPage = "Επικεφαλίδα στη σελίδα {{page}}"
-problems = "Προβλήματα επικεφαλίδων"
+problemCount = "{{count}} to fix"
 skippedLevel = "Παραλείπει ένα επίπεδο μετά την Επικεφαλίδα {{previous}}"
 
 [pdfTextEditor.inspector.accessibility.tagName]
@@ -7911,13 +7943,11 @@ title = "Τίτλος"
 allLanguages = "Όλες οι γλώσσες"
 cannotSetDocument = "Η γλώσσα αυτού του εγγράφου δεν μπορεί να αλλάξει."
 cannotSetText = "Η γλώσσα αυτού του κειμένου δεν μπορεί να αλλάξει."
-documentHint = "Η γλώσσα που θα χρησιμοποιούν οι αναγνώστες οθόνης εκτός αν μέρος του κειμένου ορίζει δική του."
 documentLabel = "Γλώσσα"
 documentLocked = "Η γλώσσα κρυπτογραφημένου εγγράφου δεν μπορεί να αλλάξει εδώ."
 inDocument = "Σε αυτό το έγγραφο"
 innerLabel = "Γλώσσα ετικέτας {{number}}"
 label = "Γλώσσα"
-missing = "Δεν έχει οριστεί γλώσσα. Οι αναγνώστες οθόνης θα μαντέψουν, και μπορεί να διαβάσουν όλο το έγγραφο με λάθος φωνή."
 mixed = "Μικτό"
 noMatch = "Καμία αντιστοιχία γλώσσας. Πληκτρολογήστε τον κωδικό της, όπως mt ή en-IE."
 placeholder = "Επιλέξτε γλώσσα"
@@ -7948,6 +7978,52 @@ renderFailed = "Αποτυχία απόδοσης σελίδας"
 [pdfTextEditor.password]
 incorrect = "Λανθασμένος κωδικός πρόσβασης - δοκιμάστε ξανά."
 label = "Κωδικός πρόσβασης"
+
+[pdfTextEditor.review]
+allDone = "All text and images are tagged"
+close = "Close accessibility settings"
+counting = "still counting"
+left = "{{count}} left to tag"
+next = "Next untagged (N)"
+noneLeft = "No text or images left to tag"
+previous = "Previous untagged (Shift+N)"
+untaggedCount = "{{count}} untagged"
+untaggedPosition = "{{index}} of {{count}} untagged"
+
+[pdfTextEditor.review.badge]
+described = "Described"
+noDescription = "Needs a description"
+untagged = "Needs a tag"
+
+[pdfTextEditor.review.card]
+autoAdvance = "Go to the next item after tagging"
+done = "Tagged"
+figureQuestion = "What does this figure show?"
+formulaPlaceholder = "For example: x squared plus one"
+formulaQuestion = "How is this formula read aloud?"
+imagePlaceholder = "Describe the image"
+imageQuestion = "What does this image show?"
+label = "Accessibility review"
+pickHint = "Click a block or an image on the page, or press the arrow to go to the next one still to tag. Shift-click to tag several at once."
+saveDescription = "Save description"
+selectedCount_one = "{{count}} block selected"
+selectedCount_other = "{{count}} blocks selected"
+showAllTags = "Show tags on every block"
+skipQuestion = "Or skip it for screen readers"
+textQuestion = "What is this text?"
+todo = "Needs attention"
+
+[pdfTextEditor.review.closePrompt]
+body = "Your tags are not in your workspace yet. Closing accessibility settings without saving loses them."
+discard = "Discard"
+keep = "Keep tagging"
+save = "Save and close"
+title = "Save your tags?"
+
+[pdfTextEditor.review.summary]
+progress = "Tagging progress"
+tagged = "{{done}} of {{total}} tagged"
+title = "Tagging"
 
 [pdfTextEditor.rulers]
 guide = "Οδηγός ευθυγράμμισης στο {{value}} {{unit}} - σύρετε επάνω σε έναν χάρακα για αφαίρεση"
@@ -8129,6 +8205,10 @@ title = "Διαφορές προεπισκόπησης"
 [pdfTextEditor.tooltip.textFocus]
 text = "Ο χώρος εργασίας εστιάζει στην επεξεργασία κειμένου και την ανατοποθέτηση ενσωματωμένων εικόνων. Πολύπλοκα γραφικά σελίδας, στοιχεία φορμών και πολυεπίπεδα γραφικά διατηρούνται για εξαγωγή αλλά δεν είναι πλήρως επεξεργάσιμα εδώ."
 title = "Εστίαση σε κείμενο και εικόνα"
+
+[pdfTextEditor.trail]
+save = "Save"
+saveTooltip = "Save to your workspace ({{shortcut}})"
 
 [PDFToCSV]
 header = "PDF σε CSV"
@@ -10321,6 +10401,10 @@ title = "Ροές εργασίας"
 
 [portal.pipelines.actions]
 newCustomPipeline = "Νέα προσαρμοσμένη ροή εργασίας"
+
+[portal.pipelines.activity]
+build = "Build pipeline"
+title = "Frequent workflows"
 
 [portal.pipelines.all]
 title = "Όλες οι ροές εργασίας"
@@ -14338,6 +14422,20 @@ noTools = "Δεν υπάρχουν διαθέσιμα εργαλεία"
 [tooltip]
 close = "Κλείσιμο συμβουλής"
 
+[toolWorkflows]
+draftName = "{{first}} + {{count}} more steps"
+longName = "{{first}} → … → {{last}} ({{count}} steps)"
+
+[toolWorkflows.ranBy]
+install = "Your colleagues have done this {{count, number}} times."
+team = "Your team has done this {{count, number}} times."
+user = "You've done this {{count, number}} times."
+
+[toolWorkflows.ranByShort]
+install = "Colleagues ran this {{count, number}} times"
+team = "Your team ran this {{count, number}} times"
+user = "You ran this {{count, number}} times"
+
 [unlockPDFForms]
 description = "Αυτό το εργαλείο θα αφαιρέσει τους περιορισμούς μόνο για ανάγνωση από τα πεδία φόρμας του PDF, καθιστώντας τα επεξεργάσιμα και συμπληρώσιμα."
 submit = "Ξεκλείδωμα φορμών"
@@ -15114,6 +15212,7 @@ readAloud = "Ανάγνωση δυνατά"
 readAloudLanguage = "Γλώσσα"
 readAloudSpeed = "Ταχύτητα"
 redact = "Απόκρυψη"
+reviewAccessibility = "Review accessibility"
 rotateLeft = "Περιστροφή αριστερά"
 rotateRight = "Περιστροφή δεξιά"
 ruler = "Χάρακας / Μέτρηση"

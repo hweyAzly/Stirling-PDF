@@ -2361,6 +2361,10 @@ title = "Jalankan Otomatisasi"
 [automate.selection]
 title = "Pilihan Otomatisasi"
 
+[automate.selection.activity]
+description = "Save it as an automation and run it with one click."
+title = "Frequent workflows"
+
 [automate.selection.createNew]
 title = "Buat Otomatisasi Baru"
 
@@ -2971,31 +2975,36 @@ stepTitle = "Perangkat ini"
 [certSign.error]
 failed = "Terjadi kesalahan saat memproses tanda tangan."
 
-[certSign.format]
-pkcs11 = "Token USB"
-windowsStore = "Penyimpanan sertifikat Windows"
-
 [certSign.hardware]
-certificate = "Sertifikat"
+allExpired = "None of the digital IDs here can sign today."
+backToDigitalIds = "Back to digital IDs"
 customLibrary = "Path driver kustom…"
+digitalId = "Digital ID"
 driver = "Driver PKCS#11"
 driverPath = "Path pustaka driver"
 driverPathPlaceholder = "Path lengkap ke driver PKCS#11 Anda (.dll, .so atau .dylib)"
-expired = "kedaluwarsa"
-expires = "berlaku hingga"
+driverSetup = "Read card directly"
+expiredOn = "Expired {{date}}"
+expiresOn = "Expires {{date}}"
+hideExpired = "Hide expired"
 listCerts = "Daftar sertifikat"
-loading = "Membaca sertifikat…"
+macLoadError = "Could not read the macOS keychain"
 noCerts = "Tidak ditemukan sertifikat penandatanganan"
 noDriver = "Tidak ada driver PKCS#11 terdeteksi. Instal driver token Anda (mis. OpenSC), lalu buka kembali ini - atau masukkan path driver secara manual di bawah."
-notYetValid = "belum berlaku"
+notListed = "Don't see your ID?"
+onDevice = "Stored on this device"
+onToken = "On a security key or smart card"
+osStoreHint = "Insert your smart card or security key, then choose your digital ID."
 pin = "PIN Token"
 pkcs11Hint = "Pilih driver PKCS#11 untuk token Anda, masukkan PIN, lalu daftar sertifikat pada token."
 pkcs11LoadError = "Tidak dapat membaca sertifikat dari token. Periksa PIN dan driver."
-refresh = "Segarkan"
-selectCert = "Pilih sertifikat"
+refreshList = "Refresh list"
 selectDriver = "Pilih driver"
+serial = "Serial …{{serial}}"
+showExpired = "Show {{count}} expired"
 slot = "Slot (opsional)"
-windowsHint = "Pilih sertifikat dari penyimpanan sertifikat Windows Anda. Penandatanganan menggunakan kunci pada kartu/token Anda - Windows akan meminta PIN."
+useDriver = "Read the card directly"
+validFrom = "Valid from {{date}}"
 windowsLoadError = "Tidak dapat membaca penyimpanan sertifikat Windows"
 
 [certSign.sessions]
@@ -3035,6 +3044,8 @@ title = "Patokan umum"
 device = "Perangkat ini"
 noOtherSources = "Tidak ada sumber sertifikat lain yang tersedia."
 server = "Server"
+serverCertUnavailable = "The server's signing certificate isn't available."
+signsAs = "Signs as"
 stepTitle = "Sumber sertifikat"
 upload = "Unggah"
 
@@ -3265,7 +3276,9 @@ checking = "Memeriksa..."
 clauseRef = "{{profile}} §{{clauses}}"
 download = "Unduh laporan aksesibilitas"
 fileFailed = "gagal"
+noFiles = "Select a PDF to check it."
 pickFile = "Tampilkan hasil untuk"
+retry = "Check again"
 submit = "Periksa aksesibilitas"
 
 [checkAccessibility.category]
@@ -3291,6 +3304,7 @@ label = "{{passed}} dari {{total}} pemeriksaan lulus"
 download = "Laporan aksesibilitas tidak dapat dibuat. Coba lagi."
 fileTitle = "File ini tidak dapat diperiksa"
 partial = "Beberapa file tidak dapat diperiksa."
+unreachable = "The server didn't answer. Check it's running, then check again."
 
 [checkAccessibility.facts]
 declares = "Mendeklarasikan PDF/UA"
@@ -3313,6 +3327,21 @@ title = "File memiliki judul di metadatanya."
 [checkAccessibility.figures]
 summary_one = "{{count}} gambar memerlukan deskripsi (halaman {{pages}})"
 summary_other = "{{count}} gambar memerlukan deskripsi (halaman {{pages}})"
+
+[checkAccessibility.fix]
+heading = "Fix the headings"
+headingOnPage = "Fix the heading on page {{page}}"
+hide = "Hide tagging tool"
+image = "Describe the images"
+imageOnPage = "Describe the image on page {{page}}"
+link = "Tag the links"
+linkOnPage = "Tag the link on page {{page}}"
+markedTagged = "Mark the document as tagged"
+show = "Show tagging tool"
+tagEverything = "Auto-tag"
+tagging = "Tagging... {{percent}}%"
+untagged = "Tag the content"
+untaggedOnPage = "Tag content on page {{page}}"
 
 [checkAccessibility.issue]
 appliesTo = "Berlaku untuk"
@@ -4928,12 +4957,15 @@ closeFile = "Tutup file"
 
 [fileEditor]
 closedFile = "Menutup {{name}}"
+filesAdded_one = "Added {{count}} file"
+filesAdded_other = "Added {{count}} files"
 filesReordered_one = "File diurutkan ulang"
 filesReordered_other = "{{count}} file diurutkan ulang"
 loadedFromStorage_one = "Memuat {{count}} file dari penyimpanan"
 loadedFromStorage_other = "Memuat {{count}} file dari penyimpanan"
 loadFromStorageFailed = "Gagal memuat beberapa file dari penyimpanan"
 pinnedFile = "Menyematkan {{name}}"
+processFilesFailed = "Failed to process files"
 savedAndClosed = "Menyimpan dan menutup {{name}}"
 saveFailed = "Penyimpanan gagal"
 unpinnedFile = "Melepas sematan {{name}}"
@@ -5959,8 +5991,10 @@ title = "Ganti Perizinan"
 
 [home.checkAccessibility]
 desc = "Nilai sebuah PDF terhadap PDF/UA dan lihat apa yang menghambat pembaca layar, tanpa mengubahnya"
+descWithReview = "Check a PDF against PDF/UA, then tag and describe what screen readers miss"
 tags = "aksesibilitas,a11y,PDF/UA,pembaca layar,WCAG,Section 508,veraPDF,PDF bertagar,teks alt,pemeriksa aksesibilitas,laporan aksesibilitas,kepatuhan,UA"
 title = "Periksa aksesibilitas PDF"
+titleWithReview = "PDF accessibility"
 
 [home.classify]
 desc = "Identifikasi jenis dokumen ini dan beri tag."
@@ -6962,6 +6996,10 @@ yourCloudAccess = "Anda akan menjadi anggota tim dan kehilangan akses pemilik."
 deselectAll = "Tidak ada"
 selectAll = "Centang Semua"
 
+[pageEditor.toolbar]
+redo = "Redo"
+undo = "Undo"
+
 [pageExtracter]
 title = "Ekstrak Halaman"
 
@@ -7800,14 +7838,11 @@ cannotTagLink = "Tautan ini tidak dapat diberi tag."
 cannotTagPage = "Konten halaman ini tidak dapat diberi tag."
 contentGroup = "Konten"
 customTag = "{{role}} (tag khusus)"
-decorativeInfo = "Pembaca layar melewati gambar dekoratif. Gunakan untuk bingkai, latar belakang, dan gambar lain yang tidak memuat informasi."
-decorativeLabel = "Gambar dekoratif"
-description = "Deskripsi gambar"
-descriptionInfo = "Pembaca layar membacakan ini sebagai pengganti gambar."
+describeLinks_one = "Describe link"
+describeLinks_other = "Describe {{count}} links"
 encrypted = "Tag tidak dapat diedit dalam file terenkripsi"
 figureDescription = "Deskripsi gambar"
 figureDescriptionInfo = "Pembaca layar membacakan ini sebagai pengganti gambar."
-formFieldDescription = "Deskripsi bidang"
 formulaDescription = "Deskripsi rumus"
 formulaDescriptionInfo = "Pembaca layar membacakan ini sebagai pengganti rumus. Ucapkan seperti saat diucapkan lantang, misalnya \"x kuadrat ditambah satu\"."
 heading = "Aksesibilitas"
@@ -7818,7 +7853,6 @@ markedTagged = "Dokumen sepenuhnya bertagar"
 markedTaggedHint = "Memberi tahu pembaca PDF untuk menggunakan tag aksesibilitas. Centang ini setelah semuanya ditandai."
 markedWithUntagged = "Beberapa konten tidak memiliki tag, sehingga pembaca layar mungkin melewatinya."
 missingDescriptions = "Deskripsi hilang"
-mixedContent = "Gambar menyertakan konten lain"
 mixedTags = "Campuran"
 needsDescriptionBadge = "Tidak ada deskripsi"
 nextToReview = "Berikutnya untuk ditinjau"
@@ -7826,12 +7860,10 @@ notFigure = "Ditandai sebagai bagian dari teks"
 removeTag = "Hapus tag"
 saveFailed = "Perubahan aksesibilitas Anda tidak dapat disimpan, sehingga file tidak disimpan. Urungkan perubahan tersebut dan coba lagi."
 selectedText = "Teks yang dipilih"
-tagFormField = "Beri tag bidang formulir"
 tagging = "Memberi tag halaman"
 tagLabel = "Tag"
 tagLinks_one = "Tag tautan"
 tagLinks_other = "Tag {{count}} tautan"
-tagUntagged = "Tag otomatis dokumen"
 tagUntaggedHint = "Secara otomatis menambahkan tag aksesibilitas di seluruh dokumen. Hasilnya masih kasar: periksa judul, daftar, dan urutan baca setelahnya."
 unknownTag = "Tidak dapat dibaca di sini"
 unmarkedWithTags = "Beberapa penampil PDF tetap akan menggunakan tag dan mungkin melewati konten yang tidak memiliki tag."
@@ -7856,7 +7888,7 @@ heading = "Heading"
 mixedNumbering = "Mencampur heading bernomor dan tanpa nomor"
 none = "Tidak ada heading"
 onPage = "Heading pada halaman {{page}}"
-problems = "Masalah heading"
+problemCount = "{{count}} to fix"
 skippedLevel = "Melewati satu tingkat setelah Heading {{previous}}"
 
 [pdfTextEditor.inspector.accessibility.tagName]
@@ -7911,13 +7943,11 @@ title = "Judul"
 allLanguages = "Semua bahasa"
 cannotSetDocument = "Bahasa dokumen ini tidak dapat diubah."
 cannotSetText = "Bahasa teks ini tidak dapat diubah."
-documentHint = "Bahasa yang digunakan pembaca layar kecuali sebagian teks menetapkan bahasanya sendiri."
 documentLabel = "Bahasa"
 documentLocked = "Bahasa dokumen terenkripsi tidak dapat diubah di sini."
 inDocument = "Di dokumen ini"
 innerLabel = "Bahasa tag {{number}}"
 label = "Bahasa"
-missing = "Tidak ada bahasa yang ditetapkan. Pembaca layar akan menebak, dan mungkin membaca seluruh dokumen dengan suara yang salah."
 mixed = "Campuran"
 noMatch = "Tidak ada bahasa yang cocok. Ketik kodenya sebagai gantinya, misalnya mt atau en-IE."
 placeholder = "Pilih bahasa"
@@ -7948,6 +7978,52 @@ renderFailed = "Gagal merender halaman"
 [pdfTextEditor.password]
 incorrect = "Kata sandi salah - coba lagi."
 label = "Kata sandi"
+
+[pdfTextEditor.review]
+allDone = "All text and images are tagged"
+close = "Close accessibility settings"
+counting = "still counting"
+left = "{{count}} left to tag"
+next = "Next untagged (N)"
+noneLeft = "No text or images left to tag"
+previous = "Previous untagged (Shift+N)"
+untaggedCount = "{{count}} untagged"
+untaggedPosition = "{{index}} of {{count}} untagged"
+
+[pdfTextEditor.review.badge]
+described = "Described"
+noDescription = "Needs a description"
+untagged = "Needs a tag"
+
+[pdfTextEditor.review.card]
+autoAdvance = "Go to the next item after tagging"
+done = "Tagged"
+figureQuestion = "What does this figure show?"
+formulaPlaceholder = "For example: x squared plus one"
+formulaQuestion = "How is this formula read aloud?"
+imagePlaceholder = "Describe the image"
+imageQuestion = "What does this image show?"
+label = "Accessibility review"
+pickHint = "Click a block or an image on the page, or press the arrow to go to the next one still to tag. Shift-click to tag several at once."
+saveDescription = "Save description"
+selectedCount_one = "{{count}} block selected"
+selectedCount_other = "{{count}} blocks selected"
+showAllTags = "Show tags on every block"
+skipQuestion = "Or skip it for screen readers"
+textQuestion = "What is this text?"
+todo = "Needs attention"
+
+[pdfTextEditor.review.closePrompt]
+body = "Your tags are not in your workspace yet. Closing accessibility settings without saving loses them."
+discard = "Discard"
+keep = "Keep tagging"
+save = "Save and close"
+title = "Save your tags?"
+
+[pdfTextEditor.review.summary]
+progress = "Tagging progress"
+tagged = "{{done}} of {{total}} tagged"
+title = "Tagging"
 
 [pdfTextEditor.rulers]
 guide = "Panduan perataan di {{value}} {{unit}} - seret ke penggaris untuk menghapus"
@@ -8129,6 +8205,10 @@ title = "Perbedaan Pratinjau"
 [pdfTextEditor.tooltip.textFocus]
 text = "Ruang kerja ini berfokus pada pengeditan teks dan memosisikan ulang gambar tersemat. Karya seni halaman yang kompleks, widget formulir, dan grafik berlapis dipertahankan untuk ekspor tetapi tidak sepenuhnya dapat diedit di sini."
 title = "Fokus Teks dan Gambar"
+
+[pdfTextEditor.trail]
+save = "Save"
+saveTooltip = "Save to your workspace ({{shortcut}})"
 
 [PDFToCSV]
 header = "PDF ke CSV"
@@ -10321,6 +10401,10 @@ title = "Pipeline"
 
 [portal.pipelines.actions]
 newCustomPipeline = "Pipeline kustom baru"
+
+[portal.pipelines.activity]
+build = "Build pipeline"
+title = "Frequent workflows"
 
 [portal.pipelines.all]
 title = "Semua pipeline"
@@ -14338,6 +14422,20 @@ noTools = "Tidak ada alat tersedia"
 [tooltip]
 close = "Tutup tooltip"
 
+[toolWorkflows]
+draftName = "{{first}} + {{count}} more steps"
+longName = "{{first}} → … → {{last}} ({{count}} steps)"
+
+[toolWorkflows.ranBy]
+install = "Your colleagues have done this {{count, number}} times."
+team = "Your team has done this {{count, number}} times."
+user = "You've done this {{count, number}} times."
+
+[toolWorkflows.ranByShort]
+install = "Colleagues ran this {{count, number}} times"
+team = "Your team ran this {{count, number}} times"
+user = "You ran this {{count, number}} times"
+
 [unlockPDFForms]
 description = "Alat ini akan menghapus pembatasan hanya baca dari bidang formulir PDF, sehingga dapat diedit dan diisi."
 submit = "Buka Kunci Formulir"
@@ -15114,6 +15212,7 @@ readAloud = "Baca Nyaring"
 readAloudLanguage = "Bahasa"
 readAloudSpeed = "Kecepatan"
 redact = "Redaksi"
+reviewAccessibility = "Review accessibility"
 rotateLeft = "Putar Kiri"
 rotateRight = "Putar Kanan"
 ruler = "Penggaris / Ukur"

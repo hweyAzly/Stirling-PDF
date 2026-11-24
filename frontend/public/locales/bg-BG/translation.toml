@@ -2361,6 +2361,10 @@ title = "Стартиране на автоматизация"
 [automate.selection]
 title = "Избор на автоматизация"
 
+[automate.selection.activity]
+description = "Save it as an automation and run it with one click."
+title = "Frequent workflows"
+
 [automate.selection.createNew]
 title = "Създаване на нова автоматизация"
 
@@ -2971,31 +2975,36 @@ stepTitle = "Това устройство"
 [certSign.error]
 failed = "Възникна грешка при обработката на подписите."
 
-[certSign.format]
-pkcs11 = "USB токен"
-windowsStore = "Хранилище на сертификати на Windows"
-
 [certSign.hardware]
-certificate = "Сертификат"
+allExpired = "None of the digital IDs here can sign today."
+backToDigitalIds = "Back to digital IDs"
 customLibrary = "Персонализиран път към драйвер…"
+digitalId = "Digital ID"
 driver = "PKCS#11 драйвер"
 driverPath = "Път към библиотеката на драйвера"
 driverPathPlaceholder = "Пълен път до вашия PKCS#11 драйвер (.dll, .so или .dylib)"
-expired = "изтекъл"
-expires = "изтича"
+driverSetup = "Read card directly"
+expiredOn = "Expired {{date}}"
+expiresOn = "Expires {{date}}"
+hideExpired = "Hide expired"
 listCerts = "Покажи сертификатите"
-loading = "Четене на сертификати…"
+macLoadError = "Could not read the macOS keychain"
 noCerts = "Не са намерени сертификати за подписване"
 noDriver = "Не е открит PKCS#11 драйвер. Инсталирайте драйвера на вашия токен (напр. OpenSC), после отворете това отново – или въведете ръчно пътя до драйвера по-долу."
-notYetValid = "още не е валиден"
+notListed = "Don't see your ID?"
+onDevice = "Stored on this device"
+onToken = "On a security key or smart card"
+osStoreHint = "Insert your smart card or security key, then choose your digital ID."
 pin = "PIN на токена"
 pkcs11Hint = "Изберете PKCS#11 драйвера на вашия токен, въведете PIN, след това покажете сертификатите на токена."
 pkcs11LoadError = "Неуспешно прочитане на сертификатите от токена. Проверете PIN и драйвера."
-refresh = "Опреснете"
-selectCert = "Изберете сертификат"
+refreshList = "Refresh list"
 selectDriver = "Изберете драйвер"
+serial = "Serial …{{serial}}"
+showExpired = "Show {{count}} expired"
 slot = "Слот (по избор)"
-windowsHint = "Изберете сертификат от хранилището на сертификати на Windows. Подписването използва ключа на вашата карта/токен – Windows ще поиска PIN."
+useDriver = "Read the card directly"
+validFrom = "Valid from {{date}}"
 windowsLoadError = "Не можа да се прочете хранилището на сертификати на Windows"
 
 [certSign.sessions]
@@ -3035,6 +3044,8 @@ title = "Общо правило"
 device = "Това устройство"
 noOtherSources = "Няма други налични източници на сертификати."
 server = "Сървър"
+serverCertUnavailable = "The server's signing certificate isn't available."
+signsAs = "Signs as"
 stepTitle = "Източник на сертификата"
 upload = "Качване"
 
@@ -3265,7 +3276,9 @@ checking = "Проверка..."
 clauseRef = "{{profile}} §{{clauses}}"
 download = "Изтегляне на доклад за достъпност"
 fileFailed = "неуспешно"
+noFiles = "Select a PDF to check it."
 pickFile = "Показване на резултати за"
+retry = "Check again"
 submit = "Провери достъпността"
 
 [checkAccessibility.category]
@@ -3291,6 +3304,7 @@ label = "Преминати {{passed}} от {{total}} проверки"
 download = "Докладът за достъпност не можа да бъде създаден. Опитайте отново."
 fileTitle = "Този файл не можа да бъде проверен"
 partial = "Някои файлове не можаха да бъдат проверени."
+unreachable = "The server didn't answer. Check it's running, then check again."
 
 [checkAccessibility.facts]
 declares = "Декларира PDF/UA"
@@ -3313,6 +3327,21 @@ title = "Файлът има заглавие в метаданните си."
 [checkAccessibility.figures]
 summary_one = "{{count}} изображение се нуждае от описание (страница {{pages}})"
 summary_other = "{{count}} изображения се нуждаят от описание (страници {{pages}})"
+
+[checkAccessibility.fix]
+heading = "Fix the headings"
+headingOnPage = "Fix the heading on page {{page}}"
+hide = "Hide tagging tool"
+image = "Describe the images"
+imageOnPage = "Describe the image on page {{page}}"
+link = "Tag the links"
+linkOnPage = "Tag the link on page {{page}}"
+markedTagged = "Mark the document as tagged"
+show = "Show tagging tool"
+tagEverything = "Auto-tag"
+tagging = "Tagging... {{percent}}%"
+untagged = "Tag the content"
+untaggedOnPage = "Tag content on page {{page}}"
 
 [checkAccessibility.issue]
 appliesTo = "Отнася се за"
@@ -4928,12 +4957,15 @@ closeFile = "Затворете файла"
 
 [fileEditor]
 closedFile = "Затворен {{name}}"
+filesAdded_one = "Added {{count}} file"
+filesAdded_other = "Added {{count}} files"
 filesReordered_one = "Файлът е пренареден"
 filesReordered_other = "{{count}} файла са пренаредени"
 loadedFromStorage_one = "Зареден {{count}} файл от хранилището"
 loadedFromStorage_other = "Заредени {{count}} файла от хранилището"
 loadFromStorageFailed = "Неуспешно зареждане на някои файлове от хранилището"
 pinnedFile = "Закачен {{name}}"
+processFilesFailed = "Failed to process files"
 savedAndClosed = "Записан и затворен {{name}}"
 saveFailed = "Записването е неуспешно"
 unpinnedFile = "Откачен {{name}}"
@@ -5959,8 +5991,10 @@ title = "Промяна на правата"
 
 [home.checkAccessibility]
 desc = "Оценете PDF спрямо PDF/UA и вижте какво пречи на екранните четци, без да го променяте"
+descWithReview = "Check a PDF against PDF/UA, then tag and describe what screen readers miss"
 tags = "accessibility,a11y,PDF/UA,screen reader,WCAG,Section 508,veraPDF,tagged PDF,alt text,accessibility checker,accessibility report,compliance,UA"
 title = "Проверка на достъпността на PDF"
+titleWithReview = "PDF accessibility"
 
 [home.classify]
 desc = "Определете какъв вид документ е това и го маркирайте."
@@ -6962,6 +6996,10 @@ yourCloudAccess = "Ще станете член на екипа и ще загу
 deselectAll = "Нито един"
 selectAll = "Маркиране на всички"
 
+[pageEditor.toolbar]
+redo = "Redo"
+undo = "Undo"
+
 [pageExtracter]
 title = "Извличане на страници"
 
@@ -7800,14 +7838,11 @@ cannotTagLink = "Тази връзка не може да бъде тагнат�
 cannotTagPage = "Съдържанието на тази страница не може да бъде тагнато."
 contentGroup = "Съдържание"
 customTag = "{{role}} (персонализиран таг)"
-decorativeInfo = "Екранните четци пропускат декоративните изображения. Използвайте го за рамки, фонове и други изображения, които не носят информация."
-decorativeLabel = "Декоративно изображение"
-description = "Описание на изображението"
-descriptionInfo = "Екранните четци прочитат това вместо изображението."
+describeLinks_one = "Describe link"
+describeLinks_other = "Describe {{count}} links"
 encrypted = "Таговете не могат да се редактират в шифрован файл"
 figureDescription = "Описание на фигурата"
 figureDescriptionInfo = "Екранните четци ще прочетат това вместо фигурата."
-formFieldDescription = "Описание на полето"
 formulaDescription = "Описание на формулата"
 formulaDescriptionInfo = "Екранните четци ще прочетат това вместо формулата. Опишете я така, както бихте я казали на глас, например \"x на квадрат плюс едно\"."
 heading = "Достъпност"
@@ -7818,7 +7853,6 @@ markedTagged = "Документът е напълно тагнат"
 markedTaggedHint = "Казва на PDF четците да използват таговете за достъпност. Отбележете го, след като всичко е тагнато."
 markedWithUntagged = "Част от съдържанието няма тагове, затова екранните четци може да го пропуснат."
 missingDescriptions = "Липсващи описания"
-mixedContent = "Фигурата включва друго съдържание"
 mixedTags = "Смесено"
 needsDescriptionBadge = "Няма описание"
 nextToReview = "Следващо за преглед"
@@ -7826,12 +7860,10 @@ notFigure = "Тагнато като част от текста"
 removeTag = "Премахване на таг"
 saveFailed = "Промените ви за достъпност не можаха да бъдат запазени, затова файлът не беше запазен. Отменете ги и опитайте отново."
 selectedText = "Избран текст"
-tagFormField = "Етикетирай поле на формуляр"
 tagging = "Тагване на страници"
 tagLabel = "Таг"
 tagLinks_one = "Тагни връзка"
 tagLinks_other = "Тагни {{count}} връзки"
-tagUntagged = "Авто-тагни документ"
 tagUntaggedHint = "Автоматично добавя тагове за достъпност в целия документ. Резултатът е груб: проверете заглавия, списъци и реда на четене след това."
 unknownTag = "Не може да се прочете тук"
 unmarkedWithTags = "Някои PDF четци така или иначе ще използват таговете и може да пропуснат съдържание без тях."
@@ -7856,7 +7888,7 @@ heading = "Заглавия"
 mixedNumbering = "Смесва номерирани и неномерирани заглавия"
 none = "Няма заглавия"
 onPage = "Заглавие на страница {{page}}"
-problems = "Проблеми със заглавията"
+problemCount = "{{count}} to fix"
 skippedLevel = "Пропуска ниво след Заглавие {{previous}}"
 
 [pdfTextEditor.inspector.accessibility.tagName]
@@ -7911,13 +7943,11 @@ title = "Заглавие"
 allLanguages = "Всички езици"
 cannotSetDocument = "Езикът на този документ не може да се променя."
 cannotSetText = "Езикът на този текст не може да се променя."
-documentHint = "Езикът, който екранните четци използват, освен ако част от текста не зададе свой."
 documentLabel = "Език"
 documentLocked = "Езикът на шифриран документ не може да се променя тук."
 inDocument = "В този документ"
 innerLabel = "Език на таг {{number}}"
 label = "Език"
-missing = "Няма зададен език. Екранните четци ще налучкват и може да прочетат целия документ с неправилен глас."
 mixed = "Смесено"
 noMatch = "Няма съвпадащ език. Въведете кода му вместо това, напр. mt или en-IE."
 placeholder = "Изберете език"
@@ -7948,6 +7978,52 @@ renderFailed = "Неуспешно рендиране на страницата"
 [pdfTextEditor.password]
 incorrect = "Неправилна парола - опитайте отново."
 label = "Парола"
+
+[pdfTextEditor.review]
+allDone = "All text and images are tagged"
+close = "Close accessibility settings"
+counting = "still counting"
+left = "{{count}} left to tag"
+next = "Next untagged (N)"
+noneLeft = "No text or images left to tag"
+previous = "Previous untagged (Shift+N)"
+untaggedCount = "{{count}} untagged"
+untaggedPosition = "{{index}} of {{count}} untagged"
+
+[pdfTextEditor.review.badge]
+described = "Described"
+noDescription = "Needs a description"
+untagged = "Needs a tag"
+
+[pdfTextEditor.review.card]
+autoAdvance = "Go to the next item after tagging"
+done = "Tagged"
+figureQuestion = "What does this figure show?"
+formulaPlaceholder = "For example: x squared plus one"
+formulaQuestion = "How is this formula read aloud?"
+imagePlaceholder = "Describe the image"
+imageQuestion = "What does this image show?"
+label = "Accessibility review"
+pickHint = "Click a block or an image on the page, or press the arrow to go to the next one still to tag. Shift-click to tag several at once."
+saveDescription = "Save description"
+selectedCount_one = "{{count}} block selected"
+selectedCount_other = "{{count}} blocks selected"
+showAllTags = "Show tags on every block"
+skipQuestion = "Or skip it for screen readers"
+textQuestion = "What is this text?"
+todo = "Needs attention"
+
+[pdfTextEditor.review.closePrompt]
+body = "Your tags are not in your workspace yet. Closing accessibility settings without saving loses them."
+discard = "Discard"
+keep = "Keep tagging"
+save = "Save and close"
+title = "Save your tags?"
+
+[pdfTextEditor.review.summary]
+progress = "Tagging progress"
+tagged = "{{done}} of {{total}} tagged"
+title = "Tagging"
 
 [pdfTextEditor.rulers]
 guide = "Водач за подравняване при {{value}} {{unit}} - плъзнете върху линийка, за да премахнете"
@@ -8129,6 +8205,10 @@ title = "Разлики в предварителния преглед"
 [pdfTextEditor.tooltip.textFocus]
 text = "Това работно пространство е насочено към редактиране на текст и преместване на вградени изображения. Сложни графики на страницата, формуляри и многослойна графика се запазват за експорт, но не са напълно редактируеми тук."
 title = "Фокус върху текст и изображения"
+
+[pdfTextEditor.trail]
+save = "Save"
+saveTooltip = "Save to your workspace ({{shortcut}})"
 
 [PDFToCSV]
 header = "PDF към CSV"
@@ -10321,6 +10401,10 @@ title = "Пайплайни"
 
 [portal.pipelines.actions]
 newCustomPipeline = "Нов персонализиран конвейер"
+
+[portal.pipelines.activity]
+build = "Build pipeline"
+title = "Frequent workflows"
 
 [portal.pipelines.all]
 title = "Всички конвейери"
@@ -14338,6 +14422,20 @@ noTools = "Няма налични инструменти"
 [tooltip]
 close = "Затворете подсказката"
 
+[toolWorkflows]
+draftName = "{{first}} + {{count}} more steps"
+longName = "{{first}} → … → {{last}} ({{count}} steps)"
+
+[toolWorkflows.ranBy]
+install = "Your colleagues have done this {{count, number}} times."
+team = "Your team has done this {{count, number}} times."
+user = "You've done this {{count, number}} times."
+
+[toolWorkflows.ranByShort]
+install = "Colleagues ran this {{count, number}} times"
+team = "Your team ran this {{count, number}} times"
+user = "You ran this {{count, number}} times"
+
 [unlockPDFForms]
 description = "Този инструмент ще премахне ограниченията „само за четене“ от полетата във PDF формуляри, за да станат редактируеми и попълваеми."
 submit = "Отключване на формуляри"
@@ -15114,6 +15212,7 @@ readAloud = "Четене на глас"
 readAloudLanguage = "Език"
 readAloudSpeed = "Скорост"
 redact = "Заличаване"
+reviewAccessibility = "Review accessibility"
 rotateLeft = "Завъртане наляво"
 rotateRight = "Завъртане надясно"
 ruler = "Линийка / Измерване"
